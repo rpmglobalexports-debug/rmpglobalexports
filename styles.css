@@ -104,3 +104,15 @@ footer strong{color:white}
   .card .img-wrap{height:210px}
   .floating-whatsapp{right:12px;bottom:12px;padding:10px 13px;font-size:13px;width:auto}
 }
+.clickable-card {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.clickable-card:hover {
+  transform: translateY(-4px);
+}
+
+.clickable-card .btn {
+  cursor: pointer;
+}
