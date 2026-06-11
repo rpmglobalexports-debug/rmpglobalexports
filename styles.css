@@ -161,4 +161,9 @@ footer strong{color:white}
     color: #6b7280;
     line-height: 1.6;
 }
-
+.compliance-line {
+  margin-top: 18px;
+  font-weight: 700;
+  color: #1f5c3f;
+  font-size: 0.95rem;
+}
