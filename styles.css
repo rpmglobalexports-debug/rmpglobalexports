@@ -124,6 +124,19 @@ footer strong{color:white}
 .clickable-card:hover {
   transform: translateY(-4px);
 }
+.clickable-card {
+  position: relative;
+}
 
+.card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.clickable-card .btn {
+  position: relative;
+  z-index: 2;
+}
 
 
