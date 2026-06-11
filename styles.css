@@ -162,8 +162,12 @@ footer strong{color:white}
     line-height: 1.6;
 }
 .compliance-line {
-  margin-top: 18px;
+  margin-top: 20px;
   font-weight: 700;
+  font-size: 16px;
   color: #1f5c3f;
-  font-size: 0.95rem;
+  background: #eef7f1;
+  padding: 12px 16px;
+  border-radius: 10px;
+  display: inline-block;
 }
