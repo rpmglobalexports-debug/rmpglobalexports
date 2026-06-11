@@ -124,3 +124,10 @@ footer strong{color:white}
 .clickable-card:hover {
   transform: translateY(-4px);
 }
+.clickable-card * {
+  pointer-events: none;
+}
+
+.clickable-card .btn {
+  pointer-events: auto;
+}
