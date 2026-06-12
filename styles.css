@@ -334,4 +334,74 @@ footer strong{color:white}
     font-size: 14px;
   }
 }
+/* SOFT WEBSITE ANIMATIONS */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+.hero,
+.product-hero,
+.card,
+.why-card,
+.step,
+.spec-card,
+.product-section,
+.process-section,
+.faq-section,
+.quote-box {
+  animation: fadeUp 0.7s ease both;
+}
+
+.card,
+.spec-card,
+.why-card,
+.step,
+.process-grid div,
+.trust-strip div {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover,
+.spec-card:hover,
+.why-card:hover,
+.step:hover,
+.process-grid div:hover,
+.trust-strip div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 34px rgba(20,34,52,0.12);
+}
+
+.btn {
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(20,34,52,0.16);
+}
+
+.product-image img,
+.card img {
+  transition: transform 0.35s ease;
+}
+
+.product-image img:hover,
+.card img:hover {
+  transform: scale(1.03);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
