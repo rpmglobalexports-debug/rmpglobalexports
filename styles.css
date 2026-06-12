@@ -171,3 +171,63 @@ footer strong{color:white}
   border-radius: 10px;
   display: inline-block;
 }
+.trust-strip,
+.spec-grid,
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin: 40px auto;
+  max-width: 1100px;
+}
+
+.trust-strip div,
+.spec-card,
+.process-grid div,
+.quote-box {
+  background: #ffffff;
+  border: 1px solid #e8e1d8;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+.spec-card span {
+  display: block;
+  font-size: 13px;
+  opacity: 0.7;
+  margin-bottom: 8px;
+}
+
+.process-section,
+.faq-section,
+.quote-box {
+  max-width: 1100px;
+  margin: 60px auto;
+}
+
+.faq-section details {
+  background: #ffffff;
+  border: 1px solid #e8e1d8;
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 12px;
+}
+
+.faq-section summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.quote-box {
+  text-align: center;
+  background: #f8f1e7;
+}
+
+@media (max-width: 768px) {
+  .trust-strip,
+  .spec-grid,
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+}
