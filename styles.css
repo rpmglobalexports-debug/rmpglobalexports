@@ -296,5 +296,31 @@ footer strong{color:white}
     object-fit: cover;
     object-position: center;
   }
-}
 
+@media (max-width: 768px) {
+
+  .product-hero {
+    grid-template-columns: 1fr !important;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .product-image {
+    order: -1;
+  }
+
+  .product-image img {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    display: block;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .product-content h1 {
+    font-size: 36px;
+    line-height: 1.1;
+  }
+
+}
