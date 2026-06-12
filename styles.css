@@ -297,3 +297,10 @@ footer strong{color:white}
     font-size: 13px;
   }
 }
+@media (max-width: 768px) {
+  .product-image img {
+    height: 260px;
+    object-fit: contain;
+    background: #fff;
+  }
+}
