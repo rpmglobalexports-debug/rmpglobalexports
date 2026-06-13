@@ -459,3 +459,37 @@ footer strong{color:white}
     height: 260px;
   }
 }
+.additional-products {
+    margin-top: 50px;
+}
+
+.additional-products h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.additional-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.small-card {
+    padding: 20px;
+}
+
+.small-card h4 {
+    margin-bottom: 10px;
+}
+
+.small-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .additional-grid {
+        grid-template-columns: 1fr;
+    }
+}
