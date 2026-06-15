@@ -234,3 +234,12 @@ footer{background:var(--dark2);color:#d7e6e6;padding:30px 5%;display:flex;justif
 .spec-table tr:hover{
   background:#fafcf8;
 }
+.spec-link{
+  color: inherit;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.spec-link:hover{
+  color: #f4b400;
+}
