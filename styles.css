@@ -203,3 +203,34 @@ footer{background:var(--dark2);color:#d7e6e6;padding:30px 5%;display:flex;justif
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+.table-wrap{
+  max-width:1100px;
+  margin:40px auto;
+  background:#fff;
+  border:1px solid #e3e7e1;
+  border-radius:24px;
+  padding:30px;
+  box-shadow:0 12px 35px rgba(0,0,0,0.08);
+  overflow-x:auto;
+}
+
+.spec-table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.spec-table th{
+  background:#f6f8f4;
+  text-align:left;
+  padding:16px;
+  font-size:18px;
+}
+
+.spec-table td{
+  padding:16px;
+  border-top:1px solid #ececec;
+}
+
+.spec-table tr:hover{
+  background:#fafcf8;
+}
