@@ -1,4 +1,3 @@
-<script>
 document.addEventListener("DOMContentLoaded", function () {
   const slider = document.getElementById("productSlider");
   let slideTimer;
@@ -26,25 +25,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const founderInfo = {
     rudra: `
       <h2>Rudra Jani</h2>
-      <h4>Founder, RPM Global Exports</h4>
+      <h4>Founder – Supplier Relations</h4>
       <p>Rudra manages supplier communication, product sourcing, quality follow-up and export documentation support for RPM Global Exports.</p>
-      <ul>
-        <li>Supplier coordination</li>
-        <li>Product sourcing</li>
-        <li>Quality follow-up</li>
-        <li>Export documentation support</li>
-      </ul>
     `,
     meet: `
       <h2>Meet Jani</h2>
-      <h4>Co-Founder, RPM Global Exports</h4>
+      <h4>Co-Founder – Buyer Relations</h4>
       <p>Meet handles buyer communication, international outreach, quotation support and business development for global importers.</p>
-      <ul>
-        <li>Buyer communication</li>
-        <li>International outreach</li>
-        <li>Quotation support</li>
-        <li>Business development</li>
-      </ul>
     `
   };
 
@@ -60,9 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.closeFounder = function () {
     const modal = document.getElementById("founderModal");
-    if (modal) {
-      modal.classList.remove("active");
-    }
+    if (modal) modal.classList.remove("active");
   };
 
   const founderModal = document.getElementById("founderModal");
@@ -81,4 +66,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-</script>
