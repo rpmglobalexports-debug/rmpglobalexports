@@ -50,7 +50,26 @@
     </section>
 
     <section class="intro-section" id="about">
-      <div class="vertical-word">EXPORT</div>
+      <div class="founder-sidebar">
+  <button class="founder-mini" onclick="openFounder('rudra')">
+    <img src="images/rudra.webp" alt="Rudra Jani">
+    <h4>Rudra Jani</h4>
+    <span>Founder</span>
+  </button>
+
+  <button class="founder-mini" onclick="openFounder('meet')">
+    <img src="images/meet.webp" alt="Meet Jani">
+    <h4>Meet Jani</h4>
+    <span>Co-Founder</span>
+  </button>
+</div>
+
+<div id="founderModal" class="founder-modal">
+  <div class="founder-modal-content">
+    <button class="founder-close" onclick="closeFounder()">×</button>
+    <div id="founderModalBody"></div>
+  </div>
+</div>
       <div class="intro-text">
         <p class="label">About RPM</p>
         <h2>Focused Indian agri export partner.</h2>
