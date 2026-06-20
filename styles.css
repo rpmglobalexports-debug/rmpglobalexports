@@ -434,3 +434,13 @@ text-decoration:none;
   font-size:16px;
   min-width:20px;
 }
+.blog-link-box{
+  background:#f7f1e6;
+  border-radius:28px;
+  padding:60px 24px;
+  margin:40px auto;
+}
+
+.blog-link-box .btn{
+  margin-top:18px;
+}
