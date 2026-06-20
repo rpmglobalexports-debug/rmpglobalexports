@@ -394,3 +394,32 @@ footer{background:var(--dark2);color:#d7e6e6;padding:36px 5%;display:flex;justif
   width:50px;
   height:auto;
 }
+.footer-brand{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.footer-logo{
+width:56px;
+height:auto;
+flex-shrink:0;
+}
+
+.footer-brand div{
+display:flex;
+flex-direction:column;
+gap:4px;
+}
+
+.footer-social{
+display:flex;
+gap:16px;
+margin-top:16px;
+}
+
+.footer-social a{
+color:inherit;
+font-size:22px;
+text-decoration:none;
+}
