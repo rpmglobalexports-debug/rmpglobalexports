@@ -423,3 +423,14 @@ color:inherit;
 font-size:22px;
 text-decoration:none;
 }
+.footer-col span{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:12px;
+}
+
+.footer-col span i{
+  font-size:16px;
+  min-width:20px;
+}
