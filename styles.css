@@ -733,3 +733,18 @@ text-decoration:none;
     padding:30px 22px;
   }
 }
+.blog-link-box .resource-links {
+  margin-top: 20px;
+}
+
+.blog-link-box .resource-links a {
+  display: inline-block;
+  color: #1f4d3b;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.blog-link-box .resource-links a:hover {
+  text-decoration: underline;
+}
