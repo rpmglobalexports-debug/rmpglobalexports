@@ -33,41 +33,41 @@
 
   <url>
     <loc>https://rpmglobalexports.com/blogs/index.html</loc>
-    <priority>0.90</priority>
+    <priority>0.85</priority>
   </url>
   
   <url>
     <loc>https://rpmglobalexports.com/blogs/import-guides/usa-import-guide.html</loc>
-    <priority>0.90</priority>
+    <priority>0.80</priority>
   </url>
   
   <url>
     <loc>https://rpmglobalexports.com/blogs/import-guides/canada-import-guide.html</loc>
-    <priority>0.90</priority>
+    <priority>0.80</priority>
   </url>
   
   <url>
     <loc>https://rpmglobalexports.com/blogs/import-guides/eu-import-guide.html</loc>
-    <priority>0.90</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://rpmglobalexports.com/blogs/import-guides/new-zealand-import-guide.html</loc>
-    <priority>0.90</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://rpmglobalexports.com/blogs/trade-guides/fob-vs-cif-explained.html</loc>
-    <priority>0.90</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://rpmglobalexports.com/blogs/psyllium/indian-psyllium-husk.html</loc>
-    <priority>0.90</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://rpmglobalexports.com/blogs/psyllium/psyllium-food-grade-vs-pharma-grade.html</loc>
-    <priority>0.90</priority>
+    <priority>0.80</priority>
   </url>
    <url>
     <loc>https://rpmglobalexports.com/blogs/psyllium/psyllium-husk-quality-parameters.html</loc>
-    <priority>0.90</priority>
+    <priority>0.80</priority>
   </url>
 </urlset>
