@@ -444,3 +444,31 @@ text-decoration:none;
 .blog-link-box .btn{
   margin-top:18px;
 }
+.cta-buttons{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.cta-button{
+    display:inline-block;
+    padding:14px 28px;
+    background:#0f766e;
+    color:#fff;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:600;
+    transition:.25s ease;
+}
+
+.cta-button:hover{
+    transform:translateY(-2px);
+}
+
+.secondary-button{
+    background:#ffffff;
+    color:#0f766e;
+    border:2px solid #0f766e;
+}
