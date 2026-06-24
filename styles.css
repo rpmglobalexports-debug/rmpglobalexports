@@ -748,3 +748,15 @@ text-decoration:none;
 .blog-link-box .resource-links a:hover {
   text-decoration: underline;
 }
+.sourcing-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.sourcing-grid img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:12px;
+}
