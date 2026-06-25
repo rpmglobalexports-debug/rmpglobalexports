@@ -877,3 +877,15 @@ text-decoration:none;
   .process-steps { gap: 14px; }
   .process-step { max-width: 100%; }
 }
+
+/* Product page hero trust strip — light background override */
+.product-detail-hero .hero-trust-strip span,
+.product-detail-hero .hero-trust-strip a {
+  background: rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.15);
+  color: var(--ink);
+}
+.product-detail-hero .hero-trust-strip a:hover {
+  background: rgba(0,0,0,0.1);
+  border-color: rgba(0,0,0,0.25);
+}
