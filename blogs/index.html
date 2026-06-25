@@ -5,11 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Import Guides & Export Insights | RPM Global Exports</title>
-
   <meta name="description" content="Practical importer guides, product knowledge and export insights for sourcing psyllium husk, sesame seeds and cumin seeds from India." />
-
   <meta name="keywords" content="import guides India, psyllium husk importer guide, sesame seeds exporter India, cumin seeds exporter India, FOB vs CIF, Indian agri export blog" />
-
   <link rel="canonical" href="https://rpmglobalexports.com/blogs/" />
 
   <meta property="og:title" content="Import Guides & Export Insights | RPM Global Exports" />
@@ -53,72 +50,95 @@
       box-shadow:0 24px 70px rgba(0,0,0,.18);
     }
 
-    .blog-hero-card h3{
-      color:#fff;
-      margin-bottom:16px;
-    }
+    .blog-hero-card h3{color:#fff;margin-bottom:16px;}
+    .blog-hero-card ul{list-style:none;padding:0;margin:0;}
+    .blog-hero-card li{padding:13px 0;border-bottom:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.88);}
+    .blog-hero-card li:last-child{border-bottom:none;}
 
-    .blog-hero-card ul{
-      list-style:none;
-      padding:0;
-      margin:0;
-    }
+    .blog-buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px;}
 
-    .blog-hero-card li{
-      padding:13px 0;
-      border-bottom:1px solid rgba(255,255,255,.16);
-      color:rgba(255,255,255,.88);
-    }
-
-    .blog-hero-card li:last-child{
-      border-bottom:none;
-    }
-
-    .blog-buttons{
+    .quick-filter{
       display:flex;
-      gap:14px;
+      gap:12px;
       flex-wrap:wrap;
-      margin-top:30px;
+      margin-top:26px;
     }
 
-    .knowledge-section{
-      padding:75px 6%;
-      background:#fff;
+    .quick-filter a{
+      display:inline-flex;
+      padding:10px 14px;
+      border-radius:999px;
+      color:#fff;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.22);
+      background:rgba(255,255,255,.1);
+      font-weight:700;
+      font-size:.9rem;
     }
 
-    .knowledge-section.alt{
-      background:#f8fafc;
-    }
+    .knowledge-section{padding:70px 6%;background:#fff;}
+    .knowledge-section.alt{background:#f8fafc;}
 
-    .blog-section-head{
-      max-width:850px;
-      margin-bottom:34px;
-    }
+    .blog-section-head{max-width:850px;margin-bottom:26px;}
+    .blog-section-head.center{text-align:center;margin-left:auto;margin-right:auto;}
+    .blog-section-head h2{font-size:clamp(2rem,4vw,3rem);margin:8px 0 14px;color:var(--dark);}
+    .blog-section-head p{color:var(--muted);line-height:1.7;}
 
-    .blog-section-head.center{
-      text-align:center;
-      margin-left:auto;
-      margin-right:auto;
-    }
-
-    .blog-section-head h2{
-      font-size:clamp(2rem,4vw,3rem);
-      margin:8px 0 14px;
-      color:var(--dark);
-    }
-
-    .blog-section-head p{
-      color:var(--muted);
-      line-height:1.7;
-    }
-
-    .blog-grid{
+    .featured-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
       gap:24px;
       max-width:1180px;
       margin:0 auto;
     }
+
+    .guide-row{
+      max-width:1180px;
+      margin:0 auto 48px;
+    }
+
+    .guide-row:last-child{margin-bottom:0;}
+
+    .guide-row-head{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      align-items:flex-end;
+      margin-bottom:18px;
+    }
+
+    .guide-row-head h2{
+      color:var(--dark);
+      margin:0 0 6px;
+      font-size:clamp(1.6rem,3vw,2.3rem);
+    }
+
+    .guide-row-head p{
+      color:var(--muted);
+      line-height:1.6;
+      margin:0;
+      max-width:720px;
+    }
+
+    .scroll-hint{
+      color:#0f766e;
+      font-weight:800;
+      white-space:nowrap;
+      font-size:.92rem;
+    }
+
+    .blog-scroll{
+      display:flex;
+      gap:20px;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      padding:4px 2px 18px;
+      -webkit-overflow-scrolling:touch;
+    }
+
+    .blog-scroll::-webkit-scrollbar{height:8px;}
+    .blog-scroll::-webkit-scrollbar-track{background:#e5e7eb;border-radius:999px;}
+    .blog-scroll::-webkit-scrollbar-thumb{background:#0f766e;border-radius:999px;}
 
     .blog-card{
       background:#fff;
@@ -129,12 +149,22 @@
       transition:.25s ease;
       display:flex;
       flex-direction:column;
-      min-height:260px;
+      min-height:270px;
+      position:relative;
     }
 
-    .blog-card:hover{
-      transform:translateY(-6px);
-      box-shadow:var(--shadow);
+    .blog-scroll .blog-card{
+      min-width:310px;
+      max-width:340px;
+      flex:0 0 auto;
+      scroll-snap-align:start;
+    }
+
+    .blog-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
+
+    .blog-card.featured{
+      border:1px solid rgba(15,118,110,.28);
+      background:linear-gradient(180deg,#ffffff,#f0fdfa);
     }
 
     .blog-card .tag{
@@ -145,9 +175,14 @@
       background:#eefaf7;
       color:#0f766e;
       font-size:.78rem;
-      font-weight:700;
+      font-weight:800;
       margin-bottom:18px;
     }
+
+    .blog-card .tag.sesame{background:#fff7ed;color:#c2410c;}
+    .blog-card .tag.psyllium{background:#eefaf7;color:#0f766e;}
+    .blog-card .tag.import{background:#eff6ff;color:#1d4ed8;}
+    .blog-card .tag.trade{background:#f5f3ff;color:#6d28d9;}
 
     .blog-card h3{
       font-size:1.35rem;
@@ -156,22 +191,25 @@
       color:var(--dark);
     }
 
-    .blog-card p{
-      color:var(--muted);
-      line-height:1.7;
-      margin-bottom:22px;
-      flex:1;
-    }
+    .blog-card p{color:var(--muted);line-height:1.7;margin-bottom:22px;flex:1;}
 
-    .blog-card a{
-      font-weight:800;
+    .blog-card a.read-link{
+      font-weight:900;
       color:#0f766e;
       text-decoration:none;
+      margin-top:auto;
     }
 
-    .coming-soon{
-      opacity:.75;
+    .blog-card a.card-cover{
+      position:absolute;
+      inset:0;
+      border-radius:26px;
+      z-index:1;
+      font-size:0;
     }
+
+    .blog-card .card-content{position:relative;z-index:2;pointer-events:none;}
+    .blog-card .card-content a{pointer-events:auto;}
 
     .product-link-grid{
       display:grid;
@@ -192,20 +230,9 @@
       transition:.25s ease;
     }
 
-    .product-link-card:hover{
-      transform:translateY(-5px);
-      box-shadow:var(--shadow);
-    }
-
-    .product-link-card h3{
-      margin-bottom:10px;
-      color:var(--dark);
-    }
-
-    .product-link-card p{
-      color:var(--muted);
-      line-height:1.6;
-    }
+    .product-link-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);}
+    .product-link-card h3{margin-bottom:10px;color:var(--dark);}
+    .product-link-card p{color:var(--muted);line-height:1.6;}
 
     .blog-cta{
       margin:0;
@@ -215,33 +242,20 @@
       color:#fff;
     }
 
-    .blog-cta h2{
-      font-size:clamp(2rem,4vw,3.2rem);
-      margin-bottom:14px;
-    }
-
-    .blog-cta p{
-      max-width:720px;
-      margin:0 auto 28px;
-      line-height:1.8;
-      color:rgba(255,255,255,.85);
-    }
+    .blog-cta h2{font-size:clamp(2rem,4vw,3.2rem);margin-bottom:14px;}
+    .blog-cta p{max-width:720px;margin:0 auto 28px;line-height:1.8;color:rgba(255,255,255,.85);}
 
     @media(max-width:850px){
-      .blog-hero{
-        grid-template-columns:1fr;
-        padding-top:70px;
-      }
-
-      .blog-hero-card{
-        padding:26px;
-      }
+      .blog-hero{grid-template-columns:1fr;padding-top:70px;}
+      .blog-hero-card{padding:26px;}
+      .guide-row-head{align-items:flex-start;flex-direction:column;}
+      .scroll-hint{font-size:.86rem;}
+      .blog-scroll .blog-card{min-width:82vw;}
     }
   </style>
 </head>
 
 <body>
-
   <header class="site-header">
     <a class="brand" href="../index.html" aria-label="RPM Global Exports home">
       <img src="../images/image-1.webp" alt="RPM Global Exports logo" />
@@ -262,13 +276,10 @@
   </header>
 
   <main>
-
     <section class="blog-hero">
       <div>
         <p class="eyebrow">RPM Global Exports Knowledge Center</p>
-
         <h1>Import guides, product knowledge & export insights for global buyers.</h1>
-
         <p>
           Practical guides for importers sourcing Indian psyllium husk, sesame seeds and cumin seeds.
           Learn about product specifications, quality parameters, shipping terms, documentation and
@@ -276,147 +287,240 @@
         </p>
 
         <div class="blog-buttons">
-          <a class="btn btn-primary" href="../index.html#quote">Start Importing</a>
-          <a class="btn btn-outline-light" href="../index.html#products">View Products</a>
+          <a class="btn btn-primary" href="../index.html#quote">Request FOB / CIF Quote</a>
+          <a class="btn btn-outline-light" href="../index.html#products">View Export Products</a>
+        </div>
+
+        <div class="quick-filter" aria-label="Blog category shortcuts">
+          <a href="#featured-guides">Featured</a>
+          <a href="#psyllium-guides">Psyllium</a>
+          <a href="#sesame-guides">Sesame</a>
+          <a href="#import-guides">Import Guides</a>
+          <a href="#trade-guides">Trade Basics</a>
         </div>
       </div>
 
       <div class="blog-hero-card">
-        <h3>What you’ll find here</h3>
+        <h3>For serious importers</h3>
         <ul>
-          <li>Country-wise importer guides</li>
-          <li>Psyllium husk quality and grade information</li>
-          <li>Sesame, cumin and agri sourcing insights</li>
-          <li>FOB, CIF and export documentation guides</li>
+          <li>Compare product grades before requesting a quote</li>
+          <li>Understand quality checks, packaging and documents</li>
+          <li>Use country guides before planning shipments</li>
+          <li>Send product, quantity and destination port for pricing</li>
         </ul>
       </div>
     </section>
 
-    <section class="knowledge-section alt">
+    <section class="knowledge-section alt" id="featured-guides">
       <div class="blog-section-head center">
-        <p class="label">Importer Guides</p>
-        <h2>Importer guides by country</h2>
+        <p class="label">Start Here</p>
+        <h2>Featured buyer guides</h2>
         <p>
-          Country-specific guides for buyers who want to understand import requirements,
-          documentation, shipping terms and sourcing considerations before importing from India.
+          These are the best starting points for buyers who are comparing Indian suppliers,
+          checking quality requirements, or preparing to request a quotation.
         </p>
-     <div class="blog-grid">
+      </div>
 
-  <article class="blog-card">
-    <span class="tag">USA Import Guide</span>
-    <h3>How to Import Psyllium Husk from India to USA</h3>
-    <p>
-      A practical guide for US importers covering documentation, FDA-related considerations,
-      quality checks, shipping terms and supplier evaluation.
-    </p>
-    <a href="import-guides/usa-import-guide.html">Read Article →</a>
-  </article>
+      <div class="featured-grid">
+        <article class="blog-card featured">
+          <a class="card-cover" href="psyllium/psyllium-husk-suppliers-in-india.html" aria-label="Read Psyllium Husk Suppliers in India"></a>
+          <div class="card-content">
+            <span class="tag psyllium">Psyllium Guide</span>
+            <h3>Psyllium Husk Suppliers in India</h3>
+            <p>
+              Learn how international buyers can evaluate Indian psyllium husk suppliers,
+              including grades, quality checks, packaging, documentation and supplier selection.
+            </p>
+            <a class="read-link" href="psyllium/psyllium-husk-suppliers-in-india.html">Read Article →</a>
+          </div>
+        </article>
 
-  <article class="blog-card">
-    <span class="tag">Canada Import Guide</span>
-    <h3>How to Import Indian Agricultural Products into Canada</h3>
-    <p>
-      Learn key considerations for Canadian buyers sourcing psyllium husk, sesame seeds,
-      cumin seeds and other Indian food ingredients.
-    </p>
-    <a href="import-guides/canada-import-guide.html">Read Article →</a>
-  </article>
+        <article class="blog-card featured">
+          <a class="card-cover" href="sesame/indian-sesame-seeds-exporter.html" aria-label="Read Indian Sesame Seeds Exporter"></a>
+          <div class="card-content">
+            <span class="tag sesame">Sesame Guide</span>
+            <h3>Indian Sesame Seeds Exporter</h3>
+            <p>
+              A practical guide for importers sourcing Indian sesame seeds, including quality
+              parameters, packaging options, export documentation and supplier selection.
+            </p>
+            <a class="read-link" href="sesame/indian-sesame-seeds-exporter.html">Read Article →</a>
+          </div>
+        </article>
 
-  <article class="blog-card">
-    <span class="tag">EU Import Guide</span>
-    <h3>Importing Food Ingredients from India to the EU</h3>
-    <p>
-      Understand documentation, traceability, residue limits, product specifications
-      and supplier communication for EU food ingredient imports.
-    </p>
-    <a href="import-guides/eu-import-guide.html">Read Article →</a>
-  </article>
+        <article class="blog-card featured">
+          <a class="card-cover" href="import-guides/usa-import-guide.html" aria-label="Read USA Import Guide"></a>
+          <div class="card-content">
+            <span class="tag import">USA Import Guide</span>
+            <h3>How to Import Psyllium Husk from India to USA</h3>
+            <p>
+              A practical guide for US importers covering documentation, quality checks,
+              shipping terms and supplier evaluation before importing from India.
+            </p>
+            <a class="read-link" href="import-guides/usa-import-guide.html">Read Article →</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
-  <article class="blog-card">
-    <span class="tag">New Zealand Import Guide</span>
-    <h3>Importing Psyllium Husk and Seeds into New Zealand</h3>
-    <p>
-      A guide for New Zealand importers evaluating Indian agri suppliers,
-      documentation, biosecurity considerations and shipment planning.
-    </p>
-    <a href="import-guides/new-zealand-import-guide.html">Read Article →</a>
-  </article>
+    <section class="knowledge-section">
+      <div class="guide-row" id="psyllium-guides">
+        <div class="guide-row-head">
+          <div>
+            <h2>Psyllium guides</h2>
+            <p>Supplier, quality, grade and specification guides for buyers sourcing Indian psyllium husk.</p>
+          </div>
+          <span class="scroll-hint">Swipe / scroll →</span>
+        </div>
 
-</div>
-</section>
+        <div class="blog-scroll">
+          <article class="blog-card">
+            <a class="card-cover" href="psyllium/psyllium-husk-suppliers-in-india.html" aria-label="Read Psyllium Husk Suppliers in India"></a>
+            <div class="card-content">
+              <span class="tag psyllium">Psyllium Guide</span>
+              <h3>Psyllium Husk Suppliers in India</h3>
+              <p>How buyers can evaluate Indian psyllium suppliers, quality standards, packaging and export documentation.</p>
+              <a class="read-link" href="psyllium/psyllium-husk-suppliers-in-india.html">Read Article →</a>
+            </div>
+          </article>
 
-<section class="knowledge-section">
-  <div class="blog-section-head center">
-    <p class="label">Product & Export Knowledge</p>
-    <h2>Product guides and trade insights</h2>
-    <p>
-      Detailed articles on psyllium husk, sesame seeds, cumin seeds, export quality,
-      shipping terms and practical sourcing decisions.
-    </p>
-  </div>
+          <article class="blog-card">
+            <a class="card-cover" href="psyllium/indian-psyllium-husk.html" aria-label="Read Indian Psyllium Husk Exporter"></a>
+            <div class="card-content">
+              <span class="tag psyllium">Psyllium Guide</span>
+              <h3>Indian Psyllium Husk Exporter: Complete Buyer Guide</h3>
+              <p>Learn about sourcing, quality parameters, packaging options and international demand for psyllium husk from India.</p>
+              <a class="read-link" href="psyllium/indian-psyllium-husk.html">Read Article →</a>
+            </div>
+          </article>
 
-  <div class="blog-grid">
+          <article class="blog-card">
+            <a class="card-cover" href="psyllium/psyllium-food-grade-vs-pharma-grade.html" aria-label="Read Food Grade vs Pharma Grade Psyllium Husk"></a>
+            <div class="card-content">
+              <span class="tag psyllium">Psyllium Quality</span>
+              <h3>Psyllium Husk: Food Grade vs Pharma Grade</h3>
+              <p>Understand the key differences between food-grade and pharma-grade psyllium husk before placing an import order.</p>
+              <a class="read-link" href="psyllium/psyllium-food-grade-vs-pharma-grade.html">Read Article →</a>
+            </div>
+          </article>
 
-    <article class="blog-card">
-      <span class="tag">Trade Guide</span>
-      <h3>FOB vs CIF: Complete Guide for Importers and Exporters</h3>
-      <p>
-        Learn the differences between FOB and CIF shipping terms, including freight costs,
-        insurance responsibilities, risk transfer and how to choose the right Incoterm.
-      </p>
-      <a href="trade-guides/fob-vs-cif-explained.html">Read Article →</a>
-    </article>
-    <article class="blog-card">
-  <span class="tag">Sesame Guide</span>
-  <h3>Sesame Export from India</h3>
-  <p>
-    Learn how sesame seeds are exported from India, including sourcing, quality standards,
-    export documentation, packaging options, shipping terms, and what international buyers
-    should know before placing an order.
-  </p>
-  <a href="sesame/sesame-export-from-india.html">Read Article →</a>
-</article>
-    <article class="blog-card">
-  <span class="tag">Sesame Guide</span>
-  <h3>Indian Sesame Seeds Exporter</h3>
-  <p>
-    A comprehensive guide for importers sourcing Indian sesame seeds, including quality
-    parameters, packaging options, export documentation, and how to choose a reliable supplier.
-  </p>
-  <a href="sesame/indian-sesame-seeds-exporter.html">Read Article →</a>
-</article>
-    <article class="blog-card">
-      <span class="tag">Psyllium Guide</span>
-      <h3>Indian Psyllium Husk Exporter: Complete Buyer Guide</h3>
-      <p>
-        Learn about sourcing, quality parameters, packaging options and international
-        demand for psyllium husk from India.
-      </p>
-      <a href="psyllium/indian-psyllium-husk.html">Read Article →</a>
-    </article>
+          <article class="blog-card">
+            <a class="card-cover" href="psyllium/psyllium-husk-quality-parameters.html" aria-label="Read Psyllium Husk Quality Parameters"></a>
+            <div class="card-content">
+              <span class="tag psyllium">Psyllium Specs</span>
+              <h3>Psyllium Husk Quality Parameters Explained</h3>
+              <p>Learn how purity, moisture, swelling index, microbiological limits, heavy metals and packaging affect quality.</p>
+              <a class="read-link" href="psyllium/psyllium-husk-quality-parameters.html">Read Article →</a>
+            </div>
+          </article>
+        </div>
+      </div>
 
-    <article class="blog-card">
-      <span class="tag">Psyllium Quality</span>
-      <h3>Psyllium Husk: Food Grade vs Pharma Grade</h3>
-      <p>
-        Understand the key differences between food-grade and pharma-grade psyllium husk
-        before placing an import order.
-      </p>
-      <a href="psyllium/psyllium-food-grade-vs-pharma-grade.html">Read Article →</a>
-    </article>
+      <div class="guide-row" id="sesame-guides">
+        <div class="guide-row-head">
+          <div>
+            <h2>Sesame guides</h2>
+            <p>Buyer-focused guides for sesame exports from India, quality standards and sourcing decisions.</p>
+          </div>
+          <span class="scroll-hint">Swipe / scroll →</span>
+        </div>
 
-    <article class="blog-card">
-      <span class="tag">Psyllium Specs</span>
-      <h3>Psyllium Husk Quality Parameters Explained</h3>
-      <p>
-        Learn how purity, moisture, swelling index, microbiological limits, heavy metals
-        and packaging standards affect psyllium husk quality.
-      </p>
-      <a href="psyllium/psyllium-husk-quality-parameters.html">Read Article →</a>
-    </article>
+        <div class="blog-scroll">
+          <article class="blog-card">
+            <a class="card-cover" href="sesame/indian-sesame-seeds-exporter.html" aria-label="Read Indian Sesame Seeds Exporter"></a>
+            <div class="card-content">
+              <span class="tag sesame">Sesame Guide</span>
+              <h3>Indian Sesame Seeds Exporter</h3>
+              <p>A comprehensive guide for importers sourcing Indian sesame seeds, including quality parameters and export documentation.</p>
+              <a class="read-link" href="sesame/indian-sesame-seeds-exporter.html">Read Article →</a>
+            </div>
+          </article>
 
-  </div>
-</section>
+          <article class="blog-card">
+            <a class="card-cover" href="sesame/sesame-export-from-india.html" aria-label="Read Sesame Export from India"></a>
+            <div class="card-content">
+              <span class="tag sesame">Sesame Guide</span>
+              <h3>Sesame Export from India</h3>
+              <p>Learn how sesame seeds are exported from India, including sourcing, quality standards, documentation and shipping terms.</p>
+              <a class="read-link" href="sesame/sesame-export-from-india.html">Read Article →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="guide-row" id="import-guides">
+        <div class="guide-row-head">
+          <div>
+            <h2>Importer guides by country</h2>
+            <p>Country-specific guides for importers planning shipments of Indian agri products.</p>
+          </div>
+          <span class="scroll-hint">Swipe / scroll →</span>
+        </div>
+
+        <div class="blog-scroll">
+          <article class="blog-card">
+            <a class="card-cover" href="import-guides/usa-import-guide.html" aria-label="Read USA Import Guide"></a>
+            <div class="card-content">
+              <span class="tag import">USA Import Guide</span>
+              <h3>How to Import Psyllium Husk from India to USA</h3>
+              <p>A practical guide for US importers covering documentation, quality checks, shipping terms and supplier evaluation.</p>
+              <a class="read-link" href="import-guides/usa-import-guide.html">Read Article →</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <a class="card-cover" href="import-guides/canada-import-guide.html" aria-label="Read Canada Import Guide"></a>
+            <div class="card-content">
+              <span class="tag import">Canada Import Guide</span>
+              <h3>How to Import Indian Agricultural Products into Canada</h3>
+              <p>Key considerations for Canadian buyers sourcing psyllium husk, sesame seeds, cumin seeds and other Indian ingredients.</p>
+              <a class="read-link" href="import-guides/canada-import-guide.html">Read Article →</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <a class="card-cover" href="import-guides/eu-import-guide.html" aria-label="Read EU Import Guide"></a>
+            <div class="card-content">
+              <span class="tag import">EU Import Guide</span>
+              <h3>Importing Food Ingredients from India to the EU</h3>
+              <p>Understand documentation, traceability, residue limits, product specifications and supplier communication for EU imports.</p>
+              <a class="read-link" href="import-guides/eu-import-guide.html">Read Article →</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <a class="card-cover" href="import-guides/new-zealand-import-guide.html" aria-label="Read New Zealand Import Guide"></a>
+            <div class="card-content">
+              <span class="tag import">New Zealand Import Guide</span>
+              <h3>Importing Psyllium Husk and Seeds into New Zealand</h3>
+              <p>A guide for New Zealand importers evaluating Indian agri suppliers, documentation, biosecurity and shipment planning.</p>
+              <a class="read-link" href="import-guides/new-zealand-import-guide.html">Read Article →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="guide-row" id="trade-guides">
+        <div class="guide-row-head">
+          <div>
+            <h2>Trade basics</h2>
+            <p>Simple explanations of shipping terms, documents and decisions buyers face before importing.</p>
+          </div>
+        </div>
+
+        <div class="blog-scroll">
+          <article class="blog-card">
+            <a class="card-cover" href="trade-guides/fob-vs-cif-explained.html" aria-label="Read FOB vs CIF Guide"></a>
+            <div class="card-content">
+              <span class="tag trade">Trade Guide</span>
+              <h3>FOB vs CIF: Complete Guide for Importers and Exporters</h3>
+              <p>Learn the differences between FOB and CIF shipping terms, freight costs, insurance, risk transfer and how to choose.</p>
+              <a class="read-link" href="trade-guides/fob-vs-cif-explained.html">Read Article →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
     <section class="knowledge-section alt">
       <div class="blog-section-head center">
@@ -429,7 +533,6 @@
       </div>
 
       <div class="product-link-grid">
-
         <a class="product-link-card" href="../Products/psyllium-husk.html">
           <h3>Psyllium Husk</h3>
           <p>Food-grade and pharma-grade psyllium husk sourced from Gujarat, India.</p>
@@ -444,7 +547,6 @@
           <h3>Cumin Seeds</h3>
           <p>Indian cumin seeds sourced from the Unjha belt for spice importers.</p>
         </a>
-
       </div>
     </section>
 
@@ -460,7 +562,6 @@
         <a class="btn btn-outline-light" href="../index.html#products">View Products</a>
       </div>
     </section>
-
   </main>
 
   <footer>
@@ -489,21 +590,13 @@
       <a href="https://maps.app.goo.gl/VYwaERHyVHVxGyBeA" target="_blank" rel="noopener noreferrer">
         Address: TF-14, Akshar Pavilion A1, Vasna Bhayli Main Rd, Vadodara, Gujarat 391410
       </a>
-
       <a href="../certifications.html">IEC: DFLPJ8868G</a>
       <a href="../certifications.html">GSTIN: 24DFLPJ8868G1ZW</a>
     </div>
 
     <div class="footer-col">
-      <span>
-        <i class="fa-solid fa-envelope"></i>
-        info@rpmglobalexports.com
-      </span>
-
-      <span>
-        <i class="fa-solid fa-phone"></i>
-        +91 8511258977
-      </span>
+      <span><i class="fa-solid fa-envelope"></i> info@rpmglobalexports.com</span>
+      <span><i class="fa-solid fa-phone"></i> +91 8511258977</span>
     </div>
   </footer>
 
@@ -511,8 +604,5 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
   <script src="../script.js"></script>
-
 </body>
 </html>
-```
-
