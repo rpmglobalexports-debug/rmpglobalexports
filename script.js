@@ -79,4 +79,17 @@ document.addEventListener('DOMContentLoaded', function () {
     wrapper.appendChild(clone);
   }
 
+  /* ── Hero slideshow: opacity crossfade + Ken Burns ── */
+  const slides = document.querySelectorAll('.hero-slide');
+  if (slides.length) {
+    let current = 0;
+    slides[0].classList.add('active');
+
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 5500);
+  }
+
 });
