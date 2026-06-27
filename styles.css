@@ -156,6 +156,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   padding: 0 2rem;
 }
 .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   font-family: var(--font-heading);
   font-size: 1.35rem;
   font-weight: 700;
@@ -176,6 +179,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin-top: 2px;
 }
 .nav.scrolled .nav-logo small { color: var(--text-muted); }
+.nav-logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+  border-radius: 6px;
+}
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
+}
 
 .nav-links {
   display: flex;
@@ -283,6 +297,51 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: radial-gradient(ellipse, rgba(201,168,76,0.09) 0%, transparent 65%);
   pointer-events: none;
   z-index: 1;
+}
+
+/* Hero Slideshow */
+.hero-slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: heroSlide 25s infinite;
+}
+.hero-slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.58);
+}
+.hero-slide:nth-child(1) { animation-delay: 0s; }
+.hero-slide:nth-child(2) { animation-delay: 5s; }
+.hero-slide:nth-child(3) { animation-delay: 10s; }
+.hero-slide:nth-child(4) { animation-delay: 15s; }
+.hero-slide:nth-child(5) { animation-delay: 20s; }
+.hero-slide-1 {
+  background-image: url('/images/hero-1.jpg'), linear-gradient(160deg, #0f2519 0%, #1a3a2a 50%, #1B4332 100%);
+}
+.hero-slide-2 {
+  background-image: url('/images/hero-2.jpg'), linear-gradient(145deg, #1a3a2a 0%, #2d1f0e 40%, #1B4332 100%);
+}
+.hero-slide-3 {
+  background-image: url('/images/hero-3.jpg'), linear-gradient(155deg, #2d1f0e 0%, #3d2b10 50%, #1a3a2a 100%);
+}
+.hero-slide-4 {
+  background-image: url('/images/hero-4.jpg'), linear-gradient(160deg, #1e2c18 0%, #1B4332 50%, #0f2519 100%);
+}
+.hero-slide-5 {
+  background-image: url('/images/hero-5.jpg'), linear-gradient(150deg, #0f2519 0%, #2d6a4f 50%, #1B4332 100%);
+}
+@keyframes heroSlide {
+  0%, 15% { opacity: 1; }
+  20%, 100% { opacity: 0; }
 }
 
 .hero-content {
@@ -658,6 +717,19 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-weight: 600;
   letter-spacing: 0.04em;
 }
+.sourcing-quote-attribution {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.sourcing-quote-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--accent);
+}
 
 /* ============================================================
    HOW IT WORKS SECTION
@@ -873,6 +945,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   gap: 3rem;
   padding-bottom: 3rem;
   border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.footer-logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+  margin-bottom: 0.75rem;
+  border-radius: 6px;
 }
 .footer-brand-name {
   font-family: var(--font-heading);

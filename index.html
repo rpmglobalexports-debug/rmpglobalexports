@@ -97,8 +97,11 @@
   <nav class="nav" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="/" class="nav-logo">
-        RPM Global Exports
-        <small>Sourced from Gujarat. Delivered Worldwide.</small>
+        <img src="/images/image-1.webp" alt="RPM Global Exports" class="nav-logo-img">
+        <span class="nav-logo-text">
+          RPM Global Exports
+          <small>Sourced from Gujarat. Delivered Worldwide.</small>
+        </span>
       </a>
 
       <ul class="nav-links" role="list">
@@ -120,6 +123,15 @@
        HERO
   ════════════════════════════════════════════ -->
   <section class="hero" aria-label="Hero">
+    <!-- Slideshow background — images auto-advance every 5s; gradient placeholders show until photos are uploaded -->
+    <div class="hero-slides" aria-hidden="true">
+      <div class="hero-slide hero-slide-1"></div>
+      <div class="hero-slide hero-slide-2"></div>
+      <div class="hero-slide hero-slide-3"></div>
+      <div class="hero-slide hero-slide-4"></div>
+      <div class="hero-slide hero-slide-5"></div>
+    </div>
+
     <div class="hero-content">
       <div class="hero-badge">🌱 Gujarat's Agricultural Belt — Unjha Sourcing Hub</div>
 
@@ -211,20 +223,20 @@
 
       <div class="products-grid">
 
-        <!-- Sesame Seeds -->
+        <!-- Psyllium Husk -->
         <article class="product-card fade-in-up">
-          <div class="product-card-visual sesame">
-            <span class="product-emoji">🌾</span>
+          <div class="product-card-visual psyllium">
+            <span class="product-emoji">🌱</span>
           </div>
           <div class="product-card-body">
-            <h3 class="product-card-title">Sesame Seeds</h3>
-            <p class="product-card-desc">Natural white, hulled and sortex-cleaned grades sourced from Gujarat's premium sesame growing regions.</p>
+            <h3 class="product-card-title">Psyllium Husk</h3>
+            <p class="product-card-desc">Food-grade and pharma-grade psyllium husk with 40 ml/g minimum swelling factor, sourced from Gujarat's isabgol belt.</p>
             <ul class="product-card-specs">
-              <li>Purity: 99.95% min</li>
-              <li>Moisture: 6% max</li>
-              <li>Grades: Natural White, Hulled, Black</li>
+              <li>Purity: 99% min</li>
+              <li>Swelling Factor: 40 ml/g min</li>
+              <li>Grades: Food Grade, Pharma Grade</li>
             </ul>
-            <a href="/Products/sesame-seeds.html" class="product-card-link">View Full Specs →</a>
+            <a href="/Products/psyllium-husk.html" class="product-card-link">View Full Specs →</a>
           </div>
         </article>
 
@@ -245,20 +257,20 @@
           </div>
         </article>
 
-        <!-- Psyllium Husk -->
+        <!-- Sesame Seeds -->
         <article class="product-card fade-in-up">
-          <div class="product-card-visual psyllium">
-            <span class="product-emoji">🌱</span>
+          <div class="product-card-visual sesame">
+            <span class="product-emoji">🌾</span>
           </div>
           <div class="product-card-body">
-            <h3 class="product-card-title">Psyllium Husk</h3>
-            <p class="product-card-desc">Food-grade and pharma-grade psyllium husk with 40 ml/g minimum swelling factor, sourced from Gujarat's isabgol belt.</p>
+            <h3 class="product-card-title">Sesame Seeds</h3>
+            <p class="product-card-desc">Natural white, hulled and sortex-cleaned grades sourced from Gujarat's premium sesame growing regions.</p>
             <ul class="product-card-specs">
-              <li>Purity: 99% min</li>
-              <li>Swelling Factor: 40 ml/g min</li>
-              <li>Grades: Food Grade, Pharma Grade</li>
+              <li>Purity: 99.95% min</li>
+              <li>Moisture: 6% max</li>
+              <li>Grades: Natural White, Hulled, Black</li>
             </ul>
-            <a href="/Products/psyllium-husk.html" class="product-card-link">View Full Specs →</a>
+            <a href="/Products/sesame-seeds.html" class="product-card-link">View Full Specs →</a>
           </div>
         </article>
 
@@ -335,7 +347,10 @@
         <div>
           <div class="sourcing-quote-card">
             <p class="sourcing-quote-text">"Our sourcing model means importers get pricing that's grounded in reality — not inflated by layers of middlemen. We visit the market so we know what's actually available, at what quality, and at what price."</p>
-            <span class="sourcing-quote-author">— Meet Jani, Co-Founder, RPM Global Exports</span>
+            <div class="sourcing-quote-attribution">
+              <img src="/images/rudra.webp" alt="Rudra Jani" class="sourcing-quote-avatar">
+              <span class="sourcing-quote-author">— Rudra Jani, Co-Founder · Sourcing</span>
+            </div>
           </div>
 
           <div style="margin-top: 2rem; padding: 2rem; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm);">
@@ -532,6 +547,7 @@
 
         <!-- Brand -->
         <div>
+          <img src="/images/image-1.webp" alt="RPM Global Exports" class="footer-logo-img">
           <div class="footer-brand-name">RPM Global Exports</div>
           <div class="footer-tagline">Sourced from Gujarat. Delivered Worldwide.</div>
           <p class="footer-brand-desc">A founder-led agricultural export business connecting Gujarat's premium sourcing hubs to serious importers across the globe.</p>
