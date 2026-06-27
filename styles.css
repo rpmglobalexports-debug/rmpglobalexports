@@ -2014,3 +2014,31 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .cta-buttons .btn,
   .cta-buttons .btn-outline-light { width: 100%; max-width: 300px; justify-content: center; }
 }
+
+/* ── WhatsApp Float Button ── */
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  z-index: 9999;
+  background-color: #25D366;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.24);
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 80px;
+  }
+}
