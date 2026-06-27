@@ -134,4 +134,18 @@
     <priority>0.80</priority>
   </url>
 
+  <url>
+    <loc>https://rpmglobalexports.com/blog.html</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://rpmglobalexports.com/blog/psyllium-husk-supplier-india</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
 </urlset>
