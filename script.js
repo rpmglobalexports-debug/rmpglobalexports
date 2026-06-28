@@ -92,4 +92,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 5500);
   }
 
+  /* ── Quote form: Formspree AJAX + success message ── */
+  const quoteForm = document.getElementById('quote-form');
+  const quoteSuccess = document.getElementById('quote-success');
+  if (quoteForm && quoteSuccess) {
+    quoteForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      try {
+        const res = await fetch(quoteForm.action, {
+          method: 'POST',
+          body: new FormData(quoteForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          quoteForm.style.display = 'none';
+          quoteSuccess.style.display = 'block';
+        } else {
+          quoteForm.submit();
+        }
+      } catch (_) {
+        quoteForm.submit();
+      }
+    });
+  }
+
 });

@@ -506,11 +506,11 @@
         </div>
 
         <div class="quote-form">
-          <form action="https://formspree.io/f/PLACEHOLDER" method="POST" novalidate>
+          <form id="quote-form" action="https://formspree.io/f/mojzrjbe" method="POST" novalidate>
             <div class="form-row">
               <div class="form-group">
                 <label for="full-name">Full Name</label>
-                <input type="text" id="full-name" name="full_name" placeholder="Your full name" required />
+                <input type="text" id="full-name" name="name" placeholder="Your full name" required />
               </div>
               <div class="form-group">
                 <label for="company">Company Name</label>
@@ -571,6 +571,9 @@
               <a href="https://wa.me/918511258977" target="_blank" rel="noopener">Request directly on WhatsApp</a>
             </p>
           </form>
+          <div id="quote-success" style="display:none; padding: 2rem; text-align: center; color: var(--primary); font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; border: 2px solid var(--accent); border-radius: 12px; margin-top: 1rem;">
+            Thank you for your inquiry. We will respond within 24 hours.
+          </div>
         </div>
 
       </div>
