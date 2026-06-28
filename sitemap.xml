@@ -1,149 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Homepage -->
   <url>
     <loc>https://rpmglobalexports.com/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
 
+  <!-- Core pages -->
   <url>
     <loc>https://rpmglobalexports.com/Our-story.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://rpmglobalexports.com/certifications.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
 
+  <!-- Product pages -->
   <url>
-    <loc>https://rpmglobalexports.com/Products/sesame-seeds.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <loc>https://rpmglobalexports.com/Products/psyllium-husk.html</loc>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
 
   <url>
     <loc>https://rpmglobalexports.com/Products/cumin-seeds.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
 
   <url>
-    <loc>https://rpmglobalexports.com/Products/psyllium-husk.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <loc>https://rpmglobalexports.com/Products/sesame-seeds.html</loc>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
 
+  <!-- Blog index pages -->
   <url>
-    <loc>https://rpmglobalexports.com/blogs/index.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <loc>https://rpmglobalexports.com/blog.html</loc>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://rpmglobalexports.com/blogs/import-guides/usa-import-guide.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <loc>https://rpmglobalexports.com/blogs/index.html</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Blog posts — psyllium -->
+  <url>
+    <loc>https://rpmglobalexports.com/blog/psyllium-husk-supplier-india</loc>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://rpmglobalexports.com/blogs/import-guides/canada-import-guide.html</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://rpmglobalexports.com/blogs/import-guides/eu-import-guide.html</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://rpmglobalexports.com/blogs/import-guides/new-zealand-import-guide.html</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://rpmglobalexports.com/blogs/trade-guides/fob-vs-cif-explained.html</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://rpmglobalexports.com/blogs/psyllium/bulk-ispaghula-husk-for-export.html</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://rpmglobalexports.com/blogs/psyllium/indian-psyllium-husk.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <loc>https://rpmglobalexports.com/blogs/psyllium/psyllium-husk-quality-parameters.html</loc>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://rpmglobalexports.com/blogs/psyllium/psyllium-food-grade-vs-pharma-grade.html</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://rpmglobalexports.com/blogs/psyllium/psyllium-husk-quality-parameters.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://rpmglobalexports.com/blogs/psyllium/psyllium-husk-suppliers-in-india.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
   <url>
+    <loc>https://rpmglobalexports.com/blogs/psyllium/indian-psyllium-husk.html</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://rpmglobalexports.com/blogs/psyllium/bulk-ispaghula-husk-for-export.html</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Blog posts — sesame -->
+  <url>
     <loc>https://rpmglobalexports.com/blogs/sesame/indian-sesame-seeds-exporter.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://rpmglobalexports.com/blogs/sesame/sesame-export-from-india.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Blog posts — import guides -->
+  <url>
+    <loc>https://rpmglobalexports.com/blogs/import-guides/usa-import-guide.html</loc>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://rpmglobalexports.com/blog.html</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <loc>https://rpmglobalexports.com/blogs/import-guides/canada-import-guide.html</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://rpmglobalexports.com/blog/psyllium-husk-supplier-india</loc>
-    <lastmod>2026-06-27</lastmod>
+    <loc>https://rpmglobalexports.com/blogs/import-guides/eu-import-guide.html</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://rpmglobalexports.com/blogs/import-guides/new-zealand-import-guide.html</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Blog posts — trade guides -->
+  <url>
+    <loc>https://rpmglobalexports.com/blogs/trade-guides/fob-vs-cif-explained.html</loc>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
