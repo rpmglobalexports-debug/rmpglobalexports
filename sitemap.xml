@@ -148,6 +148,14 @@
     <priority>0.80</priority>
   </url>
 
+  <!-- Blog posts — cumin -->
+  <url>
+    <loc>https://rpmglobalexports.com/blogs/cumin/indian-cumin-seeds-exporter.html</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
   <!-- Blog posts — trade guides -->
   <url>
     <loc>https://rpmglobalexports.com/blogs/trade-guides/fob-vs-cif-explained.html</loc>
