@@ -1524,6 +1524,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .tag-import { background: rgba(27,67,50,0.1); color: var(--primary); }
 .tag-psyllium { background: rgba(45,106,79,0.12); color: #1a5e38; }
 .tag-sesame { background: rgba(180,110,30,0.1); color: #7a4800; }
+.tag-cumin  { background: rgba(160,82,45,0.1);  color: #7a3600; }
 .tag-trade { background: rgba(90,50,10,0.1); color: #523000; }
 .blog-card-title {
   font-family: var(--font-heading);
