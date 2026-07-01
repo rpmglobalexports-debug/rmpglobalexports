@@ -92,6 +92,27 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 5500);
   }
 
+  /* ── Subtle scroll-triggered background tone shift (warm white ↔ light sage) ── */
+  const toneSections = document.querySelectorAll(
+    '.products-section, .sourcing-section, .how-section, .markets-section, .faq-section, ' +
+    '.certs-section, .story-section, .founders-section, .blog-section, .product-content, ' +
+    '.related-products, .article-shell'
+  );
+  if (toneSections.length && 'IntersectionObserver' in window) {
+    const toneObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const isToneB = Array.from(toneSections).indexOf(entry.target) % 2 === 1;
+            document.body.classList.toggle('tone-b', isToneB);
+          }
+        });
+      },
+      { rootMargin: '-45% 0px -45% 0px', threshold: 0 }
+    );
+    toneSections.forEach(el => toneObserver.observe(el));
+  }
+
   /* ── Quote form: Formspree AJAX + success message ── */
   const quoteForm = document.getElementById('quote-form');
   const quoteSuccess = document.getElementById('quote-success');

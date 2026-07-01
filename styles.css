@@ -7,9 +7,12 @@
   --primary: #1B4332;
   --primary-dark: #0D1F17;
   --primary-light: #2d6a4f;
-  --accent: #C9A84C;
-  --accent-light: #e2c06a;
+  --accent: #B8924A;
+  --accent-light: #cda968;
   --bg: #FAFAF8;
+  --bg-alt: #EEF2EA;
+  --tone-a: var(--bg);
+  --tone-b: var(--bg-alt);
   --dark: #0D1F17;
   --text: #2C2C2C;
   --text-muted: #5a5a5a;
@@ -22,7 +25,7 @@
   --shadow-lg: 0 20px 60px rgba(0,0,0,0.16);
   --radius: 14px;
   --radius-sm: 8px;
-  --transition: all 0.3s ease;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --max-w: 1200px;
 }
 
@@ -32,14 +35,32 @@ html { scroll-behavior: smooth; font-size: 16px; }
 body {
   font-family: var(--font-body);
   color: var(--text);
-  background: var(--bg);
+  background-color: var(--tone-a);
+  transition: background-color 1.2s ease;
   line-height: 1.6;
   overflow-x: hidden;
+}
+/* Subtle scroll-triggered tone shift (warm white ↔ light sage) — see script.js */
+body.tone-b { background-color: var(--tone-b); }
+@media (prefers-reduced-motion: reduce) {
+  body { transition: none; }
 }
 img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+/* --- Focus states (keyboard navigation) --- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.hamburger:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
 
 /* --- Utilities --- */
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
@@ -91,7 +112,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: var(--accent-light);
   border-color: var(--accent-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(201,168,76,0.35);
+  box-shadow: 0 8px 20px rgba(184,146,74,0.35);
 }
 .btn-outline {
   background: transparent;
@@ -230,7 +251,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .nav-cta:hover {
   background: var(--accent-light);
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(201,168,76,0.4);
+  box-shadow: 0 4px 14px rgba(184,146,74,0.4);
 }
 
 .hamburger {
@@ -294,7 +315,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   right: -10%;
   width: 70%;
   height: 80%;
-  background: radial-gradient(ellipse, rgba(201,168,76,0.09) 0%, transparent 65%);
+  background: radial-gradient(ellipse, rgba(184,146,74,0.09) 0%, transparent 65%);
   pointer-events: none;
   z-index: 1;
 }
@@ -361,8 +382,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(201,168,76,0.13);
-  border: 1px solid rgba(201,168,76,0.32);
+  background: rgba(184,146,74,0.13);
+  border: 1px solid rgba(184,146,74,0.32);
   color: var(--accent-light);
   padding: 0.45rem 1.1rem;
   border-radius: 100px;
@@ -483,7 +504,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: var(--primary);
   padding: 0.85rem 0;
   overflow: hidden;
-  border-bottom: 1px solid rgba(201,168,76,0.18);
+  border-bottom: 1px solid rgba(184,146,74,0.18);
 }
 .trust-track-wrapper {
   display: flex;
@@ -539,7 +560,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ============================================================
    PRODUCTS SECTION
    ============================================================ */
-.products-section { padding: 6rem 0; background: var(--bg); }
+.products-section { padding: 6rem 0; background: transparent; }
 
 .products-grid {
   display: grid;
@@ -550,12 +571,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border: 1px solid transparent;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.35s ease;
   background: var(--white);
 }
 .product-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
+  border-color: rgba(184,146,74,0.35);
 }
 .product-card-img {
   width: 100%;
@@ -633,7 +656,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   flex-shrink: 0;
   width: 3.25rem;
   height: 3.25rem;
-  background: rgba(201,168,76,0.14);
+  background: rgba(184,146,74,0.14);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -655,7 +678,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ============================================================
    SOURCING STORY SECTION
    ============================================================ */
-.sourcing-section { padding: 6rem 0; background: var(--bg); }
+.sourcing-section { padding: 6rem 0; background: transparent; }
 .sourcing-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -721,7 +744,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ============================================================
    HOW IT WORKS SECTION
    ============================================================ */
-.how-section { padding: 6rem 0; background: #f4f1ec; }
+.how-section { padding: 6rem 0; background: transparent; }
 .steps-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -794,7 +817,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ============================================================
    MARKETS SECTION
    ============================================================ */
-.markets-section { padding: 6rem 0; background: var(--bg); }
+.markets-section { padding: 6rem 0; background: transparent; }
 .markets-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -813,7 +836,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .market-card:hover {
   box-shadow: var(--shadow-md);
   transform: translateY(-4px);
-  border-color: rgba(201,168,76,0.5);
+  border-color: rgba(184,146,74,0.5);
 }
 .market-flag { font-size: 3rem; margin-bottom: 1rem; line-height: 1; }
 .market-name {
@@ -831,7 +854,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ============================================================
    FAQ SECTION
    ============================================================ */
-.faq-section { padding: 5rem 0; background: var(--bg); }
+.faq-section { padding: 5rem 0; background: transparent; }
 .faq-list {
   max-width: 760px;
   margin: 2.5rem auto 0;
@@ -888,7 +911,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .quote-feature-icon {
   width: 2.5rem;
   height: 2.5rem;
-  background: rgba(201,168,76,0.14);
+  background: rgba(184,146,74,0.14);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -1091,7 +1114,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   line-height: 1.1;
 }
 
-.product-content { padding: 5rem 0; background: var(--bg); }
+.product-content { padding: 5rem 0; background: transparent; }
 .product-intro-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1148,7 +1171,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .spec-table tbody tr:nth-child(odd) { background: var(--white); }
 .spec-table tbody tr:nth-child(even) { background: #f5f2ee; }
-.spec-table tbody tr:hover { background: rgba(201,168,76,0.07); }
+.spec-table tbody tr:hover { background: rgba(184,146,74,0.07); }
 .spec-table td {
   padding: 0.9rem 1.5rem;
   border-bottom: 1px solid var(--border);
@@ -1179,7 +1202,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .spec-dl-note a { color: var(--accent-light); font-weight: 500; text-decoration: underline; }
 
-.related-products { padding: 4rem 0; background: #f4f1ec; }
+.related-products { padding: 4rem 0; background: transparent; }
 .related-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1200,7 +1223,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .related-card:hover {
   box-shadow: var(--shadow-md);
   transform: translateY(-3px);
-  border-color: rgba(201,168,76,0.5);
+  border-color: rgba(184,146,74,0.5);
 }
 .related-card-emoji { font-size: 1.8rem; margin-right: 0.75rem; }
 .related-card-left { display: flex; align-items: center; }
@@ -1263,7 +1286,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ============================================================
    CERTIFICATIONS PAGE
    ============================================================ */
-.certs-section { padding: 5rem 0; background: var(--bg); }
+.certs-section { padding: 5rem 0; background: transparent; }
 .certs-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1276,9 +1299,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-radius: var(--radius);
   padding: 2rem;
   box-shadow: var(--shadow-sm);
-  transition: var(--transition);
+  transition: var(--transition), border-color 0.3s ease;
 }
-.cert-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+.cert-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); border-color: rgba(184,146,74,0.4); }
 .cert-card-header {
   display: flex;
   align-items: flex-start;
@@ -1298,7 +1321,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   text-transform: uppercase;
 }
 .cert-badge.active { background: rgba(27,67,50,0.1); color: var(--primary); }
-.cert-badge.applied { background: rgba(201,168,76,0.14); color: #7a5a10; }
+.cert-badge.applied { background: rgba(184,146,74,0.14); color: #7a5a10; }
 .cert-name {
   font-family: var(--font-heading);
   font-size: 1.15rem;
@@ -1338,7 +1361,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ============================================================
    OUR STORY PAGE
    ============================================================ */
-.story-section { padding: 5rem 0; background: var(--bg); }
+.story-section { padding: 5rem 0; background: transparent; }
 .story-intro {
   max-width: 740px;
   font-size: 1.08rem;
@@ -1372,7 +1395,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-radius: 50%;
   background: var(--accent);
   border: 3px solid var(--bg);
-  box-shadow: 0 0 0 2px rgba(201,168,76,0.4);
+  box-shadow: 0 0 0 2px rgba(184,146,74,0.4);
 }
 .story-node-label {
   font-size: 0.72rem;
@@ -1396,7 +1419,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   line-height: 1.75;
   max-width: 640px;
 }
-.founders-section { padding: 4rem 0; background: #f4f1ec; }
+.founders-section { padding: 4rem 0; background: transparent; }
 .founders-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1409,9 +1432,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  transition: var(--transition);
+  transition: var(--transition), border-color 0.3s ease;
 }
-.founder-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+.founder-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); border-color: rgba(184,146,74,0.4); }
 .founder-photo {
   width: 100%;
   height: 280px;
@@ -1476,7 +1499,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ============================================================
    BLOG INDEX PAGE
    ============================================================ */
-.blog-section { padding: 5rem 0; background: var(--bg); }
+.blog-section { padding: 5rem 0; background: transparent; }
 .blog-category { margin-bottom: 4rem; }
 .blog-category-title {
   font-family: var(--font-heading);
@@ -1509,7 +1532,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .blog-card:hover {
   box-shadow: var(--shadow-md);
   transform: translateY(-4px);
-  border-color: rgba(201,168,76,0.4);
+  border-color: rgba(184,146,74,0.4);
 }
 .blog-card-tag {
   display: inline-block;
@@ -1569,7 +1592,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-family: var(--font-heading);
   font-size: clamp(5rem, 15vw, 10rem);
   font-weight: 700;
-  color: rgba(201,168,76,0.22);
+  color: rgba(184,146,74,0.22);
   line-height: 0.9;
   margin-bottom: 1rem;
   display: block;
@@ -1775,7 +1798,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* Article shell wrapper */
 .article-shell {
-  background: var(--bg);
+  background: transparent;
   padding: 4rem 0 5rem;
 }
 .article-layout {
