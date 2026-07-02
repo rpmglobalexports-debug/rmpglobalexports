@@ -138,3 +138,91 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+
+/* ── Quote Estimator Widget ── */
+/* UPDATE WEEKLY — all prices USD per MT, FOB Mundra, indicative only */
+const PRICE_RANGES = {
+  psyllium: {
+    grades: ['Food Grade (85%)', 'Food Grade (95%)', 'Pharma Grade (98–99%)'],
+    prices: {
+      'Food Grade (85%)':          { low: 1100, high: 1350 },
+      'Food Grade (95%)':          { low: 1350, high: 1650 },
+      'Pharma Grade (98–99%)':     { low: 1800, high: 2200 }
+    }
+  },
+  cumin: {
+    grades: ['FAQ Grade', 'Europe Quality (99%)', 'Singapore Quality (99.5%)'],
+    prices: {
+      'FAQ Grade':                  { low: 2800, high: 3300 },
+      'Europe Quality (99%)':       { low: 3300, high: 3900 },
+      'Singapore Quality (99.5%)':  { low: 3900, high: 4600 }
+    }
+  },
+  sesame: {
+    grades: ['Natural White', 'Hulled (Double Sortex)', 'Black Sesame'],
+    prices: {
+      'Natural White':          { low: 1100, high: 1400 },
+      'Hulled (Double Sortex)': { low: 1350, high: 1700 },
+      'Black Sesame':           { low: 1000, high: 1300 }
+    }
+  }
+};
+
+(function () {
+  const estProduct = document.getElementById('est-product');
+  const estGrade   = document.getElementById('est-grade');
+  const estQty     = document.getElementById('est-qty');
+  const estResult  = document.getElementById('estimator-result');
+  if (!estProduct || !estGrade || !estQty || !estResult) return;
+
+  function updateGrades() {
+    const p = estProduct.value;
+    estGrade.innerHTML = '';
+    if (!p || !PRICE_RANGES[p]) {
+      estGrade.innerHTML = '<option value="">Select product first</option>';
+      estGrade.disabled = true;
+    } else {
+      estGrade.disabled = false;
+      estGrade.innerHTML = '<option value="">Choose grade</option>';
+      PRICE_RANGES[p].grades.forEach(function(g) {
+        const o = document.createElement('option');
+        o.value = g; o.textContent = g;
+        estGrade.appendChild(o);
+      });
+    }
+    renderResult();
+  }
+
+  function renderResult() {
+    const p   = estProduct.value;
+    const g   = estGrade.value;
+    const qty = parseFloat(estQty.value);
+    if (!p || !g || !PRICE_RANGES[p] || !PRICE_RANGES[p].prices[g]) {
+      estResult.innerHTML = '<div class="estimator-placeholder">Select product and grade above to see indicative price range</div>';
+      return;
+    }
+    const range = PRICE_RANGES[p].prices[g];
+    let totalHtml = '';
+    if (qty > 0) {
+      const tL = (range.low  * qty).toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+      const tH = (range.high * qty).toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+      totalHtml = '<div class="estimator-price-total">Estimated total for ' + qty + ' MT: ' + tL + ' – ' + tH + '</div>';
+    }
+    estResult.innerHTML =
+      '<div class="estimator-price-range">' +
+        '<div class="estimator-price-label">Indicative FOB Mundra price per MT</div>' +
+        '<div class="estimator-price-value">$' + range.low.toLocaleString() + ' – $' + range.high.toLocaleString() + '</div>' +
+        totalHtml +
+        '<div style="margin-top:1rem;"><a href="#quote" class="btn btn-primary" style="font-size:0.9rem;padding:0.6rem 1.4rem;">Get Exact Quote →</a></div>' +
+      '</div>';
+    const quoteProduct = document.getElementById('product');
+    const nameMap = { psyllium: 'Psyllium Husk', cumin: 'Cumin Seeds', sesame: 'Sesame Seeds' };
+    if (quoteProduct && nameMap[p]) {
+      Array.from(quoteProduct.options).forEach(function(opt) { opt.selected = (opt.value === nameMap[p]); });
+    }
+  }
+
+  estProduct.addEventListener('change', updateGrades);
+  estGrade.addEventListener('change', renderResult);
+  estQty.addEventListener('input', renderResult);
+})();
