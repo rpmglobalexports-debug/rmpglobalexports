@@ -748,7 +748,7 @@ textarea:focus-visible,
 .how-section { padding: 6rem 0; background: transparent; }
 .steps-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   position: relative;
   margin-top: 3.5rem;
@@ -757,8 +757,8 @@ textarea:focus-visible,
   content: '';
   position: absolute;
   top: 2.5rem;
-  left: 16.67%;
-  right: 16.67%;
+  left: 12.5%;
+  right: 12.5%;
   height: 2px;
   background: linear-gradient(90deg, var(--accent) 0%, var(--primary) 100%);
   opacity: 0.28;
@@ -2131,9 +2131,19 @@ details.faq-item[open] > .faq-answer { margin-top: 0.6rem; }
 .form-optional-fields { margin-top: 1rem; }
 .field-required { color: var(--accent); }
 
+/* ── Your First Order, De-Risked section ── */
+.derisked-section { padding: 5rem 0; background: var(--bg); }
+.derisked-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+.derisked-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; display: flex; flex-direction: column; gap: 0.75rem; transition: box-shadow 0.25s, transform 0.25s; }
+.derisked-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.derisked-icon { font-size: 1.75rem; line-height: 1; }
+.derisked-title { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--primary); }
+.derisked-desc { font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; }
+
 /* ── Responsive additions ── */
 @media (max-width: 768px) {
   .sample-cta-inner { flex-direction: column; text-align: center; }
   .estimator-controls { grid-template-columns: 1fr; }
   .blog-preview-grid { grid-template-columns: 1fr; }
+  .derisked-grid { grid-template-columns: 1fr; }
 }
