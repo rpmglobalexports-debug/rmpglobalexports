@@ -139,33 +139,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-/* ── Quote Estimator Widget ── */
-/* UPDATE WEEKLY — all prices USD per MT, FOB Mundra, indicative only */
-const PRICE_RANGES = {
-  psyllium: {
-    grades: ['Food Grade (85%)', 'Food Grade (95%)', 'Pharma Grade (98–99%)'],
-    prices: {
-      'Food Grade (85%)':          { low: 1100, high: 1350 },
-      'Food Grade (95%)':          { low: 1350, high: 1650 },
-      'Pharma Grade (98–99%)':     { low: 1800, high: 2200 }
-    }
-  },
-  cumin: {
-    grades: ['FAQ Grade', 'Europe Quality (99%)', 'Singapore Quality (99.5%)'],
-    prices: {
-      'FAQ Grade':                  { low: 2800, high: 3300 },
-      'Europe Quality (99%)':       { low: 3300, high: 3900 },
-      'Singapore Quality (99.5%)':  { low: 3900, high: 4600 }
-    }
-  },
-  sesame: {
-    grades: ['Natural White', 'Hulled (Double Sortex)', 'Black Sesame'],
-    prices: {
-      'Natural White':          { low: 1100, high: 1400 },
-      'Hulled (Double Sortex)': { low: 1350, high: 1700 },
-      'Black Sesame':           { low: 1000, high: 1300 }
-    }
-  }
+/* ── Get Today's Rate Widget ── */
+const RATE_GRADES = {
+  psyllium: ['Food Grade (85%)', 'Food Grade (95%)', 'Pharma Grade (98–99%)'],
+  cumin:    ['FAQ Grade', 'Europe Quality (99%)', 'Singapore Quality (99.5%)'],
+  sesame:   ['Natural White', 'Hulled (Double Sortex)', 'Black Sesame']
 };
 
 (function () {
@@ -175,16 +153,18 @@ const PRICE_RANGES = {
   const estResult  = document.getElementById('estimator-result');
   if (!estProduct || !estGrade || !estQty || !estResult) return;
 
+  const PRODUCT_NAMES = { psyllium: 'Psyllium Husk', cumin: 'Cumin Seeds', sesame: 'Sesame Seeds' };
+
   function updateGrades() {
     const p = estProduct.value;
     estGrade.innerHTML = '';
-    if (!p || !PRICE_RANGES[p]) {
+    if (!p || !RATE_GRADES[p]) {
       estGrade.innerHTML = '<option value="">Select product first</option>';
       estGrade.disabled = true;
     } else {
       estGrade.disabled = false;
       estGrade.innerHTML = '<option value="">Choose grade</option>';
-      PRICE_RANGES[p].grades.forEach(function(g) {
+      RATE_GRADES[p].forEach(function(g) {
         const o = document.createElement('option');
         o.value = g; o.textContent = g;
         estGrade.appendChild(o);
@@ -197,29 +177,39 @@ const PRICE_RANGES = {
     const p   = estProduct.value;
     const g   = estGrade.value;
     const qty = parseFloat(estQty.value);
-    if (!p || !g || !PRICE_RANGES[p] || !PRICE_RANGES[p].prices[g]) {
-      estResult.innerHTML = '<div class="estimator-placeholder">Select product and grade above to see indicative price range</div>';
+
+    if (!p || !g) {
+      estResult.innerHTML = '<div class="estimator-placeholder">Select product and grade above to get today\'s rate</div>';
       return;
     }
-    const range = PRICE_RANGES[p].prices[g];
-    let totalHtml = '';
-    if (qty > 0) {
-      const tL = (range.low  * qty).toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
-      const tH = (range.high * qty).toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
-      totalHtml = '<div class="estimator-price-total">Estimated total for ' + qty + ' MT: ' + tL + ' – ' + tH + '</div>';
-    }
+
+    const productName = PRODUCT_NAMES[p] || p;
+    const qtyText     = (qty > 0) ? qty + ' MT ' : '';
+    const summary     = qtyText + productName + ', ' + g + ', FOB Mundra';
+    const waMsg       = 'Hi, requesting today\'s rate for ' + qtyText + productName + ', ' + g + ', FOB Mundra.';
+    const waUrl       = 'https://wa.me/917265097308?text=' + encodeURIComponent(waMsg);
+
     estResult.innerHTML =
-      '<div class="estimator-price-range">' +
-        '<div class="estimator-price-label">Indicative FOB Mundra price per MT</div>' +
-        '<div class="estimator-price-value">$' + range.low.toLocaleString() + ' – $' + range.high.toLocaleString() + '</div>' +
-        totalHtml +
-        '<div style="margin-top:1rem;"><a href="#quote" class="btn btn-primary" style="font-size:0.9rem;padding:0.6rem 1.4rem;">Get Exact Quote →</a></div>' +
+      '<div class="rate-confirmation">' +
+        '<p class="rate-confirmation-text">Get today\'s FOB Mundra rate for <strong>' + summary + '</strong> — response within 24 hours.</p>' +
+        '<div class="rate-confirmation-actions">' +
+          '<a href="' + waUrl + '" target="_blank" rel="noopener" class="btn-wa-rate">WhatsApp →</a>' +
+          '<button type="button" class="btn btn-primary btn-rate-form" style="font-size:0.9rem;padding:0.6rem 1.4rem;">Email / Quote Form →</button>' +
+        '</div>' +
       '</div>';
-    const quoteProduct = document.getElementById('product');
-    const nameMap = { psyllium: 'Psyllium Husk', cumin: 'Cumin Seeds', sesame: 'Sesame Seeds' };
-    if (quoteProduct && nameMap[p]) {
-      Array.from(quoteProduct.options).forEach(function(opt) { opt.selected = (opt.value === nameMap[p]); });
-    }
+
+    estResult.querySelector('.btn-rate-form').addEventListener('click', function(e) {
+      e.preventDefault();
+      const quoteProduct = document.getElementById('product');
+      const quoteMessage = document.getElementById('message');
+      if (quoteProduct) {
+        Array.from(quoteProduct.options).forEach(function(opt) { opt.selected = (opt.value === productName); });
+      }
+      if (quoteMessage) {
+        quoteMessage.value = 'Requesting today\'s FOB Mundra rate for ' + qtyText + productName + ', ' + g + '.';
+      }
+      document.getElementById('quote').scrollIntoView({ behavior: 'smooth' });
+    });
   }
 
   estProduct.addEventListener('change', updateGrades);
