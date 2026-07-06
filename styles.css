@@ -518,9 +518,7 @@ textarea:focus-visible,
   animation: marquee 38s linear infinite;
   white-space: nowrap;
   flex-shrink: 0;
-}
-.trust-track:nth-child(2) {
-  animation-delay: -19s;
+  will-change: transform;
 }
 @keyframes marquee {
   0%   { transform: translateX(0); }
