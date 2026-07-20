@@ -573,11 +573,18 @@ textarea:focus-visible,
   border: 1px solid transparent;
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.35s ease;
   background: var(--white);
+  position: relative;
+  cursor: pointer;
 }
 .product-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
   border-color: rgba(184,146,74,0.35);
+}
+.product-card:active {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  transition-duration: 0.1s;
 }
 .product-card-img {
   width: 100%;
@@ -626,8 +633,18 @@ textarea:focus-visible,
   font-size: 0.88rem;
   font-weight: 600;
   transition: gap 0.2s, color 0.2s;
+  position: relative;
+  z-index: 1;
+}
+.product-card-link::after {
+  content: '';
+  position: absolute;
+  /* inset: 0 anchors to .product-card (nearest positioned ancestor) — covers the whole card */
+  inset: 0;
+  z-index: 1;
 }
 .product-card-link:hover { color: var(--accent); gap: 0.7rem; }
+.product-card:hover .product-card-link { color: var(--accent); }
 
 /* ============================================================
    WHY RPM SECTION (diagonal)
@@ -2075,7 +2092,18 @@ textarea:focus-visible,
 
 /* ── Product card actions ── */
 .product-card-actions { display: flex; flex-direction: column; gap: 0.6rem; }
-.product-card-spec-dl { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--text-muted); font-size: 0.82rem; font-weight: 500; transition: color 0.2s; text-decoration: none; }
+.product-card-spec-dl {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
+}
 .product-card-spec-dl:hover { color: var(--accent); }
 
 /* ── Estimator Section ── */
