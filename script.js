@@ -252,3 +252,28 @@ const RATE_GRADES = {
   estGrade.addEventListener('change', renderResult);
   estQty.addEventListener('input', renderResult);
 })();
+
+/* ── Product variant use-case selector ── */
+(function() {
+  var chips = document.querySelectorAll('.usecase-chip');
+  if (!chips.length) return;
+  var cards = document.querySelectorAll('.variant-card, .variant-industrial-card');
+  chips.forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      var wasActive = this.classList.contains('active');
+      chips.forEach(function(c) { c.classList.remove('active'); c.setAttribute('aria-pressed', 'false'); });
+      cards.forEach(function(card) { card.classList.remove('highlighted', 'dimmed'); });
+      if (wasActive) return;
+      this.classList.add('active');
+      this.setAttribute('aria-pressed', 'true');
+      var targets = (this.dataset.targets || '').split(',').map(function(s) { return s.trim(); });
+      cards.forEach(function(card) {
+        if (targets.indexOf(card.dataset.variant) !== -1) {
+          card.classList.add('highlighted');
+        } else {
+          card.classList.add('dimmed');
+        }
+      });
+    });
+  });
+})();
