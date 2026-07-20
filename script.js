@@ -113,6 +113,42 @@ document.addEventListener('DOMContentLoaded', function () {
     toneSections.forEach(el => toneObserver.observe(el));
   }
 
+  /* ── Sticky bottom CTA bar: show after scrolling past hero ── */
+  const hero = document.querySelector('.hero');
+  const stickyCta = document.getElementById('stickyCta');
+  if (hero && stickyCta) {
+    const heroObserver = new IntersectionObserver(function(entries) {
+      const visible = !entries[0].isIntersecting;
+      stickyCta.classList.toggle('visible', visible);
+      stickyCta.setAttribute('aria-hidden', visible ? 'false' : 'true');
+    }, { threshold: 0 });
+    heroObserver.observe(hero);
+  }
+
+  /* ── Spec sheet capture form: Formspree AJAX ── */
+  const specForm = document.querySelector('.spec-capture-form');
+  const specSuccess = document.getElementById('spec-capture-success');
+  if (specForm && specSuccess) {
+    specForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      try {
+        const res = await fetch(specForm.action, {
+          method: 'POST',
+          body: new FormData(specForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          specForm.style.display = 'none';
+          specSuccess.style.display = 'block';
+        } else {
+          specForm.submit();
+        }
+      } catch (_) {
+        specForm.submit();
+      }
+    });
+  }
+
   /* ── Quote form: Formspree AJAX + success message ── */
   const quoteForm = document.getElementById('quote-form');
   const quoteSuccess = document.getElementById('quote-success');
