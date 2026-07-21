@@ -63,7 +63,7 @@ textarea:focus-visible,
 }
 
 /* --- Utilities --- */
-.container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 3rem; }
 .section-label {
   font-family: var(--font-body);
   font-size: 0.75rem;
@@ -86,7 +86,7 @@ textarea:focus-visible,
 .section-subtitle {
   font-size: 1.05rem;
   color: var(--text-muted);
-  max-width: 560px;
+  max-width: 640px;
   line-height: 1.7;
 }
 .section-subtitle.light { color: rgba(255,255,255,0.8); }
@@ -310,10 +310,10 @@ textarea:focus-visible,
   z-index: 2;
   flex: 0 0 52%;
   max-width: 600px;
-  padding: 6rem clamp(1.5rem, 3vw, 3rem) 5rem clamp(1.5rem, 5vw, 5rem);
+  padding: 6.25rem clamp(1.5rem, 3vw, 3rem) 5rem clamp(2rem, 5vw, 5rem);
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1.75rem;
 }
 
 .hero-right {
@@ -332,7 +332,7 @@ textarea:focus-visible,
   font-weight: 700;
   color: #F7F1E3;
   line-height: 1.16;
-  margin: 0 0 1.2rem;
+  margin: 0 0 1rem;
   letter-spacing: -0.01em;
 }
 
@@ -340,7 +340,7 @@ textarea:focus-visible,
   font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   color: rgba(247,241,227,0.75);
   line-height: 1.75;
-  margin: 0 0 2rem;
+  margin: 0;
   max-width: 460px;
 }
 
@@ -428,10 +428,10 @@ textarea:focus-visible,
 .pour-reveal-text {
   flex: 0 0 52%;
   max-width: 600px;
-  padding: 3rem clamp(1.5rem, 3vw, 3rem) 4rem clamp(1.5rem, 5vw, 5rem);
+  padding: 3rem clamp(1.5rem, 3vw, 3rem) 4rem clamp(2rem, 5vw, 5rem);
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1.75rem;
 }
 .pour-reveal-bowl-wrap {
   flex: 0 0 48%;
@@ -538,7 +538,7 @@ textarea:focus-visible,
 /* ============================================================
    SECTION WRAPPERS
    ============================================================ */
-.section { padding: 6rem 0; }
+.section { padding: 5.5rem 0; }
 .section-header { margin-bottom: 3.5rem; }
 .section-header.centered { text-align: center; }
 .section-header.centered .section-subtitle {
@@ -549,7 +549,7 @@ textarea:focus-visible,
 /* ============================================================
    PRODUCTS SECTION
    ============================================================ */
-.products-section { padding: 6rem 0; background: transparent; }
+.products-section { padding: 5.5rem 0; background: transparent; }
 
 .products-grid {
   display: grid;
@@ -679,7 +679,7 @@ textarea:focus-visible,
 /* ============================================================
    SOURCING STORY SECTION
    ============================================================ */
-.sourcing-section { padding: 6rem 0; background: transparent; }
+.sourcing-section { padding: 5.5rem 0; background: transparent; }
 .sourcing-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -746,7 +746,7 @@ textarea:focus-visible,
    HOW IT WORKS SECTION
    ============================================================ */
 .how-section {
-  padding: 6rem 0;
+  padding: 5.5rem 0;
   background: var(--primary);
   min-height: 100vh;
   display: flex;
@@ -842,7 +842,7 @@ textarea:focus-visible,
 /* ============================================================
    MARKETS SECTION
    ============================================================ */
-.markets-section { padding: 6rem 0; background: transparent; }
+.markets-section { padding: 5.5rem 0; background: transparent; }
 .markets-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -879,7 +879,7 @@ textarea:focus-visible,
 /* ============================================================
    FAQ SECTION
    ============================================================ */
-.faq-section { padding: 5rem 0; background: transparent; }
+.faq-section { padding: 5.5rem 0; background: transparent; }
 .faq-list {
   max-width: 760px;
   margin: 2.5rem auto 0;
@@ -908,7 +908,7 @@ textarea:focus-visible,
 /* ============================================================
    QUOTE SECTION
    ============================================================ */
-.quote-section { background: var(--primary-dark); padding: 6rem 0; }
+.quote-section { background: var(--primary-dark); padding: 5.5rem 0; }
 .quote-grid {
   display: grid;
   grid-template-columns: 1fr 1.45fr;
@@ -1652,7 +1652,19 @@ textarea:focus-visible,
 
 @media (max-width: 768px) {
   .container { padding: 0 1.25rem; }
-  .section { padding: 4rem 0; }
+  .section { padding: 3.5rem 0; }
+
+  /* Section-specific mobile padding */
+  .sourcing-section,
+  .products-section,
+  .markets-section,
+  .faq-section,
+  .quote-section,
+  .blog-preview-section,
+  .estimator-section,
+  .private-label-section { padding: 3.5rem 0; }
+  .derisked-section,
+  .how-section { padding: 3.5rem 0; min-height: 0; }
 
   /* Nav */
   .hamburger { display: flex; }
@@ -1683,7 +1695,7 @@ textarea:focus-visible,
   /* Hero — mobile: single-column stack, exact viewport height */
   .hero { flex-direction: column; align-items: flex-start; height: 100svh; min-height: 600px; }
   .hero-circle { width: 260px; height: 260px; bottom: -50px; right: -50px; }
-  .hero-left { flex: none; width: 100%; padding: 5.5rem 1.5rem 2rem; gap: 2rem; }
+  .hero-left { flex: none; width: 100%; padding: 4rem 1.5rem 2rem; gap: 1.5rem; }
   .hero-right { display: none; }
   .hero-title { font-size: clamp(1.65rem, 6.5vw, 2.2rem); }
   .scroll-indicator { display: none; }
@@ -2114,7 +2126,7 @@ textarea:focus-visible,
 .product-card-spec-dl:hover { color: var(--accent); }
 
 /* ── Estimator Section ── */
-.estimator-section { padding: 5rem 0; background: #F5F9F7; }
+.estimator-section { padding: 5.5rem 0; background: #F5F9F7; }
 .estimator-widget { max-width: 760px; margin: 2.5rem auto 0; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow-md); }
 .estimator-controls { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; margin-bottom: 1.75rem; }
 .estimator-field label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.35rem; text-transform: uppercase; letter-spacing: 0.04em; }
@@ -2146,7 +2158,7 @@ details.faq-item[open] > summary.faq-question::after { content: '−'; }
 details.faq-item[open] > .faq-answer { margin-top: 0.6rem; }
 
 /* ── Blog Preview Section ── */
-.blog-preview-section { padding: 5rem 0; background: transparent; }
+.blog-preview-section { padding: 5.5rem 0; background: transparent; }
 .blog-preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
 .blog-preview-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; display: flex; flex-direction: column; gap: 0.75rem; transition: box-shadow 0.25s, transform 0.25s; }
 .blog-preview-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
@@ -2166,7 +2178,7 @@ details.faq-item[open] > .faq-answer { margin-top: 0.6rem; }
 
 /* ── Your First Order, De-Risked section ── */
 .derisked-section {
-  padding: 6rem 0;
+  padding: 5.5rem 0;
   background: #F7F1E3;
   min-height: 100vh;
   display: flex;
@@ -2339,7 +2351,7 @@ details.faq-item[open] > .faq-answer { margin-top: 0.6rem; }
    PRIVATE LABEL SECTION
    ============================================================ */
 .private-label-section {
-  padding: 4.5rem 0;
+  padding: 5.5rem 0;
   background: var(--bg-alt);
   text-align: center;
 }
