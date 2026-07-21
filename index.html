@@ -132,29 +132,76 @@
   </nav>
 
   <!-- ═══════════════════════════════════════════
-       HERO — video background, blurred-backdrop
+       HERO — green cutout, 2-slide crossfade, SVG jar
   ════════════════════════════════════════════ -->
-  <section class="hero" aria-label="Hero">
-    <!-- Mobile fallback: static poster, hidden on desktop -->
-    <img class="hero-poster" src="/images/hero-poster.jpg" alt="" aria-hidden="true">
+  <section class="hero" id="hero-section" aria-label="Hero">
+    <!-- Constant cream circle — bottom-right, partially off-canvas -->
+    <div class="hero-circle" aria-hidden="true"></div>
 
-    <!-- Layer 1: blurred backdrop (same video, fills wide frame). src set by JS on desktop only -->
-    <video class="hero-video-backdrop" id="heroVideoBg" autoplay muted loop playsinline poster="/images/hero-poster.jpg" aria-hidden="true"></video>
+    <!-- Left column: slides + fixed CTAs -->
+    <div class="hero-left">
+      <!-- Slide wrapper — both slides crossfade via opacity, wrapper has fixed min-height -->
+      <div class="hero-slides-wrapper" aria-live="polite">
+        <!-- Slide 1 -->
+        <div class="hero-slide active" id="hero-slide-1" aria-hidden="false">
+          <h1 class="hero-title">The sample you approve is the shipment you receive.</h1>
+          <p class="hero-subtitle">Photos and videos of your exact lot, sent on WhatsApp before it ships.</p>
+        </div>
+        <!-- Slide 2 -->
+        <div class="hero-slide" id="hero-slide-2" aria-hidden="true">
+          <div class="hero-highlights">
+            <div class="hero-highlight">
+              <span class="hero-hl-label"><a href="#private-label-heading" class="hero-hl-link">Private Labelling</a></span>
+              <span class="hero-hl-desc">Your brand, your bag — MOQ 1 MT. Full artwork support.</span>
+            </div>
+            <div class="hero-highlight">
+              <span class="hero-hl-label">Unjha Sourcing</span>
+              <span class="hero-hl-desc">Direct from Asia's largest seed &amp; spice market. Zero middlemen.</span>
+            </div>
+            <div class="hero-highlight">
+              <span class="hero-hl-label">500 kg Trial</span>
+              <span class="hero-hl-desc">Start small. Scale once you're satisfied with quality and service.</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <!-- Layer 2: sharp centred foreground at natural portrait aspect ratio. src set by JS on desktop only -->
-    <video class="hero-video-fg" id="heroVideoFg" autoplay muted loop playsinline poster="/images/hero-poster.jpg" aria-hidden="true"></video>
-
-    <div class="hero-gradient" aria-hidden="true"></div>
-
-    <div class="hero-content">
-      <div class="hero-badge">📦 Trial orders from 500 kg — start small, scale once you're satisfied</div>
-      <h1 class="hero-title">Start Importing at 500 kg</h1>
-      <p class="hero-subtitle">
-        Sample and lab report before you pay. Founder-direct sourcing from Unjha — Asia's largest seed market.
-      </p>
+      <!-- Fixed CTAs — always visible, not part of crossfade -->
       <div class="hero-actions">
         <a href="#quote" class="btn btn-primary">Send Your Requirement</a>
         <a href="https://wa.me/917265097308?text=Hi%2C+I%27d+like+to+request+a+free+sample+before+placing+an+order." target="_blank" rel="noopener" class="btn btn-outline">Request a Free Sample</a>
+      </div>
+    </div>
+
+    <!-- Right column: SVG jar illustration (constant) -->
+    <div class="hero-right" aria-hidden="true">
+      <div class="hero-jar" id="hero-jar">
+        <svg class="jar-svg" viewBox="0 0 120 168" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Lid cap -->
+          <rect x="38" y="4" width="44" height="8" rx="3" fill="#C9A55A"/>
+          <!-- Lid band -->
+          <rect x="34" y="10" width="52" height="14" rx="4" fill="#B8924A"/>
+          <!-- Jar body -->
+          <path d="M28 26 Q24 30 22 40 L18 130 Q17 140 26 144 L94 144 Q103 140 102 130 L98 40 Q96 30 92 26 Z" fill="#F7F1E3"/>
+          <!-- Jar shine -->
+          <path d="M34 32 Q30 36 29 48 L27 110 Q26.5 116 30 118 L36 118 L38 48 Q37 36 34 32 Z" fill="rgba(255,255,255,0.28)"/>
+          <!-- Label band -->
+          <rect x="26" y="68" width="68" height="40" rx="3" fill="rgba(184,146,74,0.12)" stroke="rgba(184,146,74,0.35)" stroke-width="1"/>
+          <text x="60" y="84" text-anchor="middle" font-family="Georgia,serif" font-size="7" fill="#8B6914" letter-spacing="1.5">RPM</text>
+          <text x="60" y="95" text-anchor="middle" font-family="Georgia,serif" font-size="5.5" fill="#8B6914" letter-spacing="0.8">GLOBAL</text>
+          <text x="60" y="104" text-anchor="middle" font-family="Georgia,serif" font-size="5" fill="#8B6914" letter-spacing="0.6">EXPORTS</text>
+          <!-- Seeds inside jar -->
+          <ellipse cx="50" cy="54" rx="5.5" ry="3" fill="#B8924A" opacity="0.85" transform="rotate(-20 50 54)"/>
+          <ellipse cx="67" cy="57" rx="5" ry="2.8" fill="#C9A55A" opacity="0.9" transform="rotate(15 67 57)"/>
+          <ellipse cx="44" cy="60" rx="5" ry="2.7" fill="#A07838" opacity="0.75" transform="rotate(8 44 60)"/>
+          <ellipse cx="58" cy="120" rx="6" ry="3.5" fill="#B8924A" opacity="0.8" transform="rotate(8 58 120)"/>
+          <ellipse cx="75" cy="115" rx="5" ry="2.8" fill="#A07838" opacity="0.85" transform="rotate(-10 75 115)"/>
+          <ellipse cx="44" cy="125" rx="5.5" ry="3" fill="#C9A55A" opacity="0.75" transform="rotate(25 44 125)"/>
+          <ellipse cx="82" cy="124" rx="5" ry="2.8" fill="#B8924A" opacity="0.8" transform="rotate(-5 82 124)"/>
+          <ellipse cx="62" cy="130" rx="6" ry="3.2" fill="#A07838" opacity="0.7" transform="rotate(18 62 130)"/>
+          <!-- Jar base -->
+          <rect x="22" y="140" width="76" height="8" rx="4" fill="#C9A55A" opacity="0.5"/>
+        </svg>
       </div>
     </div>
 

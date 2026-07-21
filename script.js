@@ -79,14 +79,60 @@ document.addEventListener('DOMContentLoaded', function () {
     wrapper.appendChild(clone);
   }
 
-  /* ── Video hero: load video only on desktop to save mobile data ── */
-  if (window.matchMedia('(min-width: 768px)').matches) {
-    var heroSrc = '/images/hero-loop.mp4';
-    var bgVid = document.getElementById('heroVideoBg');
-    var fgVid = document.getElementById('heroVideoFg');
-    if (bgVid) { bgVid.src = heroSrc; bgVid.load(); }
-    if (fgVid) { fgVid.src = heroSrc; fgVid.load(); }
-  }
+  /* ── Hero: 2-slide crossfade every 6 s ── */
+  (function () {
+    var slides = document.querySelectorAll('.hero-slide');
+    if (slides.length < 2) return;
+    var current = 0;
+    setInterval(function () {
+      slides[current].classList.remove('active');
+      slides[current].setAttribute('aria-hidden', 'true');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+      slides[current].setAttribute('aria-hidden', 'false');
+    }, 6000);
+  })();
+
+  /* ── Hero jar pour animation: one-shot when hero exits top of viewport ── */
+  (function () {
+    var heroSection = document.getElementById('hero-section');
+    var jarEl = document.getElementById('hero-jar');
+    if (!heroSection || !jarEl || !('IntersectionObserver' in window)) return;
+    var fired = false;
+    var pourObs = new IntersectionObserver(function (entries) {
+      var entry = entries[0];
+      if (!fired && entry.intersectionRatio < 0.3 && entry.boundingClientRect.top < 0) {
+        fired = true;
+        pourObs.disconnect();
+        spawnPourParticles();
+      }
+    }, { threshold: [0, 0.3] });
+    pourObs.observe(heroSection);
+
+    function spawnPourParticles() {
+      var jarRect  = jarEl.getBoundingClientRect();
+      var heroRect = heroSection.getBoundingClientRect();
+      var mouthX = jarRect.left - heroRect.left + jarRect.width * 0.5;
+      var mouthY = jarRect.top  - heroRect.top  + jarRect.height * 0.18;
+      var count = 18;
+      for (var i = 0; i < count; i++) {
+        (function (idx) {
+          var p = document.createElement('div');
+          p.className = 'hero-pour-particle';
+          var spread = (Math.random() - 0.5) * 36;
+          p.style.left = (mouthX + spread) + 'px';
+          p.style.top  = mouthY + 'px';
+          var dur   = (0.75 + Math.random() * 0.5).toFixed(2);
+          var delay = (idx * 0.04 + Math.random() * 0.03).toFixed(2);
+          p.style.setProperty('--dur',   dur   + 's');
+          p.style.setProperty('--delay', delay + 's');
+          heroSection.appendChild(p);
+          setTimeout(function () { if (p.parentNode) p.parentNode.removeChild(p); },
+            (parseFloat(dur) + parseFloat(delay)) * 1000 + 120);
+        })(i);
+      }
+    }
+  })();
 
   /* ── Section fade-in on scroll — one-time, no per-frame work ── */
   var fadeTargets = document.querySelectorAll('.fade-section-content');
