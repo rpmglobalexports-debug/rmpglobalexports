@@ -278,7 +278,7 @@ textarea:focus-visible,
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ============================================================
-   HERO SECTION — green cutout, 2-slide crossfade, SVG jar
+   HERO SECTION — green cutout, static jar + continuous pour
    ============================================================ */
 .hero {
   position: relative;
@@ -320,26 +320,9 @@ textarea:focus-visible,
   flex: 0 0 48%;
   min-height: 360px;
   padding: 2rem 2rem 2rem 0;
-}
-
-/* Slides wrapper — fixed min-height so layout never jumps */
-.hero-slides-wrapper {
-  position: relative;
-  min-height: 300px;
-}
-
-.hero-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 0.8s ease;
-  pointer-events: none;
-}
-.hero-slide.active {
-  opacity: 1;
-  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-title {
@@ -397,35 +380,13 @@ textarea:focus-visible,
   flex-wrap: wrap;
 }
 
-/* Illustrations (jar / bowl) — absolute-centered in .hero-right, crossfade with slides */
-.hero-illus {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 0.8s ease;
-  pointer-events: none;
-}
-.hero-illus.active {
-  opacity: 1;
-}
-
-/* Cylindrical jar (slide 1) — tilts left: mouth points down-left */
+/* Cylindrical jar — tilts left: mouth points down-left */
 .jar-svg {
   width: clamp(148px, 17vw, 240px);
   height: auto;
   filter: drop-shadow(0 14px 32px rgba(0,0,0,0.3));
   transform: rotate(-60deg);
   transform-origin: center;
-  display: block;
-}
-
-/* Bowl (slide 2) */
-.bowl-svg {
-  width: clamp(250px, 34vw, 470px);
-  height: auto;
-  filter: drop-shadow(0 10px 28px rgba(0,0,0,0.22));
   display: block;
 }
 
@@ -446,6 +407,56 @@ textarea:focus-visible,
   8%   { opacity: 0.9; }
   82%  { opacity: 0.9; }
   100% { opacity: 0;   transform: translateY(380px) translateX(var(--dx, -12px)); }
+}
+
+/* ============================================================
+   POUR-REVEAL SECTION — green bg, content-sized, highlights + bowl
+   ============================================================ */
+.pour-reveal-section {
+  position: relative;
+  background: #16362B;
+  overflow: hidden;
+  padding: 5rem 0 0;
+}
+.pour-reveal-circle {
+  position: absolute;
+  width: clamp(280px, 38vw, 580px);
+  height: clamp(280px, 38vw, 580px);
+  background: #F7F1E3;
+  border-radius: 50%;
+  bottom: -22%;
+  right: -6%;
+  pointer-events: none;
+  z-index: 0;
+}
+.pour-reveal-inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 5rem);
+  display: flex;
+  align-items: flex-end;
+  gap: 4rem;
+}
+.pour-reveal-text {
+  flex: 0 0 50%;
+  padding-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.pour-reveal-bowl-wrap {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.bowl-svg-lg {
+  width: clamp(260px, 36vw, 500px);
+  height: auto;
+  filter: drop-shadow(0 10px 28px rgba(0,0,0,0.22));
+  display: block;
 }
 
 /* Scroll indicator */
@@ -1686,11 +1697,16 @@ textarea:focus-visible,
   .hero-circle { width: 260px; height: 260px; bottom: -50px; right: -50px; }
   .hero-left { flex: none; width: 100%; padding: 5.5rem 1.5rem 2rem; gap: 2rem; }
   .hero-right { display: none; }
-  .hero-slides-wrapper { min-height: 380px; }
   .hero-title { font-size: clamp(1.65rem, 6.5vw, 2.2rem); }
   .scroll-indicator { display: none; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
   .hero-actions .btn { width: 100%; max-width: 320px; justify-content: center; }
+
+  /* Pour-reveal — mobile: stack vertically, bowl below text */
+  .pour-reveal-inner { flex-direction: column; align-items: flex-start; gap: 2rem; }
+  .pour-reveal-text { flex: none; width: 100%; padding: 0 1.5rem 2rem; }
+  .pour-reveal-bowl-wrap { width: 100%; padding: 0 1.5rem; }
+  .bowl-svg-lg { width: 100%; max-width: 340px; margin: 0 auto; }
 
   /* Products */
   .products-grid { grid-template-columns: 1fr; }

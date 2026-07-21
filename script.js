@@ -79,23 +79,15 @@ document.addEventListener('DOMContentLoaded', function () {
     wrapper.appendChild(clone);
   }
 
-  /* ── Hero: 2-slide crossfade + illustration switch + continuous jar pour ── */
+  /* ── Hero: continuous jar pour — seeds fall while hero is in view ── */
   (function () {
-    var slides   = document.querySelectorAll('.hero-slide');
-    var illus    = document.querySelectorAll('.hero-illus');
     var heroSect = document.getElementById('hero-section');
-    if (slides.length < 2 || !heroSect) return;
-
-    var current    = 0;
-    var pouring    = false;
-    var pourTimer  = null;
-    var MAX_P      = 28;
-
-    function spawnParticle() {
+    if (!heroSect) return;
+    var MAX_P = 28;
+    setInterval(function () {
       var marker = document.getElementById('jar-mouth-marker');
       if (!marker) return;
-      var alive = heroSect.querySelectorAll('.hero-pour-particle').length;
-      if (alive >= MAX_P) return;
+      if (heroSect.querySelectorAll('.hero-pour-particle').length >= MAX_P) return;
       var mRect = marker.getBoundingClientRect();
       var hRect = heroSect.getBoundingClientRect();
       var p = document.createElement('div');
@@ -108,41 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
       p.addEventListener('animationend', function () {
         if (p.parentNode) p.parentNode.removeChild(p);
       }, { once: true });
-    }
-
-    function startPour() {
-      if (pouring) return;
-      pouring   = true;
-      pourTimer = setInterval(spawnParticle, 200);
-    }
-
-    function stopPour() {
-      if (!pouring) return;
-      pouring = false;
-      clearInterval(pourTimer);
-      pourTimer = null;
-    }
-
-    function switchTo(idx) {
-      slides[current].classList.remove('active');
-      slides[current].setAttribute('aria-hidden', 'true');
-      if (illus[current]) illus[current].classList.remove('active');
-
-      current = idx;
-
-      slides[current].classList.add('active');
-      slides[current].setAttribute('aria-hidden', 'false');
-      if (illus[current]) illus[current].classList.add('active');
-
-      if (current === 0) startPour(); else stopPour();
-    }
-
-    /* Boot: slide 0 + jar already active in HTML, kick off the pour */
-    startPour();
-
-    setInterval(function () {
-      switchTo((current + 1) % slides.length);
-    }, 6000);
+    }, 200);
   })();
 
   /* ── Section fade-in on scroll — one-time, no per-frame work ── */
