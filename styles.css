@@ -278,39 +278,55 @@ textarea:focus-visible,
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ============================================================
-   HERO SECTION
+   HERO SECTION — ScrollTrigger scrolltelling
    ============================================================ */
-.hero {
+.hero-scroll {
   position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  height: 300vh;
+}
+
+.hero-bg {
+  position: sticky;
+  top: 0;
+  height: 100vh;
   overflow: hidden;
-  background:
-    linear-gradient(160deg,
-      #0f2519 0%,
-      #1a3a2a 25%,
-      #1e2c18 45%,
-      #2d1f0e 70%,
-      #1B4332 100%);
+  background: linear-gradient(160deg, #0f2519 0%, #1a3a2a 25%, #1e2c18 45%, #2d1f0e 70%, #1B4332 100%);
+}
+
+/* Stacked background images — GSAP crossfades between them */
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: opacity;
+}
+#hbg-1 { z-index: 1; opacity: 1; }
+#hbg-2 { z-index: 2; opacity: 0; }
+#hbg-3 { z-index: 3; opacity: 0; }
+
+/* Permanent dark overlay */
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.58);
+  z-index: 4;
+  pointer-events: none;
 }
 
 /* SVG grain texture */
-.hero::before {
-  content: '';
+.hero-grain {
   position: absolute;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)'/%3E%3C/svg%3E");
   opacity: 0.042;
   pointer-events: none;
-  z-index: 1;
+  z-index: 5;
 }
 
 /* Warm radial accent */
-.hero::after {
-  content: '';
+.hero-radial {
   position: absolute;
   top: -20%;
   right: -10%;
@@ -318,65 +334,31 @@ textarea:focus-visible,
   height: 80%;
   background: radial-gradient(ellipse, rgba(184,146,74,0.09) 0%, transparent 65%);
   pointer-events: none;
-  z-index: 1;
+  z-index: 5;
 }
 
-/* Hero Slideshow */
-.hero-slides {
+/* Scene overlays — stacked inside sticky bg */
+.hero-scene {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 6;
+  pointer-events: none;
+  will-change: opacity;
 }
-.hero-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
-  z-index: 0;
-}
-.hero-slide.active {
-  opacity: 1;
-  z-index: 1;
-  animation: kenburns 7s ease-out forwards;
-}
-.hero-slide::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.58);
-}
-.hero-slide-1 {
-  background-image: url('/images/hero-1.jpg'), linear-gradient(160deg, #0f2519 0%, #1a3a2a 50%, #1B4332 100%);
-}
-.hero-slide-2 {
-  background-image: url('/images/hero-2.jpg'), linear-gradient(145deg, #1a3a2a 0%, #2d1f0e 40%, #1B4332 100%);
-}
-.hero-slide-3 {
-  background-image: url('/images/hero-3.jpg'), linear-gradient(155deg, #2d1f0e 0%, #3d2b10 50%, #1a3a2a 100%);
-}
-.hero-slide-4 {
-  background-image: url('/images/hero-4.jpg'), linear-gradient(160deg, #1e2c18 0%, #1B4332 50%, #0f2519 100%);
-}
-.hero-slide-5 {
-  background-image: url('/images/hero-5.jpg'), linear-gradient(150deg, #0f2519 0%, #2d6a4f 50%, #1B4332 100%);
-}
-@keyframes kenburns {
-  from { transform: scale(1.0); }
-  to   { transform: scale(1.08); }
-}
+#hscene-1 { opacity: 1; }
+#hscene-2 { opacity: 0; }
+#hscene-3 { opacity: 0; }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
+.hero-scene-inner {
   text-align: center;
-  padding: 6rem 1.5rem 10rem;
+  padding: 6rem 1.5rem 3rem;
   max-width: 880px;
   width: 100%;
+  pointer-events: auto;
 }
 
 .hero-badge {
@@ -430,10 +412,10 @@ textarea:focus-visible,
 /* Scroll indicator */
 .scroll-indicator {
   position: absolute;
-  bottom: 9rem;
+  bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 2;
+  z-index: 7;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -442,6 +424,7 @@ textarea:focus-visible,
   font-size: 0.68rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  pointer-events: none;
 }
 .scroll-chevron {
   width: 18px;
@@ -457,13 +440,8 @@ textarea:focus-visible,
   50% { transform: rotate(45deg) translateY(7px); opacity: 0.9; }
 }
 
-/* Hero stat cards */
+/* Hero stat strip — flows below the 300vh hero scroll section */
 .hero-stats {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 3;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid rgba(255,255,255,0.09);
@@ -1666,15 +1644,12 @@ textarea:focus-visible,
   .nav-link::after { display: none; }
   .nav-link:hover { color: var(--accent); }
 
-  /* Hero */
-  .hero { padding: 7rem 1.5rem 2rem; min-height: 100vh; }
-  .hero-content { padding: 2rem 0 1rem; }
-  .hero-stats {
-    position: static;
-    grid-template-columns: 1fr;
-    border-top: none;
-    margin-top: 2rem;
-  }
+  /* Hero — mobile static fallback */
+  .hero-scroll { height: auto; min-height: 100vh; }
+  .hero-bg { position: relative; top: auto; min-height: 100vh; }
+  .hero-scene-inner { padding: 7rem 1.5rem 3rem; }
+  #hscene-2, #hscene-3 { display: none; }
+  .hero-stats { grid-template-columns: 1fr; }
   .hero-stat {
     border-right: none;
     border-top: 1px solid rgba(255,255,255,0.07);

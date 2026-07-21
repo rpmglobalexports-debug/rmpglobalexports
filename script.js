@@ -79,18 +79,48 @@ document.addEventListener('DOMContentLoaded', function () {
     wrapper.appendChild(clone);
   }
 
-  /* ── Hero slideshow: opacity crossfade + Ken Burns ── */
-  const slides = document.querySelectorAll('.hero-slide');
-  if (slides.length) {
-    let current = 0;
-    slides[0].classList.add('active');
-
-    setInterval(() => {
-      slides[current].classList.remove('active');
-      current = (current + 1) % slides.length;
-      slides[current].classList.add('active');
-    }, 5500);
-  }
+  /* ── Hero scrolltelling (GSAP ScrollTrigger) ── */
+  (function () {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+    gsap.registerPlugin(ScrollTrigger);
+    var mm = gsap.matchMedia();
+    mm.add('(min-width: 768px)', function () {
+      var heroScroll = document.querySelector('.hero-scroll');
+      if (!heroScroll) return;
+      var tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: heroScroll,
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: true,
+        }
+      });
+      tl
+        .fromTo('#hscene-1', { opacity: 1 }, { opacity: 0, duration: 0.3, ease: 'none' }, 0.7)
+        .fromTo('#hscene-2', { opacity: 0 }, { opacity: 1, duration: 0.3, ease: 'none' }, 0.7)
+        .fromTo('#hscene-2', { opacity: 1 }, { opacity: 0, duration: 0.3, ease: 'none' }, 1.7)
+        .fromTo('#hscene-3', { opacity: 0 }, { opacity: 1, duration: 0.3, ease: 'none' }, 1.7)
+        .fromTo('#hbg-1',    { opacity: 1 }, { opacity: 0, duration: 0.4, ease: 'none' }, 0.8)
+        .fromTo('#hbg-2',    { opacity: 0 }, { opacity: 1, duration: 0.4, ease: 'none' }, 0.8)
+        .fromTo('#hbg-2',    { opacity: 1 }, { opacity: 0, duration: 0.4, ease: 'none' }, 1.8)
+        .fromTo('#hbg-3',    { opacity: 0 }, { opacity: 1, duration: 0.4, ease: 'none' }, 1.8)
+        .to({}, { duration: 0.8 }, 2.2);
+      ScrollTrigger.create({
+        trigger: heroScroll,
+        start: 'top top',
+        end: 'bottom bottom',
+        onUpdate: function (self) {
+          var p = self.progress;
+          var s1 = document.getElementById('hscene-1');
+          var s2 = document.getElementById('hscene-2');
+          var s3 = document.getElementById('hscene-3');
+          if (s1) s1.setAttribute('aria-hidden', p > 0.4 ? 'true' : 'false');
+          if (s2) s2.setAttribute('aria-hidden', (p < 0.3 || p > 0.73) ? 'true' : 'false');
+          if (s3) s3.setAttribute('aria-hidden', p < 0.63 ? 'true' : 'false');
+        }
+      });
+    });
+  })();
 
   /* ── Subtle scroll-triggered background tone shift (warm white ↔ light sage) ── */
   const toneSections = document.querySelectorAll(
@@ -114,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ── Sticky bottom CTA bar: show after scrolling past hero ── */
-  const hero = document.querySelector('.hero');
+  const hero = document.querySelector('.hero-scroll');
   const stickyCta = document.getElementById('stickyCta');
   if (hero && stickyCta) {
     const heroObserver = new IntersectionObserver(function(entries) {

@@ -42,6 +42,11 @@
 
   <link rel="stylesheet" href="styles.css" />
 
+  <!-- Hero image preloads -->
+  <link rel="preload" href="/images/hero-1.jpg" as="image">
+  <link rel="preload" href="/images/hero-2.jpg" as="image">
+  <link rel="preload" href="/images/hero-4.jpg" as="image">
+
   <!-- JSON-LD: Organization + ItemList -->
   <script type="application/ld+json">
   {
@@ -132,62 +137,87 @@
   </nav>
 
   <!-- ═══════════════════════════════════════════
-       HERO
+       HERO — ScrollTrigger scrolltelling
   ════════════════════════════════════════════ -->
-  <section class="hero" aria-label="Hero">
-    <div class="hero-slides" aria-hidden="true">
-      <div class="hero-slide hero-slide-1"></div>
-      <div class="hero-slide hero-slide-2"></div>
-      <div class="hero-slide hero-slide-3"></div>
-      <div class="hero-slide hero-slide-4"></div>
-      <div class="hero-slide hero-slide-5"></div>
-    </div>
+  <section class="hero-scroll" aria-label="Hero">
+    <div class="hero-bg">
+      <!-- Background image layers — GSAP crossfades between these -->
+      <img id="hbg-1" class="hero-bg-img" src="/images/hero-1.jpg" alt="" aria-hidden="true" fetchpriority="high">
+      <img id="hbg-2" class="hero-bg-img" src="/images/hero-2.jpg" alt="" aria-hidden="true">
+      <img id="hbg-3" class="hero-bg-img" src="/images/hero-4.jpg" alt="" aria-hidden="true">
 
-    <div class="hero-content">
-      <div class="hero-badge">📦 Trial orders from 500 kg — start small, scale once you're satisfied</div>
+      <div class="hero-bg-overlay" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+      <div class="hero-radial" aria-hidden="true"></div>
 
-      <h1 class="hero-title">Start Importing at 500 kg</h1>
-
-      <p class="hero-subtitle">
-        Sample and lab report before you pay. Founder-direct sourcing from Unjha — Asia's largest seed market.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#quote" class="btn btn-primary">Send Your Requirement</a>
-        <a href="https://wa.me/917265097308?text=Hi%2C+I%27d+like+to+request+a+free+sample+before+placing+an+order." target="_blank" rel="noopener" class="btn btn-outline">Request a Free Sample</a>
-      </div>
-    </div>
-
-    <div class="scroll-indicator" aria-hidden="true">
-      <span>Scroll</span>
-      <div class="scroll-chevron"></div>
-    </div>
-
-    <!-- Floating stat cards -->
-    <div class="hero-stats" aria-label="Key facts">
-      <div class="hero-stat">
-        <span class="hero-stat-icon">📦</span>
-        <div>
-          <div class="hero-stat-value">500 kg Trial MOQ</div>
-          <div class="hero-stat-label">Scale to 1 MT once you're satisfied</div>
+      <!-- Scene 1: Trial order hook -->
+      <div id="hscene-1" class="hero-scene" aria-hidden="false">
+        <div class="hero-scene-inner">
+          <div class="hero-badge">📦 Trial orders from 500 kg — start small, scale once you're satisfied</div>
+          <h1 class="hero-title">Start Importing at 500 kg</h1>
+          <p class="hero-subtitle">
+            Sample and lab report before you pay. Founder-direct sourcing from Unjha — Asia's largest seed market.
+          </p>
+          <div class="hero-actions">
+            <a href="#quote" class="btn btn-primary">Send Your Requirement</a>
+            <a href="https://wa.me/917265097308?text=Hi%2C+I%27d+like+to+request+a+free+sample+before+placing+an+order." target="_blank" rel="noopener" class="btn btn-outline">Request a Free Sample</a>
+          </div>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true">
+          <span>Scroll</span>
+          <div class="scroll-chevron"></div>
         </div>
       </div>
-      <div class="hero-stat">
-        <span class="hero-stat-icon">📍</span>
-        <div>
-          <div class="hero-stat-value">Gujarat Sourcing Hub</div>
-          <div class="hero-stat-label">Unjha APMC — Asia's largest seed market</div>
+
+      <!-- Scene 2: Sourcing credibility -->
+      <div id="hscene-2" class="hero-scene" aria-hidden="true">
+        <div class="hero-scene-inner">
+          <h2 class="hero-title">Sourced hands-on. Every lot, every time.</h2>
+          <p class="hero-subtitle">
+            We visit Unjha ourselves — every shipment is weighed, sampled, and lab-tested before it leaves Gujarat. No middlemen, no surprises on arrival.
+          </p>
         </div>
       </div>
-      <div class="hero-stat">
-        <span class="hero-stat-icon">⚡</span>
-        <div>
-          <div class="hero-stat-value">4-Hour Response</div>
-          <div class="hero-stat-label">Rudra or Meet responds directly — IST</div>
+
+      <!-- Scene 3: CTA close -->
+      <div id="hscene-3" class="hero-scene" aria-hidden="true">
+        <div class="hero-scene-inner">
+          <h2 class="hero-title">Ready to see what we can source for you?</h2>
+          <p class="hero-subtitle">
+            Tell us your product, quantity and destination. We'll reply within 4 hours — direct from the founders.
+          </p>
+          <div class="hero-actions">
+            <a href="#quote" class="btn btn-primary">Send Your Requirement</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Stat strip flows below the scrolltelling hero -->
+  <div class="hero-stats" aria-label="Key facts">
+    <div class="hero-stat">
+      <span class="hero-stat-icon">📦</span>
+      <div>
+        <div class="hero-stat-value">500 kg Trial MOQ</div>
+        <div class="hero-stat-label">Scale to 1 MT once you're satisfied</div>
+      </div>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-icon">📍</span>
+      <div>
+        <div class="hero-stat-value">Gujarat Sourcing Hub</div>
+        <div class="hero-stat-label">Unjha APMC — Asia's largest seed market</div>
+      </div>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-icon">⚡</span>
+      <div>
+        <div class="hero-stat-value">4-Hour Response</div>
+        <div class="hero-stat-label">Rudra or Meet responds directly — IST</div>
+      </div>
+    </div>
+  </div>
 
   <!-- ═══════════════════════════════════════════
        MOQ COMPARISON
@@ -883,6 +913,8 @@
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
 
   <script type="application/ld+json">
