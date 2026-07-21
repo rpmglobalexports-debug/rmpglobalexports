@@ -131,10 +131,26 @@
     </div>
   </nav>
 
+  <!-- CERT MARQUEE STRIP: auto-scrolling certification badges, populated by JS -->
+  <div class="cert-strip" aria-label="Certifications and registrations" role="complementary">
+    <div class="cert-track-wrapper">
+      <div class="cert-track" id="certTrack" aria-hidden="true"></div>
+    </div>
+  </div>
+
   <!-- ═══════════════════════════════════════════
        HERO — green cutout, static jar + continuous pour
   ════════════════════════════════════════════ -->
   <section class="hero" id="hero-section" aria-label="Hero">
+    <!-- Decorative background: flowing curved line + circular photo slots (JS-rendered) -->
+    <div class="hero-flow-bg" aria-hidden="true">
+      <svg class="hero-flow-svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-80,560 C120,510 260,390 500,315 C740,240 960,185 1280,95"
+              fill="none" stroke="rgba(184,146,74,0.14)" stroke-width="1.5" stroke-dasharray="10,13"/>
+      </svg>
+      <div class="hero-photo-slots" id="heroPhotoSlots"></div>
+    </div>
+
     <!-- Constant cream circle — bottom-right, partially off-canvas -->
     <div class="hero-circle" aria-hidden="true"></div>
 
@@ -386,28 +402,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ═══════════════════════════════════════════
-       TRUST BAR
-  ════════════════════════════════════════════ -->
-  <div class="trust-bar" aria-label="Registrations and credentials">
-    <div class="trust-track-wrapper">
-      <div class="trust-track">
-        <span class="trust-item">✓ 500 kg Trial Orders</span>
-        <span class="trust-sep"></span>
-        <span class="trust-item">✓ Free Pre-Shipment Samples</span>
-        <span class="trust-sep"></span>
-        <span class="trust-item">✓ Third-Party Lab CoA</span>
-        <span class="trust-sep"></span>
-        <span class="trust-item">✓ APEDA Registered</span>
-        <span class="trust-sep"></span>
-        <span class="trust-item">✓ IEC Registered</span>
-        <span class="trust-sep"></span>
-        <span class="trust-item">✓ Founder-Direct Communication</span>
-        <span class="trust-sep"></span>
-      </div>
-    </div>
-  </div>
 
   <!-- ═══════════════════════════════════════════
        SAMPLE CTA STRIP

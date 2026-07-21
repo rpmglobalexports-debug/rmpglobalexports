@@ -200,6 +200,78 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+/* ── Cert marquee strip: badge data + DOM rendering ── */
+(function () {
+  var CERT_BADGES = [
+    { name: 'FSSAI', sub: 'Central License' },
+    { name: 'APEDA', sub: 'Psyllium Husk' },
+    { name: 'GST',   sub: 'Registered' },
+    { name: 'IEC',   sub: 'Import Export Code' },
+    // Spice Board (cumin) and IOPEPC (sesame) are pending as of July 2026 — add here once cleared.
+  ];
+
+  var track = document.getElementById('certTrack');
+  if (!track) return;
+
+  function makeBadge(b) {
+    var badge = document.createElement('span');
+    badge.className = 'cert-badge';
+    badge.innerHTML =
+      '<span class="cert-badge-icon">✓</span>' +
+      '<span class="cert-badge-text">' +
+        '<span class="cert-badge-name">' + b.name + '</span>' +
+        '<span class="cert-badge-sub">' + b.sub + '</span>' +
+      '</span>';
+    return badge;
+  }
+
+  // Render two identical sets so the -50% translateX loop is seamless
+  [0, 1].forEach(function () {
+    CERT_BADGES.forEach(function (b) { track.appendChild(makeBadge(b)); });
+  });
+})();
+
+/* ── Hero flow line: circular photo slots ── */
+var heroLinePhotos = [
+  { position: { bottom: '14%', left: '4%' },   image: null, label: 'Unjha Mandi' },
+  { position: { top: '38%',   left: '44%' },   image: null, label: 'Processing Unit' },
+  { position: { top: '10%',   right: '10%' },  image: null, label: 'Export Ready' },
+];
+
+(function () {
+  var container = document.getElementById('heroPhotoSlots');
+  if (!container) return;
+
+  heroLinePhotos.forEach(function (slot) {
+    var el = document.createElement('div');
+    el.className = 'hero-photo-slot';
+    Object.keys(slot.position).forEach(function (k) { el.style[k] = slot.position[k]; });
+
+    if (slot.image) {
+      var img = document.createElement('img');
+      img.src   = slot.image;
+      img.alt   = slot.label;
+      el.appendChild(img);
+    } else {
+      var ph = document.createElement('div');
+      ph.className = 'hero-photo-placeholder';
+      ph.innerHTML =
+        '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">' +
+          '<circle cx="12" cy="8" r="4"/>' +
+          '<path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>' +
+        '</svg>';
+      el.appendChild(ph);
+    }
+
+    var label = document.createElement('span');
+    label.className = 'hero-photo-label';
+    label.textContent = slot.label;
+    el.appendChild(label);
+
+    container.appendChild(el);
+  });
+})();
+
 /* ── Get Today's Rate Widget ── */
 const RATE_GRADES = {
   psyllium: ['Food Grade (85%)', 'Food Grade (95%)', 'Pharma Grade (98–99%)'],
