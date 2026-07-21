@@ -152,15 +152,15 @@
           <div class="hero-highlights">
             <div class="hero-highlight">
               <span class="hero-hl-label"><a href="#private-label-heading" class="hero-hl-link">Private Labelling</a></span>
-              <span class="hero-hl-desc">Your brand, your bag — MOQ 1 MT. Full artwork support.</span>
+              <span class="hero-hl-desc">Your brand, our sourcing. Custom packaging and labels on your order.</span>
             </div>
             <div class="hero-highlight">
               <span class="hero-hl-label">Unjha Sourcing</span>
-              <span class="hero-hl-desc">Direct from Asia's largest seed &amp; spice market. Zero middlemen.</span>
+              <span class="hero-hl-desc">Direct from Asia's largest seed market, not layers of traders.</span>
             </div>
             <div class="hero-highlight">
               <span class="hero-hl-label">500 kg Trial</span>
-              <span class="hero-hl-desc">Start small. Scale once you're satisfied with quality and service.</span>
+              <span class="hero-hl-desc">Prove us on a small order before you scale to full container.</span>
             </div>
           </div>
         </div>
@@ -173,34 +173,75 @@
       </div>
     </div>
 
-    <!-- Right column: SVG jar illustration (constant) -->
+    <!-- Right column: jar (slide 1) and bowl (slide 2), crossfade with slides -->
     <div class="hero-right" aria-hidden="true">
-      <div class="hero-jar" id="hero-jar">
-        <svg class="jar-svg" viewBox="0 0 120 168" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- Lid cap -->
-          <rect x="38" y="4" width="44" height="8" rx="3" fill="#C9A55A"/>
-          <!-- Lid band -->
-          <rect x="34" y="10" width="52" height="14" rx="4" fill="#B8924A"/>
-          <!-- Jar body -->
-          <path d="M28 26 Q24 30 22 40 L18 130 Q17 140 26 144 L94 144 Q103 140 102 130 L98 40 Q96 30 92 26 Z" fill="#F7F1E3"/>
-          <!-- Jar shine -->
-          <path d="M34 32 Q30 36 29 48 L27 110 Q26.5 116 30 118 L36 118 L38 48 Q37 36 34 32 Z" fill="rgba(255,255,255,0.28)"/>
+      <!-- Jar illustration (slide 1) — cylindrical, tilted 60° via CSS on the SVG -->
+      <div class="hero-jar hero-illus active" id="hero-jar">
+        <svg class="jar-svg" viewBox="0 0 100 140" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Invisible mouth marker: getBoundingClientRect gives particle spawn point after CSS rotation -->
+          <circle id="jar-mouth-marker" cx="50" cy="24" r="1" fill="none"/>
+          <!-- Lid cap (same width as jar body) -->
+          <rect x="18" y="4" width="64" height="10" rx="4" fill="#C9A55A"/>
+          <!-- Lid body -->
+          <rect x="20" y="12" width="60" height="14" rx="2" fill="#B8924A"/>
+          <!-- Jar opening rim -->
+          <rect x="20" y="24" width="60" height="5" rx="1" fill="rgba(184,146,74,0.42)"/>
+          <!-- Jar body: straight parallel sides -->
+          <rect x="20" y="27" width="60" height="98" rx="2" fill="#F7F1E3"/>
+          <!-- Glass inner shine (left edge) -->
+          <rect x="24" y="30" width="8" height="90" rx="4" fill="rgba(255,255,255,0.24)"/>
           <!-- Label band -->
-          <rect x="26" y="68" width="68" height="40" rx="3" fill="rgba(184,146,74,0.12)" stroke="rgba(184,146,74,0.35)" stroke-width="1"/>
-          <text x="60" y="84" text-anchor="middle" font-family="Georgia,serif" font-size="7" fill="#8B6914" letter-spacing="1.5">RPM</text>
-          <text x="60" y="95" text-anchor="middle" font-family="Georgia,serif" font-size="5.5" fill="#8B6914" letter-spacing="0.8">GLOBAL</text>
-          <text x="60" y="104" text-anchor="middle" font-family="Georgia,serif" font-size="5" fill="#8B6914" letter-spacing="0.6">EXPORTS</text>
-          <!-- Seeds inside jar -->
-          <ellipse cx="50" cy="54" rx="5.5" ry="3" fill="#B8924A" opacity="0.85" transform="rotate(-20 50 54)"/>
-          <ellipse cx="67" cy="57" rx="5" ry="2.8" fill="#C9A55A" opacity="0.9" transform="rotate(15 67 57)"/>
-          <ellipse cx="44" cy="60" rx="5" ry="2.7" fill="#A07838" opacity="0.75" transform="rotate(8 44 60)"/>
-          <ellipse cx="58" cy="120" rx="6" ry="3.5" fill="#B8924A" opacity="0.8" transform="rotate(8 58 120)"/>
-          <ellipse cx="75" cy="115" rx="5" ry="2.8" fill="#A07838" opacity="0.85" transform="rotate(-10 75 115)"/>
-          <ellipse cx="44" cy="125" rx="5.5" ry="3" fill="#C9A55A" opacity="0.75" transform="rotate(25 44 125)"/>
-          <ellipse cx="82" cy="124" rx="5" ry="2.8" fill="#B8924A" opacity="0.8" transform="rotate(-5 82 124)"/>
-          <ellipse cx="62" cy="130" rx="6" ry="3.2" fill="#A07838" opacity="0.7" transform="rotate(18 62 130)"/>
-          <!-- Jar base -->
-          <rect x="22" y="140" width="76" height="8" rx="4" fill="#C9A55A" opacity="0.5"/>
+          <rect x="26" y="62" width="48" height="38" rx="2" fill="rgba(184,146,74,0.11)" stroke="rgba(184,146,74,0.32)" stroke-width="1"/>
+          <text x="50" y="76" text-anchor="middle" font-family="Georgia,serif" font-size="7" fill="#8B6914" letter-spacing="1.2">RPM</text>
+          <text x="50" y="87" text-anchor="middle" font-family="Georgia,serif" font-size="5.5" fill="#8B6914" letter-spacing="0.7">GLOBAL</text>
+          <text x="50" y="96" text-anchor="middle" font-family="Georgia,serif" font-size="5" fill="#8B6914" letter-spacing="0.5">EXPORTS</text>
+          <!-- Seeds near opening (ready to pour) -->
+          <ellipse cx="46" cy="37" rx="6" ry="3.2" fill="#B8924A" opacity="0.86" transform="rotate(-14 46 37)"/>
+          <ellipse cx="63" cy="35" rx="5.5" ry="3" fill="#C9A55A" opacity="0.9" transform="rotate(11 63 35)"/>
+          <ellipse cx="52" cy="45" rx="6" ry="3.2" fill="#A07838" opacity="0.8" transform="rotate(5 52 45)"/>
+          <ellipse cx="36" cy="44" rx="5" ry="2.8" fill="#C9A55A" opacity="0.74" transform="rotate(-9 36 44)"/>
+          <ellipse cx="67" cy="47" rx="5.5" ry="3" fill="#B8924A" opacity="0.82" transform="rotate(17 67 47)"/>
+          <!-- Seeds in lower portion -->
+          <ellipse cx="43" cy="119" rx="6" ry="3.2" fill="#B8924A" opacity="0.68" transform="rotate(-11 43 119)"/>
+          <ellipse cx="61" cy="116" rx="5.5" ry="3" fill="#C9A55A" opacity="0.63" transform="rotate(8 61 116)"/>
+          <!-- Base -->
+          <rect x="18" y="123" width="64" height="11" rx="4" fill="#C9A55A" opacity="0.48"/>
+        </svg>
+      </div>
+
+      <!-- Bowl illustration (slide 2) — seeds mounded, same cream/gold palette -->
+      <div class="hero-bowl hero-illus" id="hero-bowl">
+        <svg class="bowl-svg" viewBox="0 0 220 145" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Bowl outer body -->
+          <path d="M28 52 Q24 116 110 124 Q196 116 192 52" fill="#EDE4CA"/>
+          <!-- Bowl rim (ellipse — circular opening seen from above) -->
+          <ellipse cx="110" cy="52" rx="82" ry="20" fill="#F7F1E3"/>
+          <ellipse cx="110" cy="52" rx="82" ry="20" fill="none" stroke="#C9A55A" stroke-width="2.5"/>
+          <!-- Bowl inner shadow (depth) -->
+          <ellipse cx="110" cy="58" rx="74" ry="15" fill="rgba(180,145,70,0.06)"/>
+          <!-- Seeds: bottom layer at rim level -->
+          <ellipse cx="52"  cy="57" rx="7"   ry="3.8" fill="#A07838" opacity="0.78" transform="rotate(-20 52 57)"/>
+          <ellipse cx="72"  cy="52" rx="7.5" ry="4"   fill="#B8924A" opacity="0.82" transform="rotate(8 72 52)"/>
+          <ellipse cx="92"  cy="49" rx="7"   ry="3.8" fill="#C9A55A" opacity="0.88" transform="rotate(-5 92 49)"/>
+          <ellipse cx="128" cy="49" rx="7"   ry="3.8" fill="#B8924A" opacity="0.85" transform="rotate(5 128 49)"/>
+          <ellipse cx="148" cy="52" rx="7.5" ry="4"   fill="#C9A55A" opacity="0.82" transform="rotate(-8 148 52)"/>
+          <ellipse cx="168" cy="57" rx="7"   ry="3.8" fill="#A07838" opacity="0.78" transform="rotate(20 168 57)"/>
+          <!-- Seeds: middle layer -->
+          <ellipse cx="82"  cy="45" rx="7.5" ry="4.2" fill="#C9A55A" opacity="0.9"  transform="rotate(-12 82 45)"/>
+          <ellipse cx="110" cy="43" rx="8"   ry="4.5" fill="#B8924A" opacity="0.92" transform="rotate(3 110 43)"/>
+          <ellipse cx="138" cy="45" rx="7.5" ry="4.2" fill="#C9A55A" opacity="0.88" transform="rotate(12 138 45)"/>
+          <!-- Seeds: upper mound -->
+          <ellipse cx="96"  cy="39" rx="7"   ry="3.8" fill="#D4AF6A" opacity="0.92" transform="rotate(-8 96 39)"/>
+          <ellipse cx="122" cy="39" rx="7"   ry="3.8" fill="#C9A55A" opacity="0.9"  transform="rotate(8 122 39)"/>
+          <ellipse cx="110" cy="35" rx="7"   ry="3.8" fill="#B8924A" opacity="0.95"/>
+          <!-- Seeds: peak -->
+          <ellipse cx="104" cy="31" rx="6"   ry="3.2" fill="#D4AF6A" opacity="0.92" transform="rotate(-5 104 31)"/>
+          <ellipse cx="116" cy="30" rx="5.5" ry="3"   fill="#C9A55A" opacity="0.9"  transform="rotate(6 116 30)"/>
+          <ellipse cx="110" cy="27" rx="5.5" ry="3"   fill="#D4AF6A" opacity="0.88" transform="rotate(2 110 27)"/>
+          <!-- Bowl base foot -->
+          <ellipse cx="110" cy="124" rx="24" ry="6" fill="#C9A55A" opacity="0.36"/>
+          <!-- Rim shine -->
+          <path d="M34 44 Q44 30 66 28" stroke="rgba(255,255,255,0.42)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
         </svg>
       </div>
     </div>

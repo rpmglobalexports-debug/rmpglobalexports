@@ -318,16 +318,14 @@ textarea:focus-visible,
   position: relative;
   z-index: 2;
   flex: 0 0 48%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 360px;
   padding: 2rem 2rem 2rem 0;
 }
 
 /* Slides wrapper — fixed min-height so layout never jumps */
 .hero-slides-wrapper {
   position: relative;
-  min-height: 260px;
+  min-height: 300px;
 }
 
 .hero-slide {
@@ -358,7 +356,7 @@ textarea:focus-visible,
   font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   color: rgba(247,241,227,0.75);
   line-height: 1.75;
-  margin: 0;
+  margin: 0 0 2rem;
   max-width: 460px;
 }
 
@@ -399,34 +397,55 @@ textarea:focus-visible,
   flex-wrap: wrap;
 }
 
-/* SVG jar */
-.hero-jar {
-  position: relative;
-  z-index: 1;
+/* Illustrations (jar / bowl) — absolute-centered in .hero-right, crossfade with slides */
+.hero-illus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
 }
+.hero-illus.active {
+  opacity: 1;
+}
+
+/* Cylindrical jar (slide 1) — SVG carries the 60° tilt */
 .jar-svg {
-  width: clamp(150px, 20vw, 280px);
+  width: clamp(110px, 13vw, 180px);
   height: auto;
-  filter: drop-shadow(0 16px 40px rgba(0,0,0,0.28));
+  filter: drop-shadow(0 14px 32px rgba(0,0,0,0.3));
+  transform: rotate(60deg);
+  transform-origin: center;
+  display: block;
+}
+
+/* Bowl (slide 2) */
+.bowl-svg {
+  width: clamp(190px, 26vw, 360px);
+  height: auto;
+  filter: drop-shadow(0 10px 28px rgba(0,0,0,0.22));
+  display: block;
 }
 
 /* Pour animation particles */
 .hero-pour-particle {
   position: absolute;
-  width: 8px;
-  height: 13px;
+  width: 7px;
+  height: 11px;
   border-radius: 50%;
   background: #B8924A;
   pointer-events: none;
   z-index: 10;
   opacity: 0;
-  animation: pourFall var(--dur, 0.9s) var(--delay, 0s) ease-in forwards;
+  animation: pourFall var(--dur, 1s) ease-in forwards;
 }
 @keyframes pourFall {
-  0%   { opacity: 0; transform: translateY(0) scale(1); }
-  8%   { opacity: 1; }
-  80%  { opacity: 0.85; }
-  100% { opacity: 0; transform: translateY(180px) scale(0.55); }
+  0%   { opacity: 0;   transform: translateY(0)     translateX(0); }
+  9%   { opacity: 0.9; }
+  82%  { opacity: 0.8; }
+  100% { opacity: 0;   transform: translateY(115px) translateX(var(--dx, 10px)); }
 }
 
 /* Scroll indicator */
@@ -1667,7 +1686,7 @@ textarea:focus-visible,
   .hero-circle { width: 260px; height: 260px; bottom: -50px; right: -50px; }
   .hero-left { flex: none; width: 100%; padding: 5.5rem 1.5rem 2rem; gap: 2rem; }
   .hero-right { display: none; }
-  .hero-slides-wrapper { min-height: 300px; }
+  .hero-slides-wrapper { min-height: 380px; }
   .hero-title { font-size: clamp(1.65rem, 6.5vw, 2.2rem); }
   .scroll-indicator { display: none; }
   .hero-actions { flex-direction: column; align-items: flex-start; }

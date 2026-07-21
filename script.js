@@ -79,59 +79,70 @@ document.addEventListener('DOMContentLoaded', function () {
     wrapper.appendChild(clone);
   }
 
-  /* ── Hero: 2-slide crossfade every 6 s ── */
+  /* ── Hero: 2-slide crossfade + illustration switch + continuous jar pour ── */
   (function () {
-    var slides = document.querySelectorAll('.hero-slide');
-    if (slides.length < 2) return;
-    var current = 0;
-    setInterval(function () {
+    var slides   = document.querySelectorAll('.hero-slide');
+    var illus    = document.querySelectorAll('.hero-illus');
+    var heroSect = document.getElementById('hero-section');
+    if (slides.length < 2 || !heroSect) return;
+
+    var current    = 0;
+    var pouring    = false;
+    var pourTimer  = null;
+    var MAX_P      = 16;
+
+    function spawnParticle() {
+      var marker = document.getElementById('jar-mouth-marker');
+      if (!marker) return;
+      var alive = heroSect.querySelectorAll('.hero-pour-particle').length;
+      if (alive >= MAX_P) return;
+      var mRect = marker.getBoundingClientRect();
+      var hRect = heroSect.getBoundingClientRect();
+      var p = document.createElement('div');
+      p.className = 'hero-pour-particle';
+      p.style.left = (mRect.left - hRect.left + (Math.random() - 0.5) * 12) + 'px';
+      p.style.top  = (mRect.top  - hRect.top  + (Math.random() - 0.5) * 6) + 'px';
+      p.style.setProperty('--dur', (0.85 + Math.random() * 0.45).toFixed(2) + 's');
+      p.style.setProperty('--dx',  (4 + Math.random() * 18).toFixed(1) + 'px');
+      heroSect.appendChild(p);
+      p.addEventListener('animationend', function () {
+        if (p.parentNode) p.parentNode.removeChild(p);
+      }, { once: true });
+    }
+
+    function startPour() {
+      if (pouring) return;
+      pouring   = true;
+      pourTimer = setInterval(spawnParticle, 200);
+    }
+
+    function stopPour() {
+      if (!pouring) return;
+      pouring = false;
+      clearInterval(pourTimer);
+      pourTimer = null;
+    }
+
+    function switchTo(idx) {
       slides[current].classList.remove('active');
       slides[current].setAttribute('aria-hidden', 'true');
-      current = (current + 1) % slides.length;
+      if (illus[current]) illus[current].classList.remove('active');
+
+      current = idx;
+
       slides[current].classList.add('active');
       slides[current].setAttribute('aria-hidden', 'false');
-    }, 6000);
-  })();
+      if (illus[current]) illus[current].classList.add('active');
 
-  /* ── Hero jar pour animation: one-shot when hero exits top of viewport ── */
-  (function () {
-    var heroSection = document.getElementById('hero-section');
-    var jarEl = document.getElementById('hero-jar');
-    if (!heroSection || !jarEl || !('IntersectionObserver' in window)) return;
-    var fired = false;
-    var pourObs = new IntersectionObserver(function (entries) {
-      var entry = entries[0];
-      if (!fired && entry.intersectionRatio < 0.3 && entry.boundingClientRect.top < 0) {
-        fired = true;
-        pourObs.disconnect();
-        spawnPourParticles();
-      }
-    }, { threshold: [0, 0.3] });
-    pourObs.observe(heroSection);
-
-    function spawnPourParticles() {
-      var jarRect  = jarEl.getBoundingClientRect();
-      var heroRect = heroSection.getBoundingClientRect();
-      var mouthX = jarRect.left - heroRect.left + jarRect.width * 0.5;
-      var mouthY = jarRect.top  - heroRect.top  + jarRect.height * 0.18;
-      var count = 18;
-      for (var i = 0; i < count; i++) {
-        (function (idx) {
-          var p = document.createElement('div');
-          p.className = 'hero-pour-particle';
-          var spread = (Math.random() - 0.5) * 36;
-          p.style.left = (mouthX + spread) + 'px';
-          p.style.top  = mouthY + 'px';
-          var dur   = (0.75 + Math.random() * 0.5).toFixed(2);
-          var delay = (idx * 0.04 + Math.random() * 0.03).toFixed(2);
-          p.style.setProperty('--dur',   dur   + 's');
-          p.style.setProperty('--delay', delay + 's');
-          heroSection.appendChild(p);
-          setTimeout(function () { if (p.parentNode) p.parentNode.removeChild(p); },
-            (parseFloat(dur) + parseFloat(delay)) * 1000 + 120);
-        })(i);
-      }
+      if (current === 0) startPour(); else stopPour();
     }
+
+    /* Boot: slide 0 + jar already active in HTML, kick off the pour */
+    startPour();
+
+    setInterval(function () {
+      switchTo((current + 1) % slides.length);
+    }, 6000);
   })();
 
   /* ── Section fade-in on scroll — one-time, no per-frame work ── */
