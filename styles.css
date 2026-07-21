@@ -625,6 +625,11 @@ textarea:focus-visible,
   flex-shrink: 0;
 }
 .product-card-specs li:last-child { border-bottom: none; }
+.product-card-main-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
 .product-card-link {
   display: inline-flex;
   align-items: center;
@@ -633,18 +638,8 @@ textarea:focus-visible,
   font-size: 0.88rem;
   font-weight: 600;
   transition: gap 0.2s, color 0.2s;
-  position: relative;
-  z-index: 1;
 }
-.product-card-link::after {
-  content: '';
-  position: absolute;
-  /* inset: 0 anchors to .product-card (nearest positioned ancestor) — covers the whole card */
-  inset: 0;
-  z-index: 1;
-}
-.product-card-link:hover { color: var(--accent); gap: 0.7rem; }
-.product-card:hover .product-card-link { color: var(--accent); }
+.product-card:hover .product-card-link { color: var(--accent); gap: 0.7rem; }
 
 /* ============================================================
    WHY RPM SECTION (diagonal)
