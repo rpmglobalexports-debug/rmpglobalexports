@@ -79,48 +79,28 @@ document.addEventListener('DOMContentLoaded', function () {
     wrapper.appendChild(clone);
   }
 
-  /* ── Hero scrolltelling (GSAP ScrollTrigger) ── */
-  (function () {
-    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-    gsap.registerPlugin(ScrollTrigger);
-    var mm = gsap.matchMedia();
-    mm.add('(min-width: 768px)', function () {
-      var heroScroll = document.querySelector('.hero-scroll');
-      if (!heroScroll) return;
-      var tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: heroScroll,
-          start: 'top top',
-          end: 'bottom bottom',
-          scrub: true,
+  /* ── Video hero: load video only on desktop to save mobile data ── */
+  if (window.matchMedia('(min-width: 768px)').matches) {
+    var heroSrc = '/images/hero-loop.mp4';
+    var bgVid = document.getElementById('heroVideoBg');
+    var fgVid = document.getElementById('heroVideoFg');
+    if (bgVid) { bgVid.src = heroSrc; bgVid.load(); }
+    if (fgVid) { fgVid.src = heroSrc; fgVid.load(); }
+  }
+
+  /* ── Section fade-in on scroll — one-time, no per-frame work ── */
+  var fadeTargets = document.querySelectorAll('.fade-section-content');
+  if (fadeTargets.length && 'IntersectionObserver' in window) {
+    var fadeObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          fadeObserver.unobserve(entry.target);
         }
       });
-      tl
-        .fromTo('#hscene-1', { opacity: 1 }, { opacity: 0, duration: 0.3, ease: 'none' }, 0.7)
-        .fromTo('#hscene-2', { opacity: 0 }, { opacity: 1, duration: 0.3, ease: 'none' }, 0.7)
-        .fromTo('#hscene-2', { opacity: 1 }, { opacity: 0, duration: 0.3, ease: 'none' }, 1.7)
-        .fromTo('#hscene-3', { opacity: 0 }, { opacity: 1, duration: 0.3, ease: 'none' }, 1.7)
-        .fromTo('#hbg-1',    { opacity: 1 }, { opacity: 0, duration: 0.4, ease: 'none' }, 0.8)
-        .fromTo('#hbg-2',    { opacity: 0 }, { opacity: 1, duration: 0.4, ease: 'none' }, 0.8)
-        .fromTo('#hbg-2',    { opacity: 1 }, { opacity: 0, duration: 0.4, ease: 'none' }, 1.8)
-        .fromTo('#hbg-3',    { opacity: 0 }, { opacity: 1, duration: 0.4, ease: 'none' }, 1.8)
-        .to({}, { duration: 0.8 }, 2.2);
-      ScrollTrigger.create({
-        trigger: heroScroll,
-        start: 'top top',
-        end: 'bottom bottom',
-        onUpdate: function (self) {
-          var p = self.progress;
-          var s1 = document.getElementById('hscene-1');
-          var s2 = document.getElementById('hscene-2');
-          var s3 = document.getElementById('hscene-3');
-          if (s1) s1.setAttribute('aria-hidden', p > 0.4 ? 'true' : 'false');
-          if (s2) s2.setAttribute('aria-hidden', (p < 0.3 || p > 0.73) ? 'true' : 'false');
-          if (s3) s3.setAttribute('aria-hidden', p < 0.63 ? 'true' : 'false');
-        }
-      });
-    });
-  })();
+    }, { threshold: 0.2 });
+    fadeTargets.forEach(function(el) { fadeObserver.observe(el); });
+  }
 
   /* ── Subtle scroll-triggered background tone shift (warm white ↔ light sage) ── */
   const toneSections = document.querySelectorAll(
@@ -144,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ── Sticky bottom CTA bar: show after scrolling past hero ── */
-  const hero = document.querySelector('.hero-scroll');
+  const hero = document.querySelector('.hero');
   const stickyCta = document.getElementById('stickyCta');
   if (hero && stickyCta) {
     const heroObserver = new IntersectionObserver(function(entries) {

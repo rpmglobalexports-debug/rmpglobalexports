@@ -42,11 +42,6 @@
 
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Hero image preloads -->
-  <link rel="preload" href="/images/hero-1.jpg" as="image">
-  <link rel="preload" href="/images/hero-2.jpg" as="image">
-  <link rel="preload" href="/images/hero-4.jpg" as="image">
-
   <!-- JSON-LD: Organization + ItemList -->
   <script type="application/ld+json">
   {
@@ -137,87 +132,116 @@
   </nav>
 
   <!-- ═══════════════════════════════════════════
-       HERO — ScrollTrigger scrolltelling
+       HERO — video background, blurred-backdrop
   ════════════════════════════════════════════ -->
-  <section class="hero-scroll" aria-label="Hero">
-    <div class="hero-bg">
-      <!-- Background image layers — GSAP crossfades between these -->
-      <img id="hbg-1" class="hero-bg-img" src="/images/hero-1.jpg" alt="" aria-hidden="true" fetchpriority="high">
-      <img id="hbg-2" class="hero-bg-img" src="/images/hero-2.jpg" alt="" aria-hidden="true">
-      <img id="hbg-3" class="hero-bg-img" src="/images/hero-4.jpg" alt="" aria-hidden="true">
+  <section class="hero" aria-label="Hero">
+    <!-- Mobile fallback: static poster, hidden on desktop -->
+    <img class="hero-poster" src="/images/hero-poster.jpg" alt="" aria-hidden="true">
 
-      <div class="hero-bg-overlay" aria-hidden="true"></div>
-      <div class="hero-grain" aria-hidden="true"></div>
-      <div class="hero-radial" aria-hidden="true"></div>
+    <!-- Layer 1: blurred backdrop (same video, fills wide frame). src set by JS on desktop only -->
+    <video class="hero-video-backdrop" id="heroVideoBg" autoplay muted loop playsinline poster="/images/hero-poster.jpg" aria-hidden="true"></video>
 
-      <!-- Scene 1: Trial order hook -->
-      <div id="hscene-1" class="hero-scene" aria-hidden="false">
-        <div class="hero-scene-inner">
-          <div class="hero-badge">📦 Trial orders from 500 kg — start small, scale once you're satisfied</div>
-          <h1 class="hero-title">Start Importing at 500 kg</h1>
-          <p class="hero-subtitle">
-            Sample and lab report before you pay. Founder-direct sourcing from Unjha — Asia's largest seed market.
-          </p>
-          <div class="hero-actions">
-            <a href="#quote" class="btn btn-primary">Send Your Requirement</a>
-            <a href="https://wa.me/917265097308?text=Hi%2C+I%27d+like+to+request+a+free+sample+before+placing+an+order." target="_blank" rel="noopener" class="btn btn-outline">Request a Free Sample</a>
+    <!-- Layer 2: sharp centred foreground at natural portrait aspect ratio. src set by JS on desktop only -->
+    <video class="hero-video-fg" id="heroVideoFg" autoplay muted loop playsinline poster="/images/hero-poster.jpg" aria-hidden="true"></video>
+
+    <div class="hero-gradient" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">📦 Trial orders from 500 kg — start small, scale once you're satisfied</div>
+      <h1 class="hero-title">Start Importing at 500 kg</h1>
+      <p class="hero-subtitle">
+        Sample and lab report before you pay. Founder-direct sourcing from Unjha — Asia's largest seed market.
+      </p>
+      <div class="hero-actions">
+        <a href="#quote" class="btn btn-primary">Send Your Requirement</a>
+        <a href="https://wa.me/917265097308?text=Hi%2C+I%27d+like+to+request+a+free+sample+before+placing+an+order." target="_blank" rel="noopener" class="btn btn-outline">Request a Free Sample</a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-chevron"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 2 — Your First Order, De-Risked (cream)
+  ════════════════════════════════════════════ -->
+  <section class="derisked-section" aria-labelledby="derisked-heading">
+    <div class="container">
+      <div class="fade-section-content">
+        <div class="section-header centered">
+          <span class="section-label">Risk-Free Sourcing</span>
+          <h2 class="section-title" id="derisked-heading">You've Never Bought From Us. Here's How We Made That Easy.</h2>
+          <p class="section-subtitle" style="max-width:680px;">Every part of our process exists to answer one question: how do you trust a supplier you've never met? Free sample before payment. Lab CoA from a third party, not us. Photos and video of your actual lot before it ships. Start at 500 kg, not 500 tons. This isn't a sales pitch — it's the actual order of operations.</p>
+        </div>
+        <div class="derisked-grid">
+          <div class="derisked-card">
+            <div class="derisked-icon">📦</div>
+            <h3 class="derisked-title">Start at 500 kg</h3>
+            <p class="derisked-desc">First-time buyers can trial at 500 kg — a fraction of the 5–10 MT minimums most exporters impose. Standard MOQ thereafter is 1 MT. Prove us on a small order before scaling.</p>
           </div>
-        </div>
-        <div class="scroll-indicator" aria-hidden="true">
-          <span>Scroll</span>
-          <div class="scroll-chevron"></div>
-        </div>
-      </div>
-
-      <!-- Scene 2: Sourcing credibility -->
-      <div id="hscene-2" class="hero-scene" aria-hidden="true">
-        <div class="hero-scene-inner">
-          <h2 class="hero-title">Sourced hands-on. Every lot, every time.</h2>
-          <p class="hero-subtitle">
-            We visit Unjha ourselves — every shipment is weighed, sampled, and lab-tested before it leaves Gujarat. No middlemen, no surprises on arrival.
-          </p>
-        </div>
-      </div>
-
-      <!-- Scene 3: CTA close -->
-      <div id="hscene-3" class="hero-scene" aria-hidden="true">
-        <div class="hero-scene-inner">
-          <h2 class="hero-title">Ready to see what we can source for you?</h2>
-          <p class="hero-subtitle">
-            Tell us your product, quantity and destination. We'll reply within 4 hours — direct from the founders.
-          </p>
-          <div class="hero-actions">
-            <a href="#quote" class="btn btn-primary">Send Your Requirement</a>
+          <div class="derisked-card">
+            <div class="derisked-icon">🔬</div>
+            <h3 class="derisked-title">Sample Before Payment</h3>
+            <p class="derisked-desc">We send a free pre-shipment sample to your location before you commit to bulk. Test it with your team or run it through your own lab — order only when you're satisfied.</p>
+          </div>
+          <div class="derisked-card">
+            <div class="derisked-icon">📋</div>
+            <h3 class="derisked-title">Lab-Verified, Not Self-Claimed</h3>
+            <p class="derisked-desc">Every batch comes with a third-party NABL-accredited lab CoA — not in-house test results. Independently verified purity, moisture, and microbial numbers you can rely on.</p>
+          </div>
+          <div class="derisked-card">
+            <div class="derisked-icon">📸</div>
+            <h3 class="derisked-title">See Your Lot Before It Ships</h3>
+            <p class="derisked-desc">We send photos and video of your specific material from sourcing to packing and dispatch. What you see is exactly what ships — no surprises on arrival.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Stat strip flows below the scrolltelling hero -->
-  <div class="hero-stats" aria-label="Key facts">
-    <div class="hero-stat">
-      <span class="hero-stat-icon">📦</span>
-      <div>
-        <div class="hero-stat-value">500 kg Trial MOQ</div>
-        <div class="hero-stat-label">Scale to 1 MT once you're satisfied</div>
+  <!-- ═══════════════════════════════════════════
+       SECTION 3 — How It Works (forest green)
+  ════════════════════════════════════════════ -->
+  <section class="how-section" aria-labelledby="how-heading">
+    <div class="container">
+      <div class="fade-section-content">
+        <div class="section-header centered">
+          <span class="section-label">The Process</span>
+          <h2 class="section-title" id="how-heading">How It Works</h2>
+          <p class="section-subtitle">Simple, direct, and built for serious importers. No registration required to enquire.</p>
+        </div>
+        <div class="steps-container">
+          <div class="step-block">
+            <div class="step-number">01</div>
+            <h3 class="step-title">Send Your Requirement</h3>
+            <p class="step-desc">Tell us your product, quantity (trial from 500 kg), destination port, and grade preference. No registration or commitment required to enquire.</p>
+          </div>
+          <div class="step-block">
+            <div class="step-number">02</div>
+            <h3 class="step-title">Receive Sample + Lab CoA</h3>
+            <p class="step-desc">We dispatch a free pre-shipment sample so you can verify quality with your own team or third-party lab — before any payment or commitment to bulk.</p>
+          </div>
+          <div class="step-block">
+            <div class="step-number">03</div>
+            <h3 class="step-title">Practical Quotation at Live Rates</h3>
+            <p class="step-desc">Once you're satisfied with the sample, we send a firm quotation grounded in current Unjha market rates — not inflated margins passed through intermediaries.</p>
+          </div>
+          <div class="step-block">
+            <div class="step-number">04</div>
+            <h3 class="step-title">We Handle the Rest</h3>
+            <p class="step-desc">From 500 kg trial to full container: lot photos, documentation, inspection, and shipment updates — all managed founder-direct.</p>
+          </div>
+        </div>
+        <div class="reassurance-tags">
+          <span class="reassurance-tag">✅ No commitment to enquire</span>
+          <span class="reassurance-tag">📦 Samples available before bulk</span>
+          <span class="reassurance-tag">📄 IEC &amp; compliance docs ready</span>
+        </div>
       </div>
     </div>
-    <div class="hero-stat">
-      <span class="hero-stat-icon">📍</span>
-      <div>
-        <div class="hero-stat-value">Gujarat Sourcing Hub</div>
-        <div class="hero-stat-label">Unjha APMC — Asia's largest seed market</div>
-      </div>
-    </div>
-    <div class="hero-stat">
-      <span class="hero-stat-icon">⚡</span>
-      <div>
-        <div class="hero-stat-value">4-Hour Response</div>
-        <div class="hero-stat-label">Rudra or Meet responds directly — IST</div>
-      </div>
-    </div>
-  </div>
+  </section>
 
   <!-- ═══════════════════════════════════════════
        MOQ COMPARISON
@@ -379,46 +403,6 @@
   </div>
 
   <!-- ═══════════════════════════════════════════
-       YOUR FIRST ORDER, DE-RISKED
-  ════════════════════════════════════════════ -->
-  <section class="derisked-section" aria-labelledby="derisked-heading">
-    <div class="container">
-      <div class="section-header centered">
-        <span class="section-label">Risk-Free Sourcing</span>
-        <h2 class="section-title" id="derisked-heading">You've Never Bought From Us. Here's How We Made That Easy.</h2>
-        <p class="section-subtitle" style="max-width:680px;">Every part of our process exists to answer one question: how do you trust a supplier you've never met? Free sample before payment. Lab CoA from a third party, not us. Photos and video of your actual lot before it ships. Start at 500 kg, not 500 tons. This isn't a sales pitch — it's the actual order of operations.</p>
-      </div>
-      <div class="derisked-grid">
-
-        <div class="derisked-card fade-in-up">
-          <div class="derisked-icon">📦</div>
-          <h3 class="derisked-title">Start at 500 kg</h3>
-          <p class="derisked-desc">First-time buyers can trial at 500 kg — a fraction of the 5–10 MT minimums most exporters impose. Standard MOQ thereafter is 1 MT. Prove us on a small order before scaling.</p>
-        </div>
-
-        <div class="derisked-card fade-in-up">
-          <div class="derisked-icon">🔬</div>
-          <h3 class="derisked-title">Sample Before Payment</h3>
-          <p class="derisked-desc">We send a free pre-shipment sample to your location before you commit to bulk. Test it with your team or run it through your own lab — order only when you're satisfied.</p>
-        </div>
-
-        <div class="derisked-card fade-in-up">
-          <div class="derisked-icon">📋</div>
-          <h3 class="derisked-title">Lab-Verified, Not Self-Claimed</h3>
-          <p class="derisked-desc">Every batch comes with a third-party NABL-accredited lab CoA — not in-house test results. Independently verified purity, moisture, and microbial numbers you can rely on.</p>
-        </div>
-
-        <div class="derisked-card fade-in-up">
-          <div class="derisked-icon">📸</div>
-          <h3 class="derisked-title">See Your Lot Before It Ships</h3>
-          <p class="derisked-desc">We send photos and video of your specific material from sourcing to packing and dispatch. What you see is exactly what ships — no surprises on arrival.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
        GET TODAY'S RATE WIDGET
   ════════════════════════════════════════════ -->
   <section class="estimator-section" aria-labelledby="estimator-heading" id="estimator">
@@ -554,51 +538,6 @@
         <h2 class="section-title" id="private-label-heading">Need Your Own Brand on the Bag?</h2>
         <p>Private label and custom packaging available on request. Tell us your branding, packaging spec, and target market when you enquire — we'll work out what's realistic for your order size and timeline.</p>
         <a href="https://wa.me/917265097308?text=Hi%2C+I%27d+like+to+enquire+about+private+label+and+custom+packaging." target="_blank" rel="noopener" class="btn btn-dark">Ask About Private Label →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       HOW IT WORKS
-  ════════════════════════════════════════════ -->
-  <section class="how-section" aria-labelledby="how-heading">
-    <div class="container">
-      <div class="section-header centered">
-        <span class="section-label">The Process</span>
-        <h2 class="section-title" id="how-heading">How It Works</h2>
-        <p class="section-subtitle">Simple, direct, and built for serious importers. No registration required to enquire.</p>
-      </div>
-
-      <div class="steps-container">
-        <div class="step-block fade-in-up">
-          <div class="step-number">01</div>
-          <h3 class="step-title">Send Your Requirement</h3>
-          <p class="step-desc">Tell us your product, quantity (trial from 500 kg), destination port, and grade preference. No registration or commitment required to enquire.</p>
-        </div>
-
-        <div class="step-block fade-in-up">
-          <div class="step-number">02</div>
-          <h3 class="step-title">Receive Sample + Lab CoA</h3>
-          <p class="step-desc">We dispatch a free pre-shipment sample so you can verify quality with your own team or third-party lab — before any payment or commitment to bulk.</p>
-        </div>
-
-        <div class="step-block fade-in-up">
-          <div class="step-number">03</div>
-          <h3 class="step-title">Practical Quotation at Live Rates</h3>
-          <p class="step-desc">Once you're satisfied with the sample, we send a firm quotation grounded in current Unjha market rates — not inflated margins passed through intermediaries.</p>
-        </div>
-
-        <div class="step-block fade-in-up">
-          <div class="step-number">04</div>
-          <h3 class="step-title">We Handle the Rest</h3>
-          <p class="step-desc">From 500 kg trial to full container: lot photos, documentation, inspection, and shipment updates — all managed founder-direct.</p>
-        </div>
-      </div>
-
-      <div class="reassurance-tags">
-        <span class="reassurance-tag">✅ No commitment to enquire</span>
-        <span class="reassurance-tag">📦 Samples available before bulk</span>
-        <span class="reassurance-tag">📄 IEC &amp; compliance docs ready</span>
       </div>
     </div>
   </section>
@@ -913,8 +852,6 @@
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
 
   <script type="application/ld+json">

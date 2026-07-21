@@ -278,87 +278,74 @@ textarea:focus-visible,
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ============================================================
-   HERO SECTION — ScrollTrigger scrolltelling
+   HERO SECTION — video background, blurred-backdrop technique
    ============================================================ */
-.hero-scroll {
+.hero {
   position: relative;
-  height: 300vh;
-}
-
-.hero-bg {
-  position: sticky;
-  top: 0;
   height: 100vh;
   overflow: hidden;
-  background: linear-gradient(160deg, #0f2519 0%, #1a3a2a 25%, #1e2c18 45%, #2d1f0e 70%, #1B4332 100%);
+  background: #0f2519;
 }
 
-/* Stacked background images — GSAP crossfades between them */
-.hero-bg-img {
+/* Mobile fallback poster — hidden on desktop */
+.hero-poster {
+  display: none;
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  will-change: opacity;
+  z-index: 0;
 }
-#hbg-1 { z-index: 1; opacity: 1; }
-#hbg-2 { z-index: 2; opacity: 0; }
-#hbg-3 { z-index: 3; opacity: 0; }
 
-/* Permanent dark overlay */
-.hero-bg-overlay {
+/* Layer 1: same video blurred + darkened to fill wide frame */
+.hero-video-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.58);
-  z-index: 4;
-  pointer-events: none;
-}
-
-/* SVG grain texture */
-.hero-grain {
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: 0.042;
-  pointer-events: none;
-  z-index: 5;
-}
-
-/* Warm radial accent */
-.hero-radial {
-  position: absolute;
-  top: -20%;
-  right: -10%;
-  width: 70%;
-  height: 80%;
-  background: radial-gradient(ellipse, rgba(184,146,74,0.09) 0%, transparent 65%);
-  pointer-events: none;
-  z-index: 5;
-}
-
-/* Scene overlays — stacked inside sticky bg */
-.hero-scene {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 6;
-  pointer-events: none;
-  will-change: opacity;
-}
-#hscene-1 { opacity: 1; }
-#hscene-2 { opacity: 0; }
-#hscene-3 { opacity: 0; }
-
-.hero-scene-inner {
-  text-align: center;
-  padding: 6rem 1.5rem 3rem;
-  max-width: 880px;
   width: 100%;
-  pointer-events: auto;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(30px) brightness(0.6);
+  transform: scale(1.15);
+  z-index: 1;
+}
+
+/* Layer 2: sharp foreground — portrait video at natural aspect ratio, centred */
+.hero-video-fg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: auto;
+  z-index: 2;
+}
+
+/* Top-to-bottom gradient for text legibility at bottom-third */
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(0,0,0,0.08) 0%,
+    rgba(0,0,0,0.00) 25%,
+    rgba(0,0,0,0.30) 65%,
+    rgba(0,0,0,0.62) 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Text — bottom-third of hero */
+.hero-content {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 880px;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  z-index: 4;
+  text-align: center;
 }
 
 .hero-badge {
@@ -394,7 +381,7 @@ textarea:focus-visible,
 
 .hero-subtitle {
   font-size: clamp(0.95rem, 1.8vw, 1.15rem);
-  color: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,0.85);
   line-height: 1.78;
   margin-bottom: 2.5rem;
   max-width: 650px;
@@ -415,7 +402,7 @@ textarea:focus-visible,
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 7;
+  z-index: 4;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -440,40 +427,15 @@ textarea:focus-visible,
   50% { transform: rotate(45deg) translateY(7px); opacity: 0.9; }
 }
 
-/* Hero stat strip — flows below the 300vh hero scroll section */
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid rgba(255,255,255,0.09);
+/* Section fade-in — IntersectionObserver, fires once per section */
+.fade-section-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-.hero-stat {
-  padding: 1.35rem 2rem;
-  background: rgba(13,31,23,0.72);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-right: 1px solid rgba(255,255,255,0.07);
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.hero-stat:last-child { border-right: none; }
-.hero-stat-icon {
-  font-size: 1.65rem;
-  line-height: 1;
-  flex-shrink: 0;
-}
-.hero-stat-value {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 0.25rem;
-}
-.hero-stat-label {
-  font-size: 0.73rem;
-  color: rgba(255,255,255,0.6);
-  letter-spacing: 0.03em;
+.fade-section-content.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ============================================================
@@ -733,7 +695,31 @@ textarea:focus-visible,
 /* ============================================================
    HOW IT WORKS SECTION
    ============================================================ */
-.how-section { padding: 6rem 0; background: transparent; }
+.how-section {
+  padding: 6rem 0;
+  background: var(--primary);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.how-section .container { width: 100%; }
+.how-section .section-title { color: #F7F1E3; }
+.how-section .section-subtitle { color: rgba(247,241,227,0.8); }
+.how-section .step-title { color: #F7F1E3; }
+.how-section .step-desc { color: rgba(247,241,227,0.75); }
+.how-section .step-number {
+  background: rgba(184,146,74,0.22);
+  color: var(--accent);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.how-section .steps-container::before {
+  background: linear-gradient(90deg, var(--accent) 0%, rgba(247,241,227,0.12) 100%);
+}
+.how-section .reassurance-tag {
+  background: rgba(247,241,227,0.08);
+  border-color: rgba(247,241,227,0.2);
+  color: rgba(247,241,227,0.8);
+}
 .steps-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1644,15 +1630,13 @@ textarea:focus-visible,
   .nav-link::after { display: none; }
   .nav-link:hover { color: var(--accent); }
 
-  /* Hero — mobile static fallback */
-  .hero-scroll { height: auto; min-height: 100vh; }
-  .hero-bg { position: relative; top: auto; min-height: 100vh; }
-  .hero-scene-inner { padding: 7rem 1.5rem 3rem; }
-  #hscene-2, #hscene-3 { display: none; }
-  .hero-stats { grid-template-columns: 1fr; }
-  .hero-stat {
-    border-right: none;
-    border-top: 1px solid rgba(255,255,255,0.07);
+  /* Hero — mobile: hide video layers, show static poster */
+  .hero-video-backdrop, .hero-video-fg { display: none; }
+  .hero-poster { display: block; }
+  .hero-content {
+    bottom: auto;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
   }
   .scroll-indicator { display: none; }
   .hero-actions { flex-direction: column; align-items: center; }
@@ -1695,7 +1679,6 @@ textarea:focus-visible,
   .hero-title { font-size: 1.85rem; }
   .hero-badge { font-size: 0.7rem; padding: 0.4rem 0.9rem; }
   .nav-logo { font-size: 1.1rem; }
-  .hero-stat { padding: 1rem 1.25rem; }
   .quote-form { padding: 1.5rem; }
 }
 
@@ -2128,9 +2111,16 @@ details.faq-item[open] > .faq-answer { margin-top: 0.6rem; }
 .field-required { color: var(--accent); }
 
 /* ── Your First Order, De-Risked section ── */
-.derisked-section { padding: 5rem 0; background: var(--bg); }
+.derisked-section {
+  padding: 6rem 0;
+  background: #F7F1E3;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.derisked-section .container { width: 100%; }
 .derisked-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
-.derisked-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; display: flex; flex-direction: column; gap: 0.75rem; transition: box-shadow 0.25s, transform 0.25s; }
+.derisked-card { background: rgba(255,255,255,0.75); border: 1px solid rgba(27,67,50,0.12); border-radius: var(--radius); padding: 2rem; display: flex; flex-direction: column; gap: 0.75rem; transition: box-shadow 0.25s, transform 0.25s; }
 .derisked-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
 .derisked-icon { font-size: 1.75rem; line-height: 1; }
 .derisked-title { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--primary); }
