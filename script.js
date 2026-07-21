@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var current    = 0;
     var pouring    = false;
     var pourTimer  = null;
-    var MAX_P      = 16;
+    var MAX_P      = 28;
 
     function spawnParticle() {
       var marker = document.getElementById('jar-mouth-marker');
@@ -100,10 +100,10 @@ document.addEventListener('DOMContentLoaded', function () {
       var hRect = heroSect.getBoundingClientRect();
       var p = document.createElement('div');
       p.className = 'hero-pour-particle';
-      p.style.left = (mRect.left - hRect.left + (Math.random() - 0.5) * 12) + 'px';
-      p.style.top  = (mRect.top  - hRect.top  + (Math.random() - 0.5) * 6) + 'px';
-      p.style.setProperty('--dur', (0.85 + Math.random() * 0.45).toFixed(2) + 's');
-      p.style.setProperty('--dx',  (4 + Math.random() * 18).toFixed(1) + 'px');
+      p.style.left = (mRect.left - hRect.left + (Math.random() - 0.5) * 14) + 'px';
+      p.style.top  = (mRect.top  - hRect.top  + (Math.random() - 0.5) * 8) + 'px';
+      p.style.setProperty('--dur', (2.0 + Math.random() * 0.8).toFixed(2) + 's');
+      p.style.setProperty('--dx',  (-6 - Math.random() * 20).toFixed(1) + 'px');
       heroSect.appendChild(p);
       p.addEventListener('animationend', function () {
         if (p.parentNode) p.parentNode.removeChild(p);

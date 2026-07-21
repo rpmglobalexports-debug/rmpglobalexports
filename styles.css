@@ -411,41 +411,41 @@ textarea:focus-visible,
   opacity: 1;
 }
 
-/* Cylindrical jar (slide 1) — SVG carries the 60° tilt */
+/* Cylindrical jar (slide 1) — tilts left: mouth points down-left */
 .jar-svg {
-  width: clamp(110px, 13vw, 180px);
+  width: clamp(148px, 17vw, 240px);
   height: auto;
   filter: drop-shadow(0 14px 32px rgba(0,0,0,0.3));
-  transform: rotate(60deg);
+  transform: rotate(-60deg);
   transform-origin: center;
   display: block;
 }
 
 /* Bowl (slide 2) */
 .bowl-svg {
-  width: clamp(190px, 26vw, 360px);
+  width: clamp(250px, 34vw, 470px);
   height: auto;
   filter: drop-shadow(0 10px 28px rgba(0,0,0,0.22));
   display: block;
 }
 
-/* Pour animation particles */
+/* Pour animation particles — larger, travel most of the hero height */
 .hero-pour-particle {
   position: absolute;
-  width: 7px;
-  height: 11px;
+  width: 12px;
+  height: 18px;
   border-radius: 50%;
   background: #B8924A;
   pointer-events: none;
   z-index: 10;
   opacity: 0;
-  animation: pourFall var(--dur, 1s) ease-in forwards;
+  animation: pourFall var(--dur, 2.4s) ease-in forwards;
 }
 @keyframes pourFall {
   0%   { opacity: 0;   transform: translateY(0)     translateX(0); }
-  9%   { opacity: 0.9; }
-  82%  { opacity: 0.8; }
-  100% { opacity: 0;   transform: translateY(115px) translateX(var(--dx, 10px)); }
+  8%   { opacity: 0.9; }
+  82%  { opacity: 0.9; }
+  100% { opacity: 0;   transform: translateY(380px) translateX(var(--dx, -12px)); }
 }
 
 /* Scroll indicator */
