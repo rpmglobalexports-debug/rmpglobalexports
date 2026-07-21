@@ -1680,20 +1680,27 @@ textarea:focus-visible,
   .nav-link::after { display: none; }
   .nav-link:hover { color: var(--accent); }
 
-  /* Hero — mobile: single-column stack, exact viewport height */
-  .hero { flex-direction: column; align-items: flex-start; height: 100svh; min-height: 600px; }
+  /* Hero — mobile: single-column stack, at least full viewport height */
+  .hero { flex-direction: column; align-items: flex-start; height: auto; min-height: 100svh; }
   .hero-circle { width: 260px; height: 260px; bottom: -50px; right: -50px; }
   .hero-left { flex: none; width: 100%; padding: 5.5rem 1.5rem 2rem; gap: 2rem; }
-  .hero-right { display: none; }
+  .hero-right { flex: none; width: 100%; display: flex; justify-content: center; padding: 0 0 2rem; }
+  .jar-svg { width: clamp(90px, 28vw, 130px); }
   .hero-title { font-size: clamp(1.65rem, 6.5vw, 2.2rem); }
   .scroll-indicator { display: none; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
   .hero-actions .btn { width: 100%; max-width: 320px; justify-content: center; }
+  @keyframes pourFall {
+    0%   { opacity: 0;   transform: translateY(0)     translateX(0); }
+    8%   { opacity: 0.9; }
+    82%  { opacity: 0.9; }
+    100% { opacity: 0;   transform: translateY(150px) translateX(var(--dx, -12px)); }
+  }
 
   /* Pour-reveal — mobile: stack vertically, bowl below text */
   .pour-reveal-inner { flex-direction: column; align-items: flex-start; }
   .pour-reveal-text { flex: none; width: 100%; max-width: none; padding: 0 1.5rem 2rem; }
-  .pour-reveal-bowl-wrap { flex: none; width: 100%; padding: 0 1.5rem; justify-content: flex-start; }
+  .pour-reveal-bowl-wrap { flex: none; width: 100%; padding: 0 1.5rem; justify-content: center; align-items: center; }
   .bowl-svg-lg { width: 100%; max-width: 340px; margin: 0 auto; }
 
   /* Products */
@@ -2086,7 +2093,7 @@ textarea:focus-visible,
 
 @media (max-width: 768px) {
   .whatsapp-float {
-    bottom: 80px;
+    display: none;
   }
 }
 
@@ -2493,7 +2500,7 @@ details.faq-item[open] > .faq-answer { margin-top: 0.6rem; }
   .spec-capture-form input[type="email"],
   .btn-spec-send { width: 100%; }
   .cert-pdf-embed { height: 400px; }
-  .whatsapp-float { bottom: 76px; }
+  .whatsapp-float { display: none; }
 }
 
 /* ── Product Variant Use-Case Selector ─────────────────────── */
