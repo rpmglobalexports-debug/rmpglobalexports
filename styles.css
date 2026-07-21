@@ -282,7 +282,9 @@ textarea:focus-visible,
    ============================================================ */
 .hero {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 600px;
   background: #16362B;
   display: flex;
   align-items: center;
@@ -318,7 +320,6 @@ textarea:focus-visible,
   position: relative;
   z-index: 2;
   flex: 0 0 48%;
-  min-height: 360px;
   padding: 2rem 2rem 2rem 0;
   display: flex;
   align-items: center;
@@ -416,41 +417,28 @@ textarea:focus-visible,
   position: relative;
   background: #16362B;
   overflow: hidden;
-  padding: 5rem 0 0;
-}
-.pour-reveal-circle {
-  position: absolute;
-  width: clamp(280px, 38vw, 580px);
-  height: clamp(280px, 38vw, 580px);
-  background: #F7F1E3;
-  border-radius: 50%;
-  bottom: -22%;
-  right: -6%;
-  pointer-events: none;
-  z-index: 0;
+  padding: 2rem 0 0;
 }
 .pour-reveal-inner {
   position: relative;
   z-index: 2;
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 clamp(1.5rem, 5vw, 5rem);
   display: flex;
   align-items: flex-end;
-  gap: 4rem;
 }
 .pour-reveal-text {
-  flex: 0 0 50%;
-  padding-bottom: 4rem;
+  flex: 0 0 52%;
+  max-width: 600px;
+  padding: 3rem clamp(1.5rem, 3vw, 3rem) 4rem clamp(1.5rem, 5vw, 5rem);
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
 }
 .pour-reveal-bowl-wrap {
-  flex: 1;
+  flex: 0 0 48%;
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  padding: 0 2rem 0 0;
 }
 .bowl-svg-lg {
   width: clamp(260px, 36vw, 500px);
@@ -1692,8 +1680,8 @@ textarea:focus-visible,
   .nav-link::after { display: none; }
   .nav-link:hover { color: var(--accent); }
 
-  /* Hero — mobile: single-column stack */
-  .hero { flex-direction: column; align-items: flex-start; min-height: 100svh; }
+  /* Hero — mobile: single-column stack, exact viewport height */
+  .hero { flex-direction: column; align-items: flex-start; height: 100svh; min-height: 600px; }
   .hero-circle { width: 260px; height: 260px; bottom: -50px; right: -50px; }
   .hero-left { flex: none; width: 100%; padding: 5.5rem 1.5rem 2rem; gap: 2rem; }
   .hero-right { display: none; }
@@ -1703,9 +1691,9 @@ textarea:focus-visible,
   .hero-actions .btn { width: 100%; max-width: 320px; justify-content: center; }
 
   /* Pour-reveal — mobile: stack vertically, bowl below text */
-  .pour-reveal-inner { flex-direction: column; align-items: flex-start; gap: 2rem; }
-  .pour-reveal-text { flex: none; width: 100%; padding: 0 1.5rem 2rem; }
-  .pour-reveal-bowl-wrap { width: 100%; padding: 0 1.5rem; }
+  .pour-reveal-inner { flex-direction: column; align-items: flex-start; }
+  .pour-reveal-text { flex: none; width: 100%; max-width: none; padding: 0 1.5rem 2rem; }
+  .pour-reveal-bowl-wrap { flex: none; width: 100%; padding: 0 1.5rem; justify-content: flex-start; }
   .bowl-svg-lg { width: 100%; max-width: 340px; margin: 0 auto; }
 
   /* Products */
