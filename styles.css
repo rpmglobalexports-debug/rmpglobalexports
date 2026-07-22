@@ -278,63 +278,30 @@ textarea:focus-visible,
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ============================================================
-   HERO SECTION — green cutout, static jar + continuous pour
+   HERO SECTION — full-bleed product photo bg, text left
    ============================================================ */
 .hero {
   position: relative;
   height: 100vh;
   height: 100dvh;
   min-height: 600px;
-  background: #16362B;
   display: flex;
   align-items: center;
   overflow: hidden;
+  background:
+    linear-gradient(to right, rgba(22,54,43,0.93) 0%, rgba(22,54,43,0.70) 52%, rgba(22,54,43,0.22) 100%),
+    url('/images/cumin-hero.png') 65% center / cover no-repeat;
 }
 
-/* Constant cream circle — bottom-right, partially off-canvas */
-.hero-circle {
-  position: absolute;
-  width: clamp(380px, 50vw, 740px);
-  height: clamp(380px, 50vw, 740px);
-  background: #F7F1E3;
-  border-radius: 50%;
-  bottom: -18%;
-  right: -8%;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Two-column layout */
 .hero-left {
   position: relative;
   z-index: 2;
-  flex: 0 0 52%;
-  max-width: 600px;
+  flex: 0 0 55%;
+  max-width: 640px;
   padding: 1.5rem clamp(1.5rem, 3vw, 3rem) 5rem clamp(2rem, 5vw, 5rem);
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
-}
-
-.hero-right {
-  position: relative;
-  z-index: 2;
-  flex: 0 0 48%;
-  padding: 2rem 2rem 2rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-product-img {
-  width: clamp(260px, 36vw, 460px);
-  height: clamp(260px, 36vw, 460px);
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: 65% center;
-  display: block;
-  position: relative;
-  z-index: 2;
 }
 
 .hero-title {
@@ -1689,12 +1656,15 @@ textarea:focus-visible,
   /* Cert strip — mobile: larger top clearance for taller wrapped-tagline nav (~106px) */
   .cert-strip { padding-top: 8.5rem; }
 
-  /* Hero — mobile: single-column stack, at least full viewport height */
-  .hero { flex-direction: column; align-items: flex-start; height: auto; min-height: 100svh; }
-  .hero-circle { width: 260px; height: 260px; bottom: -50px; right: -50px; }
-  .hero-left { flex: none; width: 100%; padding: 1.5rem 1.5rem 2rem; gap: 1.5rem; }
-  .hero-right { flex: none; width: 100%; display: flex; justify-content: center; padding: 0 0 2rem; }
-  .hero-product-img { width: clamp(200px, 62vw, 300px); height: clamp(200px, 62vw, 300px); }
+  /* Hero — mobile: single-column, full viewport height, stronger overlay */
+  .hero {
+    height: auto;
+    min-height: 100svh;
+    background:
+      linear-gradient(rgba(22,54,43,0.88), rgba(22,54,43,0.82)),
+      url('/images/cumin-hero.png') 65% center / cover no-repeat;
+  }
+  .hero-left { flex: none; width: 100%; padding: 1.5rem 1.5rem 4rem; gap: 1.5rem; }
   .hero-title { font-size: clamp(1.65rem, 6.5vw, 2.2rem); }
   .scroll-indicator { display: none; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
