@@ -71,38 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
     fadeEls.forEach(el => observer.observe(el));
   }
 
-  /* ── Trust bar: duplicate content for seamless marquee ── */
-  const trustTrack = document.querySelector('.trust-track');
-  if (trustTrack) {
-    const wrapper = trustTrack.parentElement;
-    const clone = trustTrack.cloneNode(true);
-    wrapper.appendChild(clone);
-  }
-
-  /* ── Hero: continuous jar pour — seeds fall while hero is in view ── */
-  (function () {
-    var heroSect = document.getElementById('hero-section');
-    if (!heroSect) return;
-    var MAX_P = 28;
-    setInterval(function () {
-      var marker = document.getElementById('jar-mouth-marker');
-      if (!marker) return;
-      if (heroSect.querySelectorAll('.hero-pour-particle').length >= MAX_P) return;
-      var mRect = marker.getBoundingClientRect();
-      var hRect = heroSect.getBoundingClientRect();
-      var p = document.createElement('div');
-      p.className = 'hero-pour-particle';
-      p.style.left = (mRect.left - hRect.left + (Math.random() - 0.5) * 14) + 'px';
-      p.style.top  = (mRect.top  - hRect.top  + (Math.random() - 0.5) * 8) + 'px';
-      p.style.setProperty('--dur', (2.0 + Math.random() * 0.8).toFixed(2) + 's');
-      p.style.setProperty('--dx',  (-6 - Math.random() * 20).toFixed(1) + 'px');
-      heroSect.appendChild(p);
-      p.addEventListener('animationend', function () {
-        if (p.parentNode) p.parentNode.removeChild(p);
-      }, { once: true });
-    }, 200);
-  })();
-
   /* ── Section fade-in on scroll — one-time, no per-frame work ── */
   var fadeTargets = document.querySelectorAll('.fade-section-content');
   if (fadeTargets.length && 'IntersectionObserver' in window) {
@@ -199,47 +167,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
-
-/* ── Hero flow line: circular photo slots ── */
-var heroLinePhotos = [
-  { position: { bottom: '14%', left: '4%' },   image: null, label: 'Unjha Mandi' },
-  { position: { top: '38%',   left: '44%' },   image: null, label: 'Processing Unit' },
-  { position: { top: '10%',   right: '10%' },  image: null, label: 'Export Ready' },
-];
-
-(function () {
-  var container = document.getElementById('heroPhotoSlots');
-  if (!container) return;
-
-  heroLinePhotos.forEach(function (slot) {
-    var el = document.createElement('div');
-    el.className = 'hero-photo-slot';
-    Object.keys(slot.position).forEach(function (k) { el.style[k] = slot.position[k]; });
-
-    if (slot.image) {
-      var img = document.createElement('img');
-      img.src   = slot.image;
-      img.alt   = slot.label;
-      el.appendChild(img);
-    } else {
-      var ph = document.createElement('div');
-      ph.className = 'hero-photo-placeholder';
-      ph.innerHTML =
-        '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">' +
-          '<circle cx="12" cy="8" r="4"/>' +
-          '<path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>' +
-        '</svg>';
-      el.appendChild(ph);
-    }
-
-    var label = document.createElement('span');
-    label.className = 'hero-photo-label';
-    label.textContent = slot.label;
-    el.appendChild(label);
-
-    container.appendChild(el);
-  });
-})();
 
 /* ── Product variant use-case selector ── */
 (function() {
