@@ -304,64 +304,6 @@ textarea:focus-visible,
   z-index: 0;
 }
 
-/* Decorative flowing line + circular photo slots (background layer) */
-.hero-flow-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  overflow: hidden;
-}
-.hero-flow-svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-.hero-photo-slots {
-  position: absolute;
-  inset: 0;
-}
-.hero-photo-slot {
-  position: absolute;
-  width: 84px;
-  height: 84px;
-  border-radius: 50%;
-  overflow: visible;
-  border: 1.5px solid rgba(184,146,74,0.3);
-  background: rgba(247,241,227,0.06);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-}
-.hero-photo-slot img {
-  width: 84px;
-  height: 84px;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-}
-.hero-photo-placeholder {
-  width: 84px;
-  height: 84px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(184,146,74,0.4);
-}
-.hero-photo-label {
-  position: absolute;
-  bottom: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.58rem;
-  color: rgba(247,241,227,0.35);
-  white-space: nowrap;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  font-family: var(--font-body);
-}
-
 /* Two-column layout */
 .hero-left {
   position: relative;
@@ -382,6 +324,17 @@ textarea:focus-visible,
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hero-product-img {
+  width: clamp(260px, 36vw, 460px);
+  height: clamp(260px, 36vw, 460px);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 65% center;
+  display: block;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-title {
@@ -439,37 +392,8 @@ textarea:focus-visible,
   flex-wrap: wrap;
 }
 
-/* Cylindrical jar — tilts left: mouth points down-left */
-.jar-svg {
-  width: clamp(148px, 17vw, 240px);
-  height: auto;
-  filter: drop-shadow(0 14px 32px rgba(0,0,0,0.3));
-  transform: rotate(-60deg);
-  transform-origin: center;
-  display: block;
-}
-
-/* Pour animation particles — larger, travel most of the hero height */
-.hero-pour-particle {
-  position: absolute;
-  width: 12px;
-  height: 18px;
-  border-radius: 50%;
-  background: #B8924A;
-  pointer-events: none;
-  z-index: 10;
-  opacity: 0;
-  animation: pourFall var(--dur, 2.4s) ease-in forwards;
-}
-@keyframes pourFall {
-  0%   { opacity: 0;   transform: translateY(0)     translateX(0); }
-  8%   { opacity: 0.9; }
-  82%  { opacity: 0.9; }
-  100% { opacity: 0;   transform: translateY(380px) translateX(var(--dx, -12px)); }
-}
-
 /* ============================================================
-   POUR-REVEAL SECTION — green bg, content-sized, highlights + bowl
+   POUR-REVEAL SECTION — green bg, content-sized, highlights
    ============================================================ */
 .pour-reveal-section {
   position: relative;
@@ -481,28 +405,16 @@ textarea:focus-visible,
   position: relative;
   z-index: 2;
   display: flex;
-  align-items: flex-end;
+  justify-content: center;
 }
 .pour-reveal-text {
-  flex: 0 0 52%;
-  max-width: 600px;
-  padding: 3rem clamp(1.5rem, 3vw, 3rem) 4rem clamp(2rem, 5vw, 5rem);
+  flex: none;
+  width: 100%;
+  max-width: 680px;
+  padding: 3rem clamp(2rem, 5vw, 5rem) 4rem;
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
-}
-.pour-reveal-bowl-wrap {
-  flex: 0 0 48%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 0 2rem 0 0;
-}
-.bowl-svg-lg {
-  width: clamp(260px, 36vw, 500px);
-  height: auto;
-  filter: drop-shadow(0 10px 28px rgba(0,0,0,0.22));
-  display: block;
 }
 
 /* Scroll indicator */
@@ -1777,31 +1689,19 @@ textarea:focus-visible,
   /* Cert strip — mobile: larger top clearance for taller wrapped-tagline nav (~106px) */
   .cert-strip { padding-top: 8.5rem; }
 
-  /* Hero flow background — hide on mobile to keep layout clean */
-  .hero-flow-bg { display: none; }
-
   /* Hero — mobile: single-column stack, at least full viewport height */
   .hero { flex-direction: column; align-items: flex-start; height: auto; min-height: 100svh; }
   .hero-circle { width: 260px; height: 260px; bottom: -50px; right: -50px; }
   .hero-left { flex: none; width: 100%; padding: 1.5rem 1.5rem 2rem; gap: 1.5rem; }
   .hero-right { flex: none; width: 100%; display: flex; justify-content: center; padding: 0 0 2rem; }
-  .jar-svg { width: clamp(90px, 28vw, 130px); }
+  .hero-product-img { width: clamp(200px, 62vw, 300px); height: clamp(200px, 62vw, 300px); }
   .hero-title { font-size: clamp(1.65rem, 6.5vw, 2.2rem); }
   .scroll-indicator { display: none; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
   .hero-actions .btn { width: 100%; max-width: 320px; justify-content: center; }
-  @keyframes pourFall {
-    0%   { opacity: 0;   transform: translateY(0)     translateX(0); }
-    8%   { opacity: 0.9; }
-    82%  { opacity: 0.9; }
-    100% { opacity: 0;   transform: translateY(150px) translateX(var(--dx, -12px)); }
-  }
 
-  /* Pour-reveal — mobile: stack vertically, bowl below text */
-  .pour-reveal-inner { flex-direction: column; align-items: flex-start; }
-  .pour-reveal-text { flex: none; width: 100%; max-width: none; padding: 0 1.5rem 2rem; }
-  .pour-reveal-bowl-wrap { flex: none; width: 100%; padding: 0 1.5rem; justify-content: center; align-items: center; }
-  .bowl-svg-lg { width: 100%; max-width: 340px; margin: 0 auto; }
+  /* Pour-reveal — mobile: centered, full width */
+  .pour-reveal-text { padding: 0 1.5rem 2rem; }
 
   /* Products */
   .products-grid { grid-template-columns: 1fr; }
