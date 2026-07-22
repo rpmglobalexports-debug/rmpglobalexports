@@ -184,6 +184,12 @@
        HERO — green bg, headline left, product photo right
   ════════════════════════════════════════════ -->
   <section class="hero" id="hero-section" aria-label="Hero">
+    <!-- Slideshow background layers: JS crossfades between these -->
+    <div class="hero-bg" id="hero-bg-a" aria-hidden="true"></div>
+    <div class="hero-bg" id="hero-bg-b" aria-hidden="true"></div>
+    <!-- Directional scrim: dark-left → transparent-right, always above bg -->
+    <div class="hero-scrim" aria-hidden="true"></div>
+
     <!-- Left column: headline + subhead + CTAs -->
     <div class="hero-left">
       <div>
