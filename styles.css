@@ -554,25 +554,26 @@ textarea:focus-visible,
   background: #111A13;
   border-bottom: 1px solid rgba(184,146,74,0.2);
   padding-top: 5.75rem; /* clears fixed nav (~89px) on desktop */
-  overflow: hidden;
   z-index: 1;
 }
 .cert-track-wrapper {
-  overflow: hidden;
+  overflow: hidden;      /* clips content to viewport — the only overflow:hidden needed */
   padding: 0.85rem 0;
   user-select: none;
 }
 .cert-track {
   display: flex;
+  width: max-content;    /* key fix: sized by content, not parent; -50% = exactly one badge set */
   align-items: center;
-  white-space: nowrap;
-  flex-shrink: 0;
   will-change: transform;
-  animation: certScroll 32s linear infinite;
+  animation: certScroll 36s linear infinite;
 }
 @keyframes certScroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+.cert-strip:hover .cert-track {
+  animation-play-state: paused;
 }
 
 /* cs-badge: marquee-specific badge class (distinct from certifications.html .cert-badge pills) */
