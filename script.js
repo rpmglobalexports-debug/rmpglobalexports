@@ -200,37 +200,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-/* ── Cert marquee strip: badge data + DOM rendering ── */
-(function () {
-  var CERT_BADGES = [
-    { name: 'FSSAI', sub: 'Central License' },
-    { name: 'APEDA', sub: 'Psyllium Husk' },
-    { name: 'GST',   sub: 'Registered' },
-    { name: 'IEC',   sub: 'Import Export Code' },
-    // Spice Board (cumin) and IOPEPC (sesame) are pending as of July 2026 — add here once cleared.
-  ];
-
-  var track = document.getElementById('certTrack');
-  if (!track) return;
-
-  function makeBadge(b) {
-    var badge = document.createElement('span');
-    badge.className = 'cert-badge';
-    badge.innerHTML =
-      '<span class="cert-badge-icon">✓</span>' +
-      '<span class="cert-badge-text">' +
-        '<span class="cert-badge-name">' + b.name + '</span>' +
-        '<span class="cert-badge-sub">' + b.sub + '</span>' +
-      '</span>';
-    return badge;
-  }
-
-  // Render two identical sets so the -50% translateX loop is seamless
-  [0, 1].forEach(function () {
-    CERT_BADGES.forEach(function (b) { track.appendChild(makeBadge(b)); });
-  });
-})();
-
 /* ── Hero flow line: circular photo slots ── */
 var heroLinePhotos = [
   { position: { bottom: '14%', left: '4%' },   image: null, label: 'Unjha Mandi' },

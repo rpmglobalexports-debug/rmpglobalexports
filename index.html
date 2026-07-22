@@ -131,10 +131,52 @@
     </div>
   </nav>
 
-  <!-- CERT MARQUEE STRIP: auto-scrolling certification badges, populated by JS -->
+  <!-- CERT MARQUEE STRIP
+       Two identical badge sets for seamless -50% translateX loop.
+       To add a cert: copy one .cs-badge block into BOTH sets.
+       Pending: Spice Board (cumin) and IOPEPC (sesame) — add once cleared (July 2026+).
+  -->
   <div class="cert-strip" aria-label="Certifications and registrations" role="complementary">
     <div class="cert-track-wrapper">
-      <div class="cert-track" id="certTrack" aria-hidden="true"></div>
+      <div class="cert-track" aria-hidden="true">
+
+        <!-- ── Set A ── -->
+        <span class="cs-badge">
+          <span class="cs-icon"><!-- shield: FSSAI --><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <span class="cs-text"><span class="cs-name">FSSAI</span><span class="cs-sub">Central License</span></span>
+        </span>
+        <span class="cs-badge">
+          <span class="cs-icon"><!-- leaf: APEDA --><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+          <span class="cs-text"><span class="cs-name">APEDA</span><span class="cs-sub">Psyllium Husk</span></span>
+        </span>
+        <span class="cs-badge">
+          <span class="cs-icon"><!-- document: GST --><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+          <span class="cs-text"><span class="cs-name">GST</span><span class="cs-sub">Registered</span></span>
+        </span>
+        <span class="cs-badge">
+          <span class="cs-icon"><!-- globe: IEC --><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+          <span class="cs-text"><span class="cs-name">IEC</span><span class="cs-sub">Import Export Code</span></span>
+        </span>
+
+        <!-- ── Set B (identical — loop target) ── -->
+        <span class="cs-badge">
+          <span class="cs-icon"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <span class="cs-text"><span class="cs-name">FSSAI</span><span class="cs-sub">Central License</span></span>
+        </span>
+        <span class="cs-badge">
+          <span class="cs-icon"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+          <span class="cs-text"><span class="cs-name">APEDA</span><span class="cs-sub">Psyllium Husk</span></span>
+        </span>
+        <span class="cs-badge">
+          <span class="cs-icon"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+          <span class="cs-text"><span class="cs-name">GST</span><span class="cs-sub">Registered</span></span>
+        </span>
+        <span class="cs-badge">
+          <span class="cs-icon"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+          <span class="cs-text"><span class="cs-name">IEC</span><span class="cs-sub">Import Export Code</span></span>
+        </span>
+
+      </div>
     </div>
   </div>
 

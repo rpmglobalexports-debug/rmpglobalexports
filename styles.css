@@ -568,49 +568,51 @@ textarea:focus-visible,
   white-space: nowrap;
   flex-shrink: 0;
   will-change: transform;
-  animation: certScroll 30s linear infinite;
+  animation: certScroll 32s linear infinite;
 }
 @keyframes certScroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-.cert-badge {
+
+/* cs-badge: marquee-specific badge class (distinct from certifications.html .cert-badge pills) */
+.cs-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  margin-right: 3.5rem;
+  gap: 0.6rem;
+  margin-right: 4rem;
   flex-shrink: 0;
 }
-.cert-badge-icon {
-  width: 28px;
-  height: 28px;
+.cs-icon {
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background: rgba(184,146,74,0.12);
-  border: 1px solid rgba(184,146,74,0.35);
-  display: flex;
+  background: rgba(184,146,74,0.1);
+  border: 1px solid rgba(184,146,74,0.3);
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.85rem;
-  color: #B8924A;
+  color: #C6A15B;
   flex-shrink: 0;
 }
-.cert-badge-text {
+.cs-text {
   display: flex;
   flex-direction: column;
 }
-.cert-badge-name {
-  font-size: 0.75rem;
+.cs-name {
+  font-size: 0.74rem;
   font-weight: 600;
-  color: rgba(247,241,227,0.9);
-  letter-spacing: 0.04em;
+  color: rgba(247,241,227,0.88);
+  letter-spacing: 0.05em;
   line-height: 1.2;
+  text-transform: uppercase;
 }
-.cert-badge-sub {
-  font-size: 0.62rem;
+.cs-sub {
+  font-size: 0.6rem;
   font-weight: 400;
-  color: rgba(247,241,227,0.42);
+  color: rgba(247,241,227,0.4);
   letter-spacing: 0.02em;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
 /* ============================================================
