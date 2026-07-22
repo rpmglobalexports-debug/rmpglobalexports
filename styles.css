@@ -1166,6 +1166,7 @@ textarea:focus-visible,
 }
 .footer-copy { font-size: 0.76rem; color: rgba(255,255,255,0.32); }
 .footer-reg { font-size: 0.74rem; color: rgba(255,255,255,0.28); letter-spacing: 0.02em; }
+.footer-export-note { font-size: 0.74rem; color: rgba(255,255,255,0.28); letter-spacing: 0.02em; }
 
 /* ============================================================
    PRODUCT PAGES

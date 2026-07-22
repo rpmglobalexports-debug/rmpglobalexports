@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ── Subtle scroll-triggered background tone shift (warm white ↔ light sage) ── */
   const toneSections = document.querySelectorAll(
-    '.products-section, .sourcing-section, .how-section, .markets-section, .faq-section, ' +
+    '.products-section, .sourcing-section, .how-section, .faq-section, ' +
     '.certs-section, .story-section, .founders-section, .blog-section, .product-content, ' +
     '.related-products, .article-shell'
   );
@@ -239,84 +239,6 @@ var heroLinePhotos = [
 
     container.appendChild(el);
   });
-})();
-
-/* ── Get Today's Rate Widget ── */
-const RATE_GRADES = {
-  psyllium: ['Food Grade (85%)', 'Food Grade (95%)', 'Pharma Grade (98–99%)'],
-  cumin:    ['FAQ Grade', 'Europe Quality (99%)', 'Singapore Quality (99.5%)'],
-  sesame:   ['Natural White', 'Hulled (Double Sortex)', 'Black Sesame']
-};
-
-(function () {
-  const estProduct = document.getElementById('est-product');
-  const estGrade   = document.getElementById('est-grade');
-  const estQty     = document.getElementById('est-qty');
-  const estResult  = document.getElementById('estimator-result');
-  if (!estProduct || !estGrade || !estQty || !estResult) return;
-
-  const PRODUCT_NAMES = { psyllium: 'Psyllium Husk', cumin: 'Cumin Seeds', sesame: 'Sesame Seeds' };
-
-  function updateGrades() {
-    const p = estProduct.value;
-    estGrade.innerHTML = '';
-    if (!p || !RATE_GRADES[p]) {
-      estGrade.innerHTML = '<option value="">Select product first</option>';
-      estGrade.disabled = true;
-    } else {
-      estGrade.disabled = false;
-      estGrade.innerHTML = '<option value="">Choose grade</option>';
-      RATE_GRADES[p].forEach(function(g) {
-        const o = document.createElement('option');
-        o.value = g; o.textContent = g;
-        estGrade.appendChild(o);
-      });
-    }
-    renderResult();
-  }
-
-  function renderResult() {
-    const p   = estProduct.value;
-    const g   = estGrade.value;
-    const qty = parseFloat(estQty.value);
-
-    if (!p || !g) {
-      estResult.innerHTML = '<div class="estimator-placeholder">Select product and grade above to get today\'s rate</div>';
-      return;
-    }
-
-    const productName = PRODUCT_NAMES[p] || p;
-    const qtyText     = (qty > 0) ? qty + ' MT ' : '';
-    const summary     = qtyText + productName + ', ' + g + ', FOB Mundra';
-    const waMsg       = 'Hi, requesting today\'s rate for ' + qtyText + productName + ', ' + g + ', FOB Mundra.';
-    const waUrl       = 'https://wa.me/917265097308?text=' + encodeURIComponent(waMsg);
-
-    estResult.innerHTML =
-      '<div class="rate-confirmation">' +
-        '<p class="rate-confirmation-text">Get today\'s FOB Mundra rate for <strong>' + summary + '</strong> — response within 24 hours.</p>' +
-        '<div class="rate-confirmation-actions">' +
-          '<a href="' + waUrl + '" target="_blank" rel="noopener" class="btn-wa-rate">WhatsApp →</a>' +
-          '<button type="button" class="btn btn-primary btn-rate-form" style="font-size:0.9rem;padding:0.6rem 1.4rem;">Email / Quote Form →</button>' +
-        '</div>' +
-      '</div>';
-
-    estResult.querySelector('.btn-rate-form').addEventListener('click', function(e) {
-      e.preventDefault();
-      const quoteProduct = document.getElementById('product');
-      const quoteMessage = document.getElementById('message');
-      if (quoteProduct) {
-        Array.from(quoteProduct.options).forEach(function(opt) { opt.selected = (opt.value === productName); });
-      }
-      if (quoteMessage) {
-        quoteMessage.value = 'Requesting today\'s FOB Mundra rate for ' + qtyText + productName + ', ' + g + '.';
-      }
-      document.getElementById('quote').scrollIntoView({ behavior: 'smooth' });
-    });
-  }
-
-  estProduct.addEventListener('change', updateGrades);
-  estGrade.addEventListener('change', renderResult);
-  estQty.addEventListener('input', renderResult);
 })();
 
 /* ── Product variant use-case selector ── */
