@@ -278,7 +278,7 @@ textarea:focus-visible,
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ============================================================
-   HERO SECTION — full-bleed product photo bg, text left
+   HERO SECTION — crossfade product photo bg, directional scrim
    ============================================================ */
 .hero {
   position: relative;
@@ -288,9 +288,28 @@ textarea:focus-visible,
   display: flex;
   align-items: center;
   overflow: hidden;
-  background:
-    linear-gradient(to right, rgba(22,54,43,0.93) 0%, rgba(22,54,43,0.70) 52%, rgba(22,54,43,0.22) 100%),
-    url('/images/cumin-hero.png') 65% center / cover no-repeat;
+  background: #0D1F17; /* fallback while images load */
+}
+
+/* Two bg layers — JS swaps opacity to crossfade between images */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: 62% center;
+  background-repeat: no-repeat;
+  transition: opacity 1s ease;
+  will-change: opacity;
+  z-index: 0;
+}
+
+/* Scrim: dark (#16362B) on left → transparent at 58% — no green tint on right */
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to right, rgba(22,54,43,0.78) 0%, rgba(22,54,43,0) 58%);
 }
 
 .hero-left {
@@ -1656,14 +1675,10 @@ textarea:focus-visible,
   /* Cert strip — mobile: larger top clearance for taller wrapped-tagline nav (~106px) */
   .cert-strip { padding-top: 8.5rem; }
 
-  /* Hero — mobile: single-column, full viewport height, stronger overlay */
-  .hero {
-    height: auto;
-    min-height: 100svh;
-    background:
-      linear-gradient(rgba(22,54,43,0.88), rgba(22,54,43,0.82)),
-      url('/images/cumin-hero.png') 65% center / cover no-repeat;
-  }
+  /* Hero — mobile: single-column, full viewport height */
+  .hero { height: auto; min-height: 100svh; }
+  /* Scrim goes uniform on mobile — full overlay for text readability */
+  .hero-scrim { background: rgba(22,54,43,0.76); }
   .hero-left { flex: none; width: 100%; padding: 1.5rem 1.5rem 4rem; gap: 1.5rem; }
   .hero-title { font-size: clamp(1.65rem, 6.5vw, 2.2rem); }
   .scroll-indicator { display: none; }
