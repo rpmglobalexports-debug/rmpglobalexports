@@ -42,6 +42,10 @@
 
   <link rel="stylesheet" href="styles.css" />
 
+  <!-- Preload hero image (LCP) — browser fetches before JS runs -->
+  <link rel="preload" as="image" href="/images/cumin-hero.webp" type="image/webp" media="(min-width: 961px)" fetchpriority="high">
+  <link rel="preload" as="image" href="/images/cumin-hero-960.webp" type="image/webp" media="(max-width: 960px)" fetchpriority="high">
+
   <!-- JSON-LD: Organization + ItemList -->
   <script type="application/ld+json">
   {
@@ -185,8 +189,17 @@
   ════════════════════════════════════════════ -->
   <section class="hero" id="hero-section" aria-label="Hero">
     <!-- Slideshow background layers: JS crossfades between these -->
-    <div class="hero-bg" id="hero-bg-a" aria-hidden="true"></div>
-    <div class="hero-bg" id="hero-bg-b" aria-hidden="true"></div>
+    <div class="hero-bg" id="hero-bg-a" aria-hidden="true">
+      <picture>
+        <source media="(max-width: 960px)" srcset="/images/cumin-hero-960.webp" type="image/webp">
+        <img src="/images/cumin-hero.webp" alt="" width="1672" height="941"
+             loading="eager" fetchpriority="high" decoding="async" class="hero-bg-img">
+      </picture>
+    </div>
+    <div class="hero-bg" id="hero-bg-b" aria-hidden="true">
+      <img src="/images/sesame-hero.webp" alt="" width="1672" height="941"
+           loading="lazy" decoding="async" class="hero-bg-img">
+    </div>
     <!-- Directional scrim: dark-left → transparent-right, always above bg -->
     <div class="hero-scrim" aria-hidden="true"></div>
 
@@ -272,7 +285,7 @@
           <div class="sourcing-quote-card">
             <p class="sourcing-quote-text">"Importers get pricing grounded in reality — not inflated by middlemen. We visit Unjha market so we know what's available, at what quality, and at what price."</p>
             <div class="sourcing-quote-attribution">
-              <img src="/images/rudra.webp" alt="Rudra Jani" class="sourcing-quote-avatar">
+              <img src="/images/rudra.webp" alt="Rudra Jani" class="sourcing-quote-avatar" loading="lazy">
               <span class="sourcing-quote-author">— Rudra Jani, Co-Founder · Sourcing</span>
             </div>
           </div>
@@ -280,7 +293,7 @@
           <div class="sourcing-quote-card">
             <p class="sourcing-quote-text">"Every enquiry I answer myself. No sales team, no account managers — if you email us, you're talking to someone who can actually make the call."</p>
             <div class="sourcing-quote-attribution">
-              <img src="/images/meet.webp" alt="Meet Jani" class="sourcing-quote-avatar">
+              <img src="/images/meet.webp" alt="Meet Jani" class="sourcing-quote-avatar" loading="lazy">
               <span class="sourcing-quote-author">— Meet Jani, Co-Founder · Business Development</span>
             </div>
           </div>
@@ -301,10 +314,11 @@
           <p class="section-subtitle">Simple, direct, and built for serious importers. No registration required to enquire.</p>
         </div>
         <div class="steps-container">
-          <svg class="how-connector-svg" aria-hidden="true" viewBox="0 0 800 50" preserveAspectRatio="none">
-            <path d="M 0 25 C 100 8, 200 42, 400 25 S 600 8, 800 25"
-                  fill="none" stroke="#C6A15B" stroke-width="3"
-                  stroke-dasharray="1 14" stroke-linecap="round"
+          <svg class="how-connector-svg" aria-hidden="true" viewBox="0 0 800 80" preserveAspectRatio="none">
+            <path class="how-connector-path"
+                  d="M 0 40 C 67 5, 200 5, 267 40 C 333 75, 467 75, 533 40 C 600 5, 733 5, 800 40"
+                  fill="none" stroke="#C6A15B" stroke-width="2.5"
+                  stroke-linecap="round" stroke-dasharray="0.1 12"
                   vector-effect="non-scaling-stroke"/>
           </svg>
           <div class="step-block">

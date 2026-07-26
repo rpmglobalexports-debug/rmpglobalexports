@@ -1,36 +1,16 @@
 /* RPM Global Exports — Main Script */
 
-/* ── Hero background slideshow — add images here to extend the rotation ── */
+/* ── Hero background slideshow — images defined in HTML, JS only toggles opacity ── */
 (function () {
-  var IMAGES = [
-    '/images/cumin-hero.png',
-    '/images/sesame-hero.webp'
-  ];
-  var HOLD_MS = 6000; /* each image holds for 6 s */
-
+  var HOLD_MS = 6000;
   var bgA = document.getElementById('hero-bg-a');
   var bgB = document.getElementById('hero-bg-b');
-  if (!bgA || !bgB || IMAGES.length < 2) {
-    /* single image or missing elements — just set the background statically */
-    if (bgA && IMAGES.length) bgA.style.backgroundImage = 'url(' + IMAGES[0] + ')';
-    return;
-  }
-
-  /* Preload every image so the first crossfade doesn't stall */
-  IMAGES.forEach(function (src) { (new Image()).src = src; });
-
-  /* Init: first image visible on layer A */
-  bgA.style.backgroundImage = 'url(' + IMAGES[0] + ')';
+  if (!bgA || !bgB) return;
   bgA.style.opacity = '1';
   bgB.style.opacity = '0';
-
-  var cur   = 0;
-  var front = bgA; /* currently visible */
-  var back  = bgB; /* hidden, loads next */
-
+  var front = bgA;
+  var back  = bgB;
   setInterval(function () {
-    cur = (cur + 1) % IMAGES.length;
-    back.style.backgroundImage = 'url(' + IMAGES[cur] + ')';
     back.style.opacity  = '1';
     front.style.opacity = '0';
     var tmp = front; front = back; back = tmp;
