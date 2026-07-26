@@ -31,14 +31,13 @@
 
 /* --- Reset --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
 body {
   font-family: var(--font-body);
   color: var(--text);
   background-color: var(--tone-a);
   transition: background-color 1.2s ease;
   line-height: 1.6;
-  overflow-x: hidden;
 }
 /* Subtle scroll-triggered tone shift (warm white ↔ light sage) — see script.js */
 body.tone-b { background-color: var(--tone-b); }
