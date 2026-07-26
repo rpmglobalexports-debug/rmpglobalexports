@@ -276,6 +276,20 @@ textarea:focus-visible,
 .hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* Light-page variant — no dark hero behind nav; force white/scrolled state from load */
+body.light-page .nav {
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 24px rgba(0,0,0,0.08);
+  padding: 0.9rem 0;
+}
+body.light-page .nav .nav-link { color: var(--text); }
+body.light-page .nav .nav-link:hover { color: var(--primary); }
+body.light-page .nav .nav-logo-text { color: var(--primary); }
+body.light-page .nav .hamburger span { background: var(--text); }
+body.light-page .certs-section { padding-top: 7.5rem; }
+
 /* ============================================================
    HERO SECTION — crossfade product photo bg, directional scrim
    ============================================================ */
@@ -740,9 +754,7 @@ textarea:focus-visible,
   color: var(--accent);
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
-.how-section .steps-container::before {
-  background: linear-gradient(90deg, var(--accent) 0%, rgba(247,241,227,0.12) 100%);
-}
+.how-section .steps-container::before { content: none; }
 .how-section .reassurance-tag {
   background: rgba(247,241,227,0.08);
   border-color: rgba(247,241,227,0.2);
@@ -755,16 +767,19 @@ textarea:focus-visible,
   position: relative;
   margin-top: 3.5rem;
 }
-.steps-container::before {
-  content: '';
+.steps-container::before { content: none; }
+.how-connector-svg {
   position: absolute;
-  top: 2.5rem;
+  top: 1rem;
   left: 12.5%;
-  right: 12.5%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent) 0%, var(--primary) 100%);
-  opacity: 0.28;
+  width: 75%;
+  height: 50px;
   z-index: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+@media (max-width: 768px) {
+  .how-connector-svg { display: none; }
 }
 .step-block {
   text-align: center;
