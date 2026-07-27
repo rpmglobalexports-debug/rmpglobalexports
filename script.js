@@ -135,6 +135,20 @@ document.addEventListener('DOMContentLoaded', function () {
     heroObserver.observe(hero);
   }
 
+  /* ── GA4: contact click tracking (email + WhatsApp) ── */
+  if (typeof gtag === 'function') {
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        gtag('event', 'contact_click', { method: 'email' });
+      });
+    });
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        gtag('event', 'contact_click', { method: 'whatsapp' });
+      });
+    });
+  }
+
   /* ── Spec sheet capture form: Formspree AJAX ── */
   const specForm = document.querySelector('.spec-capture-form');
   const specSuccess = document.getElementById('spec-capture-success');
@@ -148,6 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
           headers: { 'Accept': 'application/json' }
         });
         if (res.ok) {
+          if (typeof gtag === 'function') gtag('event', 'form_submit', { form_name: 'spec_sheet_request' });
           specForm.style.display = 'none';
           specSuccess.style.display = 'block';
         } else {
@@ -172,6 +187,7 @@ document.addEventListener('DOMContentLoaded', function () {
           headers: { 'Accept': 'application/json' }
         });
         if (res.ok) {
+          if (typeof gtag === 'function') gtag('event', 'form_submit', { form_name: 'quote_request' });
           quoteForm.style.display = 'none';
           quoteSuccess.style.display = 'block';
         } else {
