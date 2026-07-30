@@ -1112,12 +1112,12 @@ body.light-page .certs-section { padding-top: 7.5rem; }
 .product-hero.sesame {
   background:
     linear-gradient(160deg, rgba(12,6,0,0.85) 0%, rgba(70,35,10,0.6) 100%),
-    url('../images/sesame-banner.png') center/cover no-repeat;
+    url('../images/sesame-banner.webp') center/cover no-repeat;
 }
 .product-hero.cumin {
   background:
     linear-gradient(160deg, rgba(10,5,0,0.88) 0%, rgba(55,22,5,0.65) 100%),
-    url('../images/cumin-banner.png') center/cover no-repeat;
+    url('../images/cumin-banner.webp') center/cover no-repeat;
 }
 .product-hero.psyllium {
   background:
