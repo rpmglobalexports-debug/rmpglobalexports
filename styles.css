@@ -774,28 +774,18 @@ body.light-page .certs-section { padding-top: 7.5rem; }
   margin-top: 3.5rem;
 }
 .steps-container::before { content: none; }
-.how-connector-svg {
+.step-gap {
   position: absolute;
-  top: 0;
-  left: 12.5%;
-  width: 75%;
-  height: 80px;
-  z-index: 0;
+  height: 0;
+  top: calc(2.5rem - 1px);
+  border-top: 2px dashed rgba(198,161,91,0.5);
   pointer-events: none;
-  overflow: visible;
 }
-@keyframes flow-dots {
-  to { stroke-dashoffset: -12.1; }
-}
-.how-connector-path {
-  stroke-dashoffset: 0;
-  animation: flow-dots 20s linear infinite;
-}
-@media (prefers-reduced-motion: reduce) {
-  .how-connector-path { animation: none; }
-}
+.step-gap-1 { left: calc(12.5% + 1.75rem); right: calc(62.5% + 2.75rem); }
+.step-gap-2 { left: calc(37.5% + 2.25rem); right: calc(37.5% + 2.25rem); }
+.step-gap-3 { left: calc(62.5% + 2.75rem); right: calc(12.5% + 1.75rem); }
 @media (max-width: 768px) {
-  .how-connector-svg { display: none; }
+  .step-gap { display: none; }
 }
 .step-block {
   text-align: center;
