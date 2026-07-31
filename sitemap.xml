@@ -125,6 +125,20 @@
     <priority>0.80</priority>
   </url>
 
+  <url>
+    <loc>https://rpmglobalexports.com/blogs/psyllium/psyllium-husk-hs-code-guide.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://rpmglobalexports.com/blogs/psyllium/isabgol-vs-psyllium-husk.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
   <!-- Blog posts — sesame -->
   <url>
     <loc>https://rpmglobalexports.com/blogs/sesame/indian-sesame-seeds-exporter.html</loc>
@@ -143,6 +157,13 @@
   <url>
     <loc>https://rpmglobalexports.com/blogs/sesame/sesame-seeds-canadian-buyers.html</loc>
     <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://rpmglobalexports.com/blogs/sesame/sesame-seeds-hs-code-guide.html</loc>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -182,6 +203,13 @@
     <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://rpmglobalexports.com/blogs/cumin/cumin-seeds-hs-code-guide.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <!-- Blog posts — trade guides -->
