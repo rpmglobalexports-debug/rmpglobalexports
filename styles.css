@@ -1112,12 +1112,12 @@ body.light-page .certs-section { padding-top: 7.5rem; }
 .product-hero.sesame {
   background:
     linear-gradient(160deg, rgba(12,6,0,0.85) 0%, rgba(70,35,10,0.6) 100%),
-    url('../images/sesame-banner.png') center/cover no-repeat;
+    url('../images/sesame-banner.webp') center/cover no-repeat;
 }
 .product-hero.cumin {
   background:
     linear-gradient(160deg, rgba(10,5,0,0.88) 0%, rgba(55,22,5,0.65) 100%),
-    url('../images/cumin-banner.png') center/cover no-repeat;
+    url('../images/cumin-banner.webp') center/cover no-repeat;
 }
 .product-hero.psyllium {
   background:
@@ -2178,6 +2178,103 @@ details.faq-item[open] > .faq-answer { margin-top: 0.6rem; }
 /* ── Grade Comparison Table ── */
 .grade-section { padding: 3rem 0 0; }
 .grade-table th:not(:first-child), .grade-table td:not(:first-child) { text-align: center; }
+
+/* ── Quick Procurement Snapshot ── */
+.procurement-snapshot {
+  background: var(--surface);
+  border: 1.5px solid rgba(198,161,91,0.35);
+  border-radius: var(--radius);
+  padding: 1.75rem 2.25rem;
+  margin: 2.5rem 0;
+}
+.procurement-snapshot-title {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 1.25rem;
+}
+.snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  gap: 1rem 2rem;
+}
+.snapshot-item { display: flex; flex-direction: column; gap: 0.2rem; }
+.snapshot-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.snapshot-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary);
+  line-height: 1.45;
+}
+
+/* ── Documents Included With Shipment ── */
+.documents-section { margin: 3rem 0; }
+.documents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.6rem 1.5rem;
+  margin-top: 1rem;
+}
+.document-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+.document-item::before {
+  content: "✓";
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ── Typical Procurement Process ── */
+.process-section { margin: 3rem 0 2rem; }
+.process-steps {
+  counter-reset: proc-step;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.process-step {
+  counter-increment: proc-step;
+  display: grid;
+  grid-template-columns: 2.25rem 1fr;
+  align-items: start;
+  gap: 0.9rem;
+}
+.process-step::before {
+  content: counter(proc-step);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  background: rgba(198,161,91,0.1);
+  border: 1.5px solid rgba(198,161,91,0.4);
+  border-radius: 50%;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.82rem;
+  flex-shrink: 0;
+}
+.process-step p { font-size: 0.95rem; color: var(--text); line-height: 1.55; margin: 0; padding-top: 0.25rem; }
+.process-step strong { color: var(--primary); }
 
 /* ── Optional form fields ── */
 .form-optional { margin-bottom: 1.25rem; }
