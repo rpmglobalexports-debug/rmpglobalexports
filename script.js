@@ -3,17 +3,18 @@
 /* ── Hero background slideshow — images defined in HTML, JS only toggles opacity ── */
 (function () {
   var HOLD_MS = 6000;
-  var bgA = document.getElementById('hero-bg-a');
-  var bgB = document.getElementById('hero-bg-b');
-  if (!bgA || !bgB) return;
-  bgA.style.opacity = '1';
-  bgB.style.opacity = '0';
-  var front = bgA;
-  var back  = bgB;
+  var slides = [
+    document.getElementById('hero-bg-a'),
+    document.getElementById('hero-bg-b'),
+    document.getElementById('hero-bg-c')
+  ];
+  if (!slides[0] || !slides[1] || !slides[2]) return;
+  var current = 0;
+  slides.forEach(function (s, i) { s.style.opacity = i === 0 ? '1' : '0'; });
   setInterval(function () {
-    back.style.opacity  = '1';
-    front.style.opacity = '0';
-    var tmp = front; front = back; back = tmp;
+    slides[current].style.opacity = '0';
+    current = (current + 1) % slides.length;
+    slides[current].style.opacity = '1';
   }, HOLD_MS);
 })();
 

@@ -43,8 +43,7 @@
   <link rel="stylesheet" href="styles.css" />
 
   <!-- Preload hero image (LCP) — browser fetches before JS runs -->
-  <link rel="preload" as="image" href="/images/cumin-hero.webp" type="image/webp" media="(min-width: 961px)" fetchpriority="high">
-  <link rel="preload" as="image" href="/images/cumin-hero-960.webp" type="image/webp" media="(max-width: 960px)" fetchpriority="high">
+  <link rel="preload" as="image" href="/images/psyllium-hero.webp" type="image/webp" fetchpriority="high">
 
   <!-- JSON-LD: Organization + ItemList -->
   <script type="application/ld+json">
@@ -190,13 +189,17 @@
   <section class="hero" id="hero-section" aria-label="Hero">
     <!-- Slideshow background layers: JS crossfades between these -->
     <div class="hero-bg" id="hero-bg-a" aria-hidden="true">
+      <img src="/images/psyllium-hero.webp" alt="" width="1376" height="768"
+           loading="eager" fetchpriority="high" decoding="async" class="hero-bg-img">
+    </div>
+    <div class="hero-bg" id="hero-bg-b" aria-hidden="true">
       <picture>
         <source media="(max-width: 960px)" srcset="/images/cumin-hero-960.webp" type="image/webp">
         <img src="/images/cumin-hero.webp" alt="" width="1672" height="941"
-             loading="eager" fetchpriority="high" decoding="async" class="hero-bg-img">
+             loading="lazy" decoding="async" class="hero-bg-img">
       </picture>
     </div>
-    <div class="hero-bg" id="hero-bg-b" aria-hidden="true">
+    <div class="hero-bg" id="hero-bg-c" aria-hidden="true">
       <img src="/images/sesame-hero.webp" alt="" width="1672" height="941"
            loading="lazy" decoding="async" class="hero-bg-img">
     </div>
