@@ -191,6 +191,14 @@
     <priority>0.80</priority>
   </url>
 
+  <!-- Blog posts — guides -->
+  <url>
+    <loc>https://rpmglobalexports.com/blogs/guides/psyllium-husk-hs-code.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
   <!-- Blog posts — trade guides -->
   <url>
     <loc>https://rpmglobalexports.com/blogs/trade-guides/fob-vs-cif-explained.html</loc>
