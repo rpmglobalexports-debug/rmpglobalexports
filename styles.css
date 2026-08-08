@@ -1694,8 +1694,9 @@ body.light-page .certs-section { padding-top: 7.5rem; }
   .nav-link::after { display: none; }
   .nav-link:hover { color: var(--primary); }
 
-  /* Cert strip — mobile: larger top clearance for taller wrapped-tagline nav (~106px) */
-  .cert-strip { padding-top: 8.5rem; overflow: hidden; }
+  /* Cert strip — padding-top synced to nav height via --nav-h (set in script.js).
+     Fallback of 8.5rem covers the rare case JS hasn't run yet. */
+  .cert-strip { padding-top: var(--nav-h, 8.5rem); overflow: hidden; }
 
   /* Hero — mobile: single-column, full viewport height */
   .hero { height: auto; min-height: 100svh; align-items: flex-start; }

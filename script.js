@@ -28,6 +28,16 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+
+    /* ── Sync --nav-h so cert-strip padding always clears the nav ──
+       Nav height varies with viewport width (tagline wraps at narrow sizes).
+       Setting a CSS custom property lets the cert-strip stay in sync without
+       hardcoded pixel values that break when content or breakpoints change. */
+    const setNavHeight = () => {
+      document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+    };
+    setNavHeight();
+    window.addEventListener('resize', setNavHeight, { passive: true });
   }
 
   /* ── Hamburger menu toggle ── */
