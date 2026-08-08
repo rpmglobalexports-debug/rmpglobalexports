@@ -1676,7 +1676,7 @@ body.light-page .certs-section { padding-top: 7.5rem; }
     right: -100%;
     width: 280px;
     height: 100vh;
-    background: var(--primary-dark);
+    background: #F5F1EC;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
@@ -1684,21 +1684,21 @@ body.light-page .certs-section { padding-top: 7.5rem; }
     gap: 1.5rem;
     transition: right 0.35s ease;
     z-index: 1000;
-    box-shadow: -10px 0 40px rgba(0,0,0,0.3);
+    box-shadow: -10px 0 40px rgba(0,0,0,0.15);
   }
   .nav-links.open { right: 0; }
   .nav-link {
-    color: rgba(255,255,255,0.88);
+    color: var(--text);
     font-size: 1.05rem;
   }
   .nav-link::after { display: none; }
-  .nav-link:hover { color: var(--accent); }
+  .nav-link:hover { color: var(--primary); }
 
   /* Cert strip — mobile: larger top clearance for taller wrapped-tagline nav (~106px) */
-  .cert-strip { padding-top: 8.5rem; }
+  .cert-strip { padding-top: 8.5rem; overflow: hidden; }
 
   /* Hero — mobile: single-column, full viewport height */
-  .hero { height: auto; min-height: 100svh; }
+  .hero { height: auto; min-height: 100svh; align-items: flex-start; }
   /* Scrim goes uniform on mobile — full overlay for text readability */
   .hero-scrim { background: rgba(22,54,43,0.76); }
   .hero-left { flex: none; width: 100%; padding: 1.5rem 1.5rem 4rem; gap: 1.5rem; }
@@ -2166,6 +2166,15 @@ details.faq-item[open] > .faq-answer { margin-top: 0.6rem; }
 .blog-preview-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
 .blog-preview-title { font-family: var(--font-heading); font-size: 1rem; font-weight: 600; color: var(--primary); line-height: 1.45; flex: 1; }
 .blog-preview-cta { text-align: center; margin-top: 2.5rem; }
+/* Blog preview CTA sits on light background — override white-border btn-outline */
+.blog-preview-cta .btn-outline {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.blog-preview-cta .btn-outline:hover {
+  background: var(--primary);
+  color: var(--white);
+}
 
 /* ── Grade Comparison Table ── */
 .grade-section { padding: 3rem 0 0; }
@@ -2600,9 +2609,9 @@ details.faq-item[open] > .faq-answer { margin-top: 0.6rem; }
 /* ── Responsive additions ── */
 @media (max-width: 768px) {
   .moq-grid { grid-template-columns: 1fr; }
-  .spec-capture-form { flex-direction: column; align-items: stretch; }
-  .spec-capture-form input[type="email"],
-  .btn-spec-send { width: 100%; }
+  .spec-capture-form { flex-direction: column; align-items: center; }
+  .spec-capture-form input[type="email"] { width: 100%; }
+  .btn-spec-send { width: auto; max-width: 280px; }
   .cert-pdf-embed { height: 400px; }
   .whatsapp-float { display: none; }
 }
