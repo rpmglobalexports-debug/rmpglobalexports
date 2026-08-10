@@ -18,8 +18,8 @@
   --text-muted: #5a5a5a;
   --white: #ffffff;
   --border: #e8e4de;
-  --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Fraunces', Georgia, serif;
+  --font-body: 'Work Sans', system-ui, sans-serif;
   --shadow-sm: 0 2px 8px rgba(0,0,0,0.07);
   --shadow-md: 0 8px 28px rgba(0,0,0,0.11);
   --shadow-lg: 0 20px 60px rgba(0,0,0,0.16);
@@ -1335,7 +1335,7 @@ body.light-page .certs-section { padding-top: 7.5rem; }
   justify-content: space-between;
   margin-bottom: 1.1rem;
 }
-.cert-icon { font-size: 2.2rem; line-height: 1; }
+.cert-icon { display: flex; align-items: center; line-height: 1; }
 .cert-badge {
   display: inline-flex;
   align-items: center;
