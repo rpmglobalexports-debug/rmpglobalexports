@@ -2887,3 +2887,390 @@ details.faq-item[open] > .faq-answer { margin-top: 0.6rem; }
   .moq-card { padding: 1.35rem 1.1rem; }
   .moq-card-name { font-size: 1.2rem; }
 }
+
+/* ============================================================
+   TRUST & TRACK RECORD SECTION
+   ============================================================ */
+
+.trust-section {
+  padding: 5.5rem 0;
+  background: var(--bg-alt);
+}
+
+.trust-pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.trust-pillar {
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1.5px solid var(--border);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.trust-pillar-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(27,67,50,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.trust-pillar-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.trust-pillar-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Testimonials */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.testimonial-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1.5px solid var(--border);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.testimonial-quote {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.7;
+  font-style: italic;
+  flex: 1;
+}
+
+.testimonial-quote::before { content: '\201C'; }
+.testimonial-quote::after  { content: '\201D'; }
+
+.testimonial-meta {
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+}
+
+.testimonial-name {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.testimonial-company {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.testimonial-product-tag {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(184,146,74,0.1);
+  border-radius: 4px;
+  padding: 0.2rem 0.55rem;
+}
+
+.trust-placeholder-note {
+  text-align: center;
+  padding: 3rem 2rem;
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-top: 2rem;
+}
+
+.trust-placeholder-note {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.trust-placeholder-note strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--primary);
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+}
+
+.trust-placeholder-note a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Trust — certification chips */
+.trust-certifications {
+  margin: 2rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.trust-cert-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.trust-cert-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.trust-cert-chip {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--primary-dark);
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 100px;
+  padding: 0.3rem 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Trust — testimonials area wrapper */
+.trust-testimonials-area {
+  margin-top: 3rem;
+}
+
+/* ============================================================
+   CONTACT PAGE
+   ============================================================ */
+
+.contact-hero {
+  background: var(--primary-dark);
+  padding: 9rem 0 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(184,146,74,0.08) 0%, transparent 60%);
+}
+
+.contact-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.contact-hero h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.contact-hero p {
+  color: rgba(255,255,255,0.75);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 4rem;
+  padding: 5rem 0;
+  align-items: start;
+}
+
+.contact-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.contact-info-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-info-label {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.contact-info-value {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.contact-info-value a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-color: rgba(27,67,50,0.3);
+  text-underline-offset: 3px;
+}
+
+.contact-info-value a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+.contact-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #25D366;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.7rem 1.25rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.contact-wa-btn:hover {
+  background: #1ebe5d;
+  transform: translateY(-1px);
+}
+
+.contact-form-panel {
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1.5px solid var(--border);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-form-panel h2 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.contact-form-panel .form-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   PRIVACY / TERMS PAGES
+   ============================================================ */
+
+.policy-body {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 4.5rem 0 6rem;
+}
+
+.policy-body h2 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin: 2.5rem 0 0.75rem;
+}
+
+.policy-body h2:first-child { margin-top: 0; }
+
+.policy-body p,
+.policy-body ul {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.75;
+  margin-bottom: 0.9rem;
+}
+
+.policy-body ul {
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+.policy-body ul li { margin-bottom: 0.35rem; }
+
+.policy-flag {
+  background: rgba(184,146,74,0.1);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 0.9rem 1.25rem;
+  margin: 1.5rem 0;
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.policy-flag strong {
+  color: #7a5a1a;
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ============================================================
+   TRUST / CONTACT / POLICY RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .trust-pillars { grid-template-columns: repeat(2, 1fr); }
+  .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+@media (max-width: 768px) {
+  .trust-section { padding: 3.5rem 0; }
+  .trust-pillars { grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+  .trust-pillar { padding: 1.5rem 1.1rem; }
+  .contact-hero { padding: 8rem 0 3.5rem; }
+  .contact-layout { padding: 3rem 0; }
+  .contact-form-panel { padding: 1.75rem; }
+  .policy-body { padding: 3rem 0 4rem; }
+}
+
+@media (max-width: 480px) {
+  .trust-pillars { grid-template-columns: 1fr; }
+  .trust-pillar { padding: 1.25rem 1rem; }
+}

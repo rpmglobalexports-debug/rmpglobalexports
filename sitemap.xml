@@ -4,12 +4,19 @@
   <!-- Homepage -->
   <url>
     <loc>https://rpmglobalexports.com/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
 
   <!-- Core pages -->
+  <url>
+    <loc>https://rpmglobalexports.com/contact.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
   <url>
     <loc>https://rpmglobalexports.com/Our-story.html</loc>
     <lastmod>2026-06-28</lastmod>
