@@ -3293,3 +3293,40 @@ details.faq-item[open] > .faq-answer { margin-top: 0.6rem; }
   .trust-pillars { grid-template-columns: 1fr; }
   .trust-pillar { padding: 1.25rem 1rem; }
 }
+
+/* ============================================================
+   HSN CODE SECTION (Products/psyllium-husk.html)
+   ============================================================ */
+
+.hsn-section {
+  margin: 2.5rem 0;
+  padding: 1.75rem 2rem;
+  background: var(--bg-alt);
+  border-radius: var(--radius);
+  border-left: 4px solid var(--accent);
+}
+.hsn-section p { margin: 0 0 1rem; line-height: 1.7; }
+.hsn-section p:last-child { margin-bottom: 0; }
+.hsn-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 1.5rem;
+}
+.hsn-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.hsn-detail-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+.hsn-detail-value {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.95rem;
+}
