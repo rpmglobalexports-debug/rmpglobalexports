@@ -3196,6 +3196,36 @@ details.faq-item[open] > .faq-answer { margin-top: 0.6rem; }
   line-height: 1.5;
 }
 
+/* Light-background overrides — .form-group styles default to dark/hero context;
+   the contact panel is white, so labels, inputs, and placeholders need dark colours. */
+.contact-form-panel .form-group label {
+  color: var(--text-muted);
+}
+.contact-form-panel .form-group input,
+.contact-form-panel .form-group select,
+.contact-form-panel .form-group textarea {
+  background: var(--bg);
+  border-color: var(--border);
+  color: var(--text);
+}
+.contact-form-panel .form-group input:focus,
+.contact-form-panel .form-group select:focus,
+.contact-form-panel .form-group textarea:focus {
+  background: var(--white);
+  border-color: var(--accent);
+}
+.contact-form-panel .form-group input::placeholder,
+.contact-form-panel .form-group textarea::placeholder {
+  color: rgba(44,44,44,0.35);
+}
+.contact-form-panel .form-group select option {
+  background: var(--white);
+  color: var(--text);
+}
+.contact-form-panel .form-optional-toggle {
+  color: var(--primary);
+}
+
 /* ============================================================
    PRIVACY / TERMS PAGES
    ============================================================ */
