@@ -222,6 +222,7 @@ textarea:focus-visible,
   color: rgba(255,255,255,0.88);
   transition: color 0.25s;
   position: relative;
+  white-space: nowrap;
 }
 .nav-link::after {
   content: '';
