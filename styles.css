@@ -462,10 +462,10 @@ body.light-page .certs-section { padding-top: 7.5rem; }
   flex: none;
   width: 100%;
   max-width: 680px;
-  padding: 3rem clamp(2rem, 5vw, 5rem) 4rem;
+  padding: 2.5rem clamp(2rem, 5vw, 5rem) 3rem;
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 1.5rem;
 }
 
 /* Scroll indicator */
@@ -593,7 +593,7 @@ body.light-page .certs-section { padding-top: 7.5rem; }
 /* ============================================================
    PRODUCTS SECTION
    ============================================================ */
-.products-section { padding: 5.5rem 0; background: transparent; }
+.products-section { padding: 5.5rem 0; background: var(--bg-alt); }
 
 .products-grid {
   display: grid;
@@ -795,6 +795,9 @@ body.light-page .certs-section { padding-top: 7.5rem; }
   min-height: 100vh;
   display: flex;
   align-items: center;
+  border-radius: 2rem 2rem 0 0;
+  overflow: hidden;
+  position: relative;
 }
 .how-section .container { width: 100%; }
 .how-section .section-title { color: #F7F1E3; }
@@ -3099,18 +3102,21 @@ details.faq-item[open] > .faq-answer { margin-top: 0.6rem; }
 
 /* Trust — certification chips */
 .trust-certifications {
-  margin: 2rem 0 0;
+  background: var(--primary-dark);
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+  margin: 2.5rem 0 0;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
 .trust-cert-label {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: rgba(198,161,91,0.75);
 }
 
 .trust-cert-chips {
@@ -3122,9 +3128,9 @@ details.faq-item[open] > .faq-answer { margin-top: 0.6rem; }
 .trust-cert-chip {
   font-size: 0.8rem;
   font-weight: 500;
-  color: var(--primary-dark);
-  background: var(--white);
-  border: 1.5px solid var(--border);
+  color: rgba(247,241,227,0.85);
+  background: rgba(247,241,227,0.07);
+  border: 1px solid rgba(247,241,227,0.15);
   border-radius: 100px;
   padding: 0.3rem 0.9rem;
   font-variant-numeric: tabular-nums;
@@ -3477,4 +3483,218 @@ details.faq-item[open] > .faq-answer { margin-top: 0.6rem; }
 
 @media (max-width: 768px) {
   .why-rpm-section { padding: 3.5rem 0; }
+}
+
+/* ============================================================
+   FIX 1 — Ghost secondary CTA (hero + pour-reveal)
+   ============================================================ */
+.btn-ghost {
+  background: transparent;
+  border: none;
+  color: rgba(247,241,227,0.72);
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 0.85rem 0.25rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(247,241,227,0.35);
+  transition: color 0.25s, text-decoration-color 0.25s;
+  cursor: pointer;
+}
+.btn-ghost:hover {
+  color: rgba(247,241,227,1);
+  text-decoration-color: rgba(247,241,227,0.7);
+}
+
+/* ============================================================
+   FIX 3 — Static trust bar (hero → pour-reveal transition)
+   ============================================================ */
+.static-trust-bar {
+  background: var(--primary-dark);
+  border-bottom: 1px solid rgba(198,161,91,0.2);
+}
+.stb-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.stb-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 1rem 1.5rem;
+  border-right: 1px solid rgba(247,241,227,0.08);
+  color: rgba(247,241,227,0.88);
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.stb-item:last-child { border-right: none; }
+.stb-icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--accent);
+}
+@media (max-width: 768px) {
+  .stb-grid { grid-template-columns: 1fr 1fr; }
+  .stb-item { padding: 0.85rem 1rem; }
+  .stb-item:nth-child(2) { border-right: none; }
+}
+@media (max-width: 420px) {
+  .stb-grid { grid-template-columns: 1fr; }
+  .stb-item { border-right: none; border-bottom: 1px solid rgba(247,241,227,0.08); }
+  .stb-item:last-child { border-bottom: none; }
+}
+
+/* ============================================================
+   FIX 4 — Builder vs Realtor contrast panel (Why RPM section)
+   ============================================================ */
+.why-rpm-compare {
+  display: grid;
+  grid-template-columns: 1fr 3rem 1fr;
+  margin-bottom: 3.5rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.why-rpm-compare-card {
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.why-rpm-compare-builder {
+  background: #DEDEDE;
+}
+.why-rpm-compare-realtor {
+  background: var(--primary);
+}
+.why-rpm-compare-vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #CACAC7;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #888;
+  font-style: italic;
+  writing-mode: vertical-rl;
+  letter-spacing: 0.05em;
+}
+.why-rpm-compare-label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.why-rpm-compare-builder .why-rpm-compare-label {
+  color: #888;
+}
+.why-rpm-compare-realtor .why-rpm-compare-label {
+  color: var(--accent);
+}
+.why-rpm-compare-heading {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+}
+.why-rpm-compare-builder .why-rpm-compare-heading {
+  color: #4a4a4a;
+}
+.why-rpm-compare-realtor .why-rpm-compare-heading {
+  color: #F7F1E3;
+}
+.why-rpm-compare-desc {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  margin: 0;
+}
+.why-rpm-compare-builder .why-rpm-compare-desc { color: #666; }
+.why-rpm-compare-realtor .why-rpm-compare-desc { color: rgba(247,241,227,0.82); }
+@media (max-width: 768px) {
+  .why-rpm-compare { grid-template-columns: 1fr; }
+  .why-rpm-compare-vs { writing-mode: horizontal-tb; padding: 0.5rem 2rem; height: 2.5rem; }
+}
+
+/* ============================================================
+   FIX 2 — Destination markets card (replaces testimonials)
+   ============================================================ */
+.trust-destinations-area {
+  margin-top: 3rem;
+}
+.trust-destinations-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.25rem 2.5rem;
+}
+.trust-dest-heading {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+.trust-dest-list {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: start;
+  gap: 0.5rem 2.5rem;
+  margin-bottom: 1.5rem;
+}
+.trust-dest-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+.trust-dest-flag {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+.trust-dest-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  border-top: 1px solid var(--border);
+  padding-top: 1.1rem;
+  margin: 0;
+}
+.trust-dest-note a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+@media (max-width: 600px) {
+  .trust-dest-list { grid-template-columns: repeat(2, auto); gap: 0.75rem 2rem; }
+  .trust-destinations-card { padding: 1.75rem 1.5rem; }
+}
+
+/* ============================================================
+   FIX 5 — Reassurance tag icon style
+   ============================================================ */
+.reassurance-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.rtag-icon {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+.how-section .rtag-icon { color: var(--accent); }
+
+/* ============================================================
+   FIX 6 — Section rhythm: how-section top-edge radius mobile
+   ============================================================ */
+@media (max-width: 768px) {
+  .how-section { border-radius: 1.25rem 1.25rem 0 0; }
 }
