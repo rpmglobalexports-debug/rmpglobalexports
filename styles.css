@@ -3698,3 +3698,37 @@ details.faq-item[open] > .faq-answer { margin-top: 0.6rem; }
 @media (max-width: 768px) {
   .how-section { border-radius: 1.25rem 1.25rem 0 0; }
 }
+
+/* ============================================================
+   TASK A — Why RPM section: heading + link spacing
+   ============================================================ */
+.why-rpm-heading-standalone {
+  margin-bottom: 1.75rem;
+}
+.why-rpm-readmore {
+  margin: -1.5rem 0 2rem;  /* pull up slightly under compare card bottom margin */
+}
+.why-rpm-points-col {
+  margin-top: 0;
+}
+
+/* ============================================================
+   TASK B — Asterisk disclosure notes
+   ============================================================ */
+.sample-asterisk-note {
+  font-size: 0.72rem;
+  color: var(--text-muted, #888);
+  text-align: center;
+  padding: 0.35rem 1.5rem 0;
+  margin: 0;
+  letter-spacing: 0.01em;
+  background: var(--primary-dark);
+  border-top: 1px solid rgba(247,241,227,0.08);
+}
+.footer-sample-note {
+  font-size: 0.7rem;
+  color: rgba(247,241,227,0.45);
+  display: block;
+  margin-top: 0.3rem;
+  letter-spacing: 0.01em;
+}
