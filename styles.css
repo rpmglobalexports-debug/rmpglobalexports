@@ -443,6 +443,43 @@ body.light-page .certs-section { padding-top: 7.5rem; }
   flex-wrap: wrap;
 }
 
+/* Quiet scroll-down nudge — third-tier, clearly below the two CTAs */
+.hero-source-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(247, 241, 227, 0.52);
+  text-decoration: none;
+  /* Underline draw: 0-width → 100% on hover */
+  background-image: linear-gradient(to right, #B8924A, #B8924A);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+  padding-bottom: 2px;
+  transition: color 0.25s ease, background-size 0.35s ease;
+  align-self: flex-start;
+}
+.hero-source-link:hover {
+  color: rgba(247, 241, 227, 0.82);
+  background-size: 100% 1px;
+}
+.hero-source-arrow {
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+.hero-source-link:hover .hero-source-arrow {
+  transform: translateY(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-source-link { transition: none; }
+  .hero-source-arrow { transition: none; }
+}
+
 /* ============================================================
    POUR-REVEAL SECTION — green bg, content-sized, highlights
    ============================================================ */
