@@ -340,7 +340,30 @@
           <p class="section-subtitle">We control the full chain — direct sourcing from Unjha APMC, processing, packaging, and export to buyers in USA, UAE, Germany, and Canada. Quotations reflect live Unjha market rates, not estimates passed through intermediaries.</p>
 
           <div class="sourcing-image" style="margin-top: 2rem;">
-            <img src="/images/hero-1.jpg" alt="Rudra Jani at Unjha APMC — Asia's largest seed trading market" loading="lazy" />
+            <a href="/see-the-market.html" class="sourcing-play-link" aria-label="See the market — watch our Unjha APMC walkthrough">
+              <!-- Looping teaser: portrait clip cropped to 4:3 landscape container.
+                   Lazy-loaded via IntersectionObserver below. -->
+              <video
+                class="sourcing-teaser-vid"
+                id="sourcing-teaser"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                data-src="/videos/piles-whitebags.mp4"
+                aria-hidden="true"
+                tabindex="-1"
+              ></video>
+              <div class="sourcing-play-overlay" aria-hidden="true">
+                <div class="sourcing-play-btn">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <polygon points="7,3.5 17,10 7,16.5" fill="currentColor"/>
+                  </svg>
+                </div>
+                <span class="sourcing-play-label">See the Market Through Our Eyes</span>
+              </div>
+            </a>
           </div>
           <p class="sourcing-image-caption">Unjha APMC — Asia's largest seed trading market, Gujarat.</p>
         </div>
@@ -898,5 +921,36 @@
   <a href="https://wa.me/917265097308" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="28" height="28" />
   </a>
+
+  <!-- Lazy-load the homepage sourcing teaser video when it enters the viewport -->
+  <script>
+    (function () {
+      'use strict';
+      var teaser = document.getElementById('sourcing-teaser');
+      if (!teaser) return;
+
+      function loadAndPlay(el) {
+        if (!el.src && el.dataset.src) {
+          el.src = el.dataset.src;
+        }
+        el.play().catch(function () {});
+      }
+
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              loadAndPlay(e.target);
+              obs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.25 });
+        obs.observe(teaser);
+      } else {
+        /* Fallback for older browsers: load immediately */
+        loadAndPlay(teaser);
+      }
+    }());
+  </script>
 </body>
 </html>

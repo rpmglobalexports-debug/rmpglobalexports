@@ -284,4 +284,11 @@
     <priority>0.80</priority>
   </url>
 
+  <url>
+    <loc>https://rpmglobalexports.com/see-the-market.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.55</priority>
+  </url>
+
 </urlset>

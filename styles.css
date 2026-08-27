@@ -737,7 +737,8 @@ body.light-page .certs-section { padding-top: 7.5rem; }
 .sourcing-image {
   border-radius: var(--radius);
   overflow: hidden;
-  height: 320px;
+  width: 100%;
+  aspect-ratio: 3 / 4;   /* portrait container — matches video orientation */
   margin-top: 2rem;
 }
 .sourcing-image img {
@@ -3731,4 +3732,96 @@ details.faq-item[open] > .faq-answer { margin-top: 0.6rem; }
   display: block;
   margin-top: 0.3rem;
   letter-spacing: 0.01em;
+}
+
+/* ─────────────────────────────────────────────────────────
+   SOURCING PLAY TRIGGER (homepage → /see-the-market.html)
+──────────────────────────────────────────────────────────── */
+.sourcing-play-link {
+  display: block;
+  height: 100%;          /* fill the aspect-ratio container */
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.sourcing-play-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.45s ease;
+}
+/* Looping video teaser fills the fixed-height .sourcing-image container */
+.sourcing-teaser-vid {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+  background: #0D1F17; /* dark ground while video loads */
+}
+.sourcing-play-link:hover img,
+.sourcing-play-link:focus-visible img,
+.sourcing-play-link:hover .sourcing-teaser-vid,
+.sourcing-play-link:focus-visible .sourcing-teaser-vid {
+  transform: scale(1.04);
+}
+.sourcing-play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  background: rgba(13, 31, 23, 0.32);
+  transition: background 0.3s;
+}
+.sourcing-play-link:hover .sourcing-play-overlay,
+.sourcing-play-link:focus-visible .sourcing-play-overlay {
+  background: rgba(13, 31, 23, 0.48);
+}
+.sourcing-play-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: rgba(184, 146, 74, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0D1F17;
+  box-shadow: 0 0 0 0 rgba(184, 146, 74, 0.45);
+  animation: sourcing-play-pulse 2.2s ease-out infinite;
+  transition: transform 0.2s ease, background 0.2s;
+}
+.sourcing-play-link:hover .sourcing-play-btn,
+.sourcing-play-link:focus-visible .sourcing-play-btn {
+  transform: scale(1.1);
+  background: rgba(205, 169, 104, 0.97);
+}
+.sourcing-play-btn svg {
+  /* optical centering: play triangle sits slightly right of centre */
+  margin-left: 3px;
+}
+.sourcing-play-label {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #F5F0E8;
+  text-align: center;
+  padding: 0 1.5rem;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
+  line-height: 1.4;
+}
+@keyframes sourcing-play-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(184, 146, 74, 0.5); }
+  70%  { box-shadow: 0 0 0 15px rgba(184, 146, 74, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(184, 146, 74, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sourcing-play-btn                { animation: none; }
+  .sourcing-play-link img,
+  .sourcing-teaser-vid,
+  .sourcing-play-btn                { transition: none; }
 }
