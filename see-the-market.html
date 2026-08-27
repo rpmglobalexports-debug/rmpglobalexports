@@ -113,13 +113,12 @@
     }
 
     /*
-      Both clips are portrait (~3:4). Rather than object-fit:cover which
-      would crop portrait footage into a tight sliver on landscape desktops,
-      we use a two-layer technique:
-        1. mk-vid-blur — same source, full-bleed cover, heavily blurred/dimmed,
-           fills the sides and gives the frame warmth.
-        2. mk-vid-main — object-fit:contain, centered, shows the video at its
-           true aspect ratio so the full scene is visible.
+      Portrait video layout — two layers:
+        1. mk-vid-blur — static poster image, full-bleed cover, heavily blurred/dimmed.
+           Using a static img (not a second <video>) so CSS blur is GPU-cached,
+           not recalculated every frame. Fills the dark edges with warm atmosphere.
+        2. mk-vid-main — the only playing video; object-fit not used — sized by
+           height:min(88dvh, ...) so it reads as the centerpiece, not a thumbnail.
     */
     .mk-vid-blur {
       position: absolute;
@@ -135,10 +134,19 @@
 
     .mk-vid-main {
       position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /*
+        Size by viewport height so the portrait video reads as the centerpiece,
+        not a small floating thumbnail. The min() caps width at 96vw so it
+        never overflows on portrait-mobile viewports:
+          min(88dvh, 96vw/0.748) picks height-driven sizing on landscape
+          and width-driven on narrow portrait screens — no distortion either way.
+        Video AR: 634/848 = 0.748
+      */
+      height: min(88dvh, calc(96vw / 0.748));
+      width: auto;
       display: block;
       pointer-events: none;
     }
@@ -381,18 +389,16 @@
   <!-- ── VIDEO SECTION ── -->
   <section class="mk-video-section" aria-label="Unjha APMC market footage — first-person walkthrough">
 
-    <!-- Blurred fill layer: always muted, hidden from assistive tech -->
-    <video
-      id="mk-vid-blur"
+    <!-- Static blurred fill — poster image with CSS blur, never a second video decode.
+         A playing <video> + filter:blur recalculates the blur every frame (jank).
+         A static <img> with the same filter is computed once and GPU-cached. -->
+    <img
       class="mk-vid-blur"
-      src="/videos/unjha-market-walk.mp4"
-      autoplay
-      muted
-      playsinline
-      preload="metadata"
+      src="/images/market-poster.jpg"
+      alt=""
       aria-hidden="true"
       tabindex="-1"
-    ></video>
+    />
 
     <!-- Sharp portrait video centered on the blurred ground -->
     <video
@@ -452,7 +458,6 @@
       'use strict';
 
       var video      = document.getElementById('mk-video');
-      var vidBlur    = document.getElementById('mk-vid-blur');
       var unmuteBtn  = document.getElementById('mk-unmute');
       var speakerIcon = document.getElementById('mk-speaker-icon');
       var unmuteLabel = document.getElementById('mk-unmute-label');
@@ -504,10 +509,7 @@
         unmuteBtn.disabled = true;
       });
 
-      /* Start both videos — blur layer is decorative so errors are silently ignored */
-      if (vidBlur) {
-        vidBlur.play().catch(function () {});
-      }
+      /* Start the main video — blur layer is a static image, no play() needed */
       var p = video.play();
       if (p !== undefined) {
         p.catch(function () {
