@@ -1203,6 +1203,20 @@ body.light-page .certs-section { padding-top: 7.5rem; }
     linear-gradient(160deg, rgba(5,16,10,0.9) 0%, rgba(27,67,50,0.72) 100%),
     url('../images/PH1.webp') center/cover no-repeat;
 }
+/* PLACEHOLDER: ashwagandha — gradient stand-in until product photography is available.
+   Replace url() reference with real image when: ../images/ashwagandha-banner.webp exists. */
+.product-hero.ashwagandha {
+  background:
+    linear-gradient(160deg, rgba(10,6,0,0.9) 0%, rgba(90,48,8,0.7) 100%),
+    url('../images/psyllium-husk.webp') center/cover no-repeat;
+}
+/* PLACEHOLDER: chia seeds — gradient stand-in until product photography is available.
+   Replace url() reference with real image when: ../images/chia-banner.webp exists. */
+.product-hero.chia {
+  background:
+    linear-gradient(160deg, rgba(4,14,12,0.92) 0%, rgba(18,55,45,0.72) 100%),
+    url('../images/psyllium-husk.webp') center/cover no-repeat;
+}
 .product-hero-inner {
   max-width: var(--max-w);
   margin: 0 auto;
@@ -1252,6 +1266,56 @@ body.light-page .certs-section { padding-top: 7.5rem; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* ── PRODUCT PHOTO PLACEHOLDER ──────────────────────────────────
+   Neutral stand-in while product photography is not yet available.
+   Remove once real images are supplied for each product.
+   Matches the exact dimensions of .product-card-img (220px) and
+   .product-intro-image (300px) so layout is unaffected.
+─────────────────────────────────────────────────────────────── */
+.product-card-img-placeholder {
+  width: 100%;
+  height: 220px;
+  border-radius: 12px 12px 0 0;
+  background: var(--bg-alt);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  color: var(--text-muted);
+  border-bottom: 1px solid rgba(27,67,50,0.08);
+}
+.product-card-img-placeholder svg { opacity: 0.28; }
+.product-card-img-placeholder span {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  opacity: 0.52;
+}
+.product-intro-placeholder {
+  width: 100%;
+  height: 300px;
+  background: var(--bg-alt);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--text-muted);
+}
+.product-intro-placeholder svg { opacity: 0.25; }
+.product-intro-placeholder span {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  text-align: center;
+  max-width: 180px;
+  line-height: 1.55;
 }
 
 .spec-section { margin-bottom: 4rem; }
