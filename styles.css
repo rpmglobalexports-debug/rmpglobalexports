@@ -1203,6 +1203,20 @@ body.light-page .certs-section { padding-top: 7.5rem; }
     linear-gradient(160deg, rgba(5,16,10,0.9) 0%, rgba(27,67,50,0.72) 100%),
     url('../images/PH1.webp') center/cover no-repeat;
 }
+/* PLACEHOLDER: ashwagandha — gradient stand-in until product photography is available.
+   Replace url() reference with real image when: ../images/ashwagandha-banner.webp exists. */
+.product-hero.ashwagandha {
+  background:
+    linear-gradient(160deg, rgba(10,6,0,0.9) 0%, rgba(90,48,8,0.7) 100%),
+    url('../images/psyllium-husk.webp') center/cover no-repeat;
+}
+/* PLACEHOLDER: chia seeds — gradient stand-in until product photography is available.
+   Replace url() reference with real image when: ../images/chia-banner.webp exists. */
+.product-hero.chia {
+  background:
+    linear-gradient(160deg, rgba(4,14,12,0.92) 0%, rgba(18,55,45,0.72) 100%),
+    url('../images/psyllium-husk.webp') center/cover no-repeat;
+}
 .product-hero-inner {
   max-width: var(--max-w);
   margin: 0 auto;
