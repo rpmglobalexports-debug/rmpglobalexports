@@ -1268,6 +1268,56 @@ body.light-page .certs-section { padding-top: 7.5rem; }
   object-fit: cover;
 }
 
+/* ── PRODUCT PHOTO PLACEHOLDER ──────────────────────────────────
+   Neutral stand-in while product photography is not yet available.
+   Remove once real images are supplied for each product.
+   Matches the exact dimensions of .product-card-img (220px) and
+   .product-intro-image (300px) so layout is unaffected.
+─────────────────────────────────────────────────────────────── */
+.product-card-img-placeholder {
+  width: 100%;
+  height: 220px;
+  border-radius: 12px 12px 0 0;
+  background: var(--bg-alt);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  color: var(--text-muted);
+  border-bottom: 1px solid rgba(27,67,50,0.08);
+}
+.product-card-img-placeholder svg { opacity: 0.28; }
+.product-card-img-placeholder span {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  opacity: 0.52;
+}
+.product-intro-placeholder {
+  width: 100%;
+  height: 300px;
+  background: var(--bg-alt);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--text-muted);
+}
+.product-intro-placeholder svg { opacity: 0.25; }
+.product-intro-placeholder span {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  text-align: center;
+  max-width: 180px;
+  line-height: 1.55;
+}
+
 .spec-section { margin-bottom: 4rem; }
 .spec-section-title {
   font-family: var(--font-heading);
