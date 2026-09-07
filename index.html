@@ -805,27 +805,30 @@
       </div>
 
       <!-- COA EMBED — PLACEHOLDER
-           Swap src, lot label, and download href once the real CoA file is supplied.
-           Embed pattern matches certifications.html document embeds.
-           Once ready: replace the placeholder div with:
-           <iframe src="/documents/coa-psyllium-husk-lot-XXX.pdf"
+           When the real CoA PDF is ready, replace the placeholder div with:
+           <iframe src="/documents/coa-[product-slug].pdf"
                    class="cert-pdf-embed"
-                   title="Certificate of Analysis — [Product], Lot [NUMBER], [LAB], [DATE]"
+                   title="Certificate of Analysis — [Product], [Lab], [Date]"
                    loading="lazy"></iframe>
-           and update the heading label and download link. -->
+           Then update the three meta fields below (product / lab / date).
+           No lot number or batch reference — this is a general trust-signal document. -->
       <div class="coa-embed-block">
         <div class="coa-embed-header">
           <div>
-            <p class="trust-cert-label">Recent Lot Certificate of Analysis</p>
-            <!-- PLACEHOLDER: update with product name, lot number, issuing lab, and date once file is supplied -->
-            <p class="coa-embed-meta">Psyllium Husk · Lot [NUMBER] · [LAB NAME] · [DATE]</p>
+            <p class="trust-cert-label">Certificate of Analysis</p>
+            <!-- PLACEHOLDER: fill in the three fields below once the file is supplied -->
+            <p class="coa-embed-meta">
+              <!-- Product  --> Psyllium Husk Powder (95%)
+              <!-- Lab      --> &middot; Eureka Lab
+              <!-- Date     --> &middot; 8 August 2026
+            </p>
           </div>
           <a href="/certifications.html" class="btn-outline-dark coa-dl-btn">View All Certifications</a>
         </div>
         <div class="cert-embed-wrap coa-embed-placeholder-wrap">
           <div class="coa-placeholder-block">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-            <p>Recent lot CoA will be embedded here — <a href="/contact.html">enquire to receive the current CoA by email</a>.</p>
+            <p>CoA will be embedded here once the file is uploaded — <a href="/contact.html">request a copy by email in the meantime</a>.</p>
           </div>
         </div>
       </div>
