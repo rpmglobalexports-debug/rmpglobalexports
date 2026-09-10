@@ -305,4 +305,20 @@
     <priority>0.85</priority>
   </url>
 
+
+  <!-- Blog — Psyllium Husk (September 2026) -->
+  <url>
+    <loc>https://rpmglobalexports.com/blogs/psyllium/psyllium-husk-benefits-how-to-take.html</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://rpmglobalexports.com/blogs/psyllium/psyllium-husk-business-idea-guide.html</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.60</priority>
+  </url>
+
 </urlset>

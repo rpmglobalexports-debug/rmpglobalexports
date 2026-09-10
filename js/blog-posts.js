@@ -35,6 +35,22 @@
 
     // ── PSYLLIUM ────────────────────────────────────────────────────────────
     {
+      date: '2026-09-10',
+      category: 'psyllium',
+      tag: 'Psyllium',
+      tagClass: 'tag-psyllium',
+      title: 'Is a Psyllium Husk Brand a Good Business Idea in 2026?',
+      url: '/blogs/psyllium/psyllium-husk-business-idea-guide.html'
+    },
+    {
+      date: '2026-09-10',
+      category: 'psyllium',
+      tag: 'Psyllium',
+      tagClass: 'tag-psyllium',
+      title: 'Psyllium Husk Benefits, Dosage & How to Take It Safely',
+      url: '/blogs/psyllium/psyllium-husk-benefits-how-to-take.html'
+    },
+    {
       date: '2026-08-27',
       category: 'psyllium',
       tag: 'Sourcing',
