@@ -35,6 +35,14 @@
 
     // ── PSYLLIUM ────────────────────────────────────────────────────────────
     {
+      date: '2026-09-15',
+      category: 'psyllium',
+      tag: 'Psyllium',
+      tagClass: 'tag-psyllium',
+      title: 'How to Start a Psyllium Husk Brand — A Practical Guide',
+      url: '/blogs/psyllium/how-to-start-a-psyllium-husk-brand.html'
+    },
+    {
       date: '2026-09-10',
       category: 'psyllium',
       tag: 'Psyllium',
@@ -172,6 +180,14 @@
     },
 
     // ── IMPORT GUIDES ───────────────────────────────────────────────────────
+    {
+      date: '2026-09-15',
+      category: 'import',
+      tag: 'Import Guide',
+      tagClass: 'tag-import',
+      title: 'Psyllium Husk Import into Saudi Arabia — SFDA Rules & Sourcing Guide',
+      url: '/blogs/import-guides/psyllium-husk-importer-saudi-arabia.html'
+    },
     {
       date: '2026-08-14',
       category: 'import',

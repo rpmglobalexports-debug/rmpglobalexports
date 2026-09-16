@@ -162,6 +162,13 @@
 
   <!-- Blog posts — import guides -->
   <url>
+    <loc>https://rpmglobalexports.com/blogs/import-guides/psyllium-husk-importer-saudi-arabia.html</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
     <loc>https://rpmglobalexports.com/blogs/import-guides/psyllium-husk-importer-germany.html</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -252,6 +259,13 @@
   <url>
     <loc>https://rpmglobalexports.com/blogs/psyllium/psyllium-husk-benefits-how-to-take.html</loc>
     <lastmod>2026-09-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://rpmglobalexports.com/blogs/psyllium/how-to-start-a-psyllium-husk-brand.html</loc>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.60</priority>
   </url>
