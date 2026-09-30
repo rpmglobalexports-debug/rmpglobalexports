@@ -239,14 +239,6 @@
 
     // ── TRADE GUIDES ────────────────────────────────────────────────────────
     {
-      date: '2026-08-06',
-      category: 'trade',
-      tag: 'Trade Guide',
-      tagClass: 'tag-trade',
-      title: 'Psyllium Husk HS Code: HSN, HTSUS, and TARIC Guide',
-      url: '/blogs/guides/psyllium-husk-hs-code.html'
-    },
-    {
       date: '2026-07-30',
       category: 'trade',
       tag: 'Trade Guide',
