@@ -35,6 +35,22 @@
 
     // ── PSYLLIUM ────────────────────────────────────────────────────────────
     {
+      date: '2026-09-30',
+      category: 'psyllium',
+      tag: 'Quality',
+      tagClass: 'tag-psyllium',
+      title: 'Psyllium Husk Sterilization: Steam vs ETO vs Gamma',
+      url: '/blogs/psyllium/psyllium-husk-sterilization-steam-eto-gamma.html'
+    },
+    {
+      date: '2026-09-30',
+      category: 'psyllium',
+      tag: 'Market',
+      tagClass: 'tag-psyllium',
+      title: 'Psyllium Crop Calendar 2026-27: When to Buy Psyllium Husk',
+      url: '/blogs/psyllium/psyllium-crop-calendar-2026-27.html'
+    },
+    {
       date: '2026-09-15',
       category: 'psyllium',
       tag: 'Psyllium',
