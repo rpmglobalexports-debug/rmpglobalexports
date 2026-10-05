@@ -191,6 +191,10 @@ document.addEventListener('DOMContentLoaded', function () {
   if (quoteForm && quoteSuccess) {
     quoteForm.addEventListener('submit', async function (e) {
       e.preventDefault();
+      quoteForm.querySelectorAll('input, textarea').forEach(function (el) {
+        el.value = el.value.trim();
+      });
+      if (!quoteForm.checkValidity()) { quoteForm.reportValidity(); return; }
       try {
         const res = await fetch(quoteForm.action, {
           method: 'POST',
