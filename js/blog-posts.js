@@ -35,6 +35,14 @@
 
     // ── PSYLLIUM ────────────────────────────────────────────────────────────
     {
+      date: '2026-10-06',
+      category: 'psyllium',
+      tag: 'Quality',
+      tagClass: 'tag-psyllium',
+      title: 'Psyllium Husk Purity Grades and Mesh Sizes: 85% to 99% Explained',
+      url: '/blogs/psyllium/psyllium-husk-purity-grades-mesh-sizes.html'
+    },
+    {
       date: '2026-09-30',
       category: 'psyllium',
       tag: 'Quality',
