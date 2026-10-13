@@ -35,6 +35,14 @@
 
     // ── PSYLLIUM ────────────────────────────────────────────────────────────
     {
+      date: '2026-10-13',
+      category: 'psyllium',
+      tag: 'Applications',
+      tagClass: 'tag-psyllium',
+      title: 'Psyllium Husk Beyond Digestive Health: Pet Food, Horses, Erosion Control and Bakery',
+      url: '/blogs/psyllium/psyllium-husk-uses-beyond-digestive-health.html'
+    },
+    {
       date: '2026-10-06',
       category: 'psyllium',
       tag: 'Quality',
