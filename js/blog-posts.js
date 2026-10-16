@@ -35,6 +35,14 @@
 
     // ── PSYLLIUM ────────────────────────────────────────────────────────────
     {
+      date: '2026-10-16',
+      category: 'psyllium',
+      tag: 'Applications',
+      tagClass: 'tag-psyllium',
+      title: 'Flavoured Psyllium Husk: Why Whole Husk Doesn\'t Hold Flavour, and What Brands Use Instead',
+      url: '/blogs/psyllium/flavoured-psyllium-husk-powder-vs-whole-husk.html'
+    },
+    {
       date: '2026-10-13',
       category: 'psyllium',
       tag: 'Applications',
