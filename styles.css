@@ -2477,6 +2477,7 @@ details.faq-item[open] > .faq-answer { margin-top: 0.6rem; }
 .form-optional-toggle::-webkit-details-marker { display: none; }
 .form-optional-fields { margin-top: 1rem; }
 .field-required { color: var(--accent); }
+.field-optional { color: var(--text-muted, #888); font-weight: 400; font-size: 0.85em; }
 
 /* ── Your First Order, De-Risked section ── */
 .derisked-section {
