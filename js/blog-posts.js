@@ -35,6 +35,14 @@
 
     // ── PSYLLIUM ────────────────────────────────────────────────────────────
     {
+      date: '2026-11-14',
+      category: 'psyllium',
+      tag: 'Procurement',
+      tagClass: 'tag-psyllium',
+      title: 'Writing a Psyllium Husk Specification: 5 Places the Spec and the Lot Part Ways',
+      url: '/blogs/psyllium/psyllium-husk-specification-guide.html'
+    },
+    {
       date: '2026-10-16',
       category: 'psyllium',
       tag: 'Applications',
