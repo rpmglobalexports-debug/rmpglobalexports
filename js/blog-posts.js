@@ -35,6 +35,14 @@
 
     // ── PSYLLIUM ────────────────────────────────────────────────────────────
     {
+      date: '2026-11-17',
+      category: 'psyllium',
+      tag: 'For Buyers',
+      tagClass: 'tag-psyllium',
+      title: 'Four Questions First-Time Psyllium Buyers Ask (and What They Reveal)',
+      url: '/blogs/psyllium/four-questions-first-time-psyllium-buyers-ask.html'
+    },
+    {
       date: '2026-11-14',
       category: 'psyllium',
       tag: 'Procurement',
