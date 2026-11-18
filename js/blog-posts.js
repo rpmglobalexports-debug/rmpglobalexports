@@ -35,6 +35,14 @@
 
     // ── PSYLLIUM ────────────────────────────────────────────────────────────
     {
+      date: '2026-11-18',
+      category: 'psyllium',
+      tag: 'Market & Research',
+      tagClass: 'tag-psyllium',
+      title: 'The Fibre Opportunity: What Peer-Reviewed Studies Say About the Next Five Years',
+      url: '/blogs/psyllium/fibre-opportunity-what-studies-say.html'
+    },
+    {
       date: '2026-11-17',
       category: 'psyllium',
       tag: 'For Buyers',
