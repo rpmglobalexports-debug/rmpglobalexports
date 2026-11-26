@@ -1,1133 +1,460 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G2VVCT3054"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-G2VVCT3054');
-</script>
+<title>RPM Global Exports</title>
+<meta name="claude:viewport-fit-sides" content="cover">
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Health &amp; Wellness Ingredients from India | RPM Global Exports</title>
-  <meta name="description" content="Health &amp; wellness ingredient sourcing from India — psyllium husk, ashwagandha, chia seeds. Verified before shipment. Founder-direct. Trial from 500 kg." />
-  <link rel="canonical" href="https://rpmglobalexports.com/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="RPM Global Exports" />
-  <meta property="og:url" content="https://rpmglobalexports.com/" />
-  <meta property="og:title" content="Health &amp; Wellness Ingredients from India | RPM Global Exports" />
-  <meta property="og:description" content="Psyllium husk, ashwagandha, and chia seeds sourced from India. Sample before bulk. Third-party NABL CoA with every lot. Trial orders from 500 kg. Founder-direct." />
-  <meta property="og:image" content="https://rpmglobalexports.com/images/core-products-bowls.webp" />
+<style>
+  /* Layout: single-screen hero. oversized handwritten cursive centered in forest green, dual CTAs splay below with hand-drawn arrows. Brand palette: forest green #16362B, brass gold #C6A15B, cream. Poppins for UI, Caveat for hero. */
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Health &amp; Wellness Ingredients from India | RPM Global Exports" />
-  <meta name="twitter:description" content="Psyllium husk, ashwagandha, and chia seeds sourced from India. Sample before bulk. Third-party NABL CoA with every lot. Trial orders from 500 kg." />
-  <meta name="twitter:image" content="https://rpmglobalexports.com/images/core-products-bowls.webp" />
-
-  <!-- Favicons -->
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- Preload hero image (LCP) — browser fetches before JS runs -->
-  <link rel="preload" as="image" href="/images/psyllium-hero.webp" type="image/webp" fetchpriority="high">
-
-  <!-- JSON-LD: Organization + ItemList -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://rpmglobalexports.com/#organization",
-        "name": "RPM Global Exports",
-        "url": "https://rpmglobalexports.com/",
-        "logo": "https://rpmglobalexports.com/images/image-1.webp",
-        "description": "We source psyllium husk, ashwagandha, and chia seeds from India's agricultural belts — and export to buyers in the USA, Canada, UAE, and Germany. Trial orders from 500 kg. Pre-shipment sample and third-party NABL lab CoA with every order.",
-        "identifier": { "@type": "PropertyValue", "name": "IEC", "value": "DFLPJ8868G" },
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Vadodara",
-          "addressRegion": "Gujarat",
-          "addressCountry": "IN"
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+91-7265097308",
-          "email": "meet@rpmglobalexports.com",
-          "contactType": "sales",
-          "availableLanguage": "English"
-        },
-        "sameAs": [
-          "https://www.instagram.com/rpmglobalexports",
-          "https://www.linkedin.com/company/rpm-global-exports"
-        ]
-      },
-      {
-        "@type": "ItemList",
-        "name": "RPM Global Exports — Core Products",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Psyllium Husk",
-            "url": "https://rpmglobalexports.com/Products/psyllium-husk.html"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Ashwagandha Root Powder",
-            "url": "https://rpmglobalexports.com/Products/ashwagandha.html"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Chia Seeds",
-            "url": "https://rpmglobalexports.com/Products/chia-seeds.html"
-          }
-        ]
-      }
-    ]
+  :root {
+    --bg: #F6EFDD;              /* brand cream */
+    --bg-card: #FBF7EA;         /* lighter cream for cards */
+    --fg: #16362B;              /* forest green — primary */
+    --fg-muted: #4A5E55;        /* muted forest */
+    --accent: #C6A15B;          /* brass gold */
+    --accent-deep: #9E7F3E;     /* darker brass */
+    --whatsapp: #25D366;
+    --divider: rgba(22, 54, 43, 0.15);
+    --shadow: rgba(22, 54, 43, 0.12);
   }
-  </script>
-</head>
-<body>
 
-  <!-- ═══════════════════════════════════════════
-       NAVIGATION
-  ════════════════════════════════════════════ -->
-  <nav class="nav" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">
-        <img src="/images/image-1.webp" alt="RPM Global Exports" class="nav-logo-img">
-        <span class="nav-logo-text">
-          RPM Global Exports
-          <!-- PENDING SUPPLIER CONFIRMATION: chia seeds origin ("from India") — sourced via re-export or India-grown not yet confirmed by supplier. Do not use in trade documents until confirmed. -->
-          <small>Health &amp; wellness ingredients from India, sourced and verified before they ship.</small>
-        </span>
-      </a>
-
-      <ul class="nav-links" role="list">
-        <li><a href="/" class="nav-link">Home</a></li>
-        <li class="nav-has-dropdown">
-          <a href="/#products" class="nav-link" aria-haspopup="true">Ingredients <span class="nav-chevron" aria-hidden="true">&#9660;</span></a>
-          <ul class="nav-dropdown" role="list">
-            <li><a href="/Products/psyllium-husk.html" class="nav-dropdown-item">Psyllium Husk</a></li>
-            <li><a href="/Products/ashwagandha.html" class="nav-dropdown-item">Ashwagandha</a></li>
-            <li><a href="/Products/chia-seeds.html" class="nav-dropdown-item">Chia Seeds</a></li>
-          </ul>
-        </li>
-        <li><a href="/Our-story.html" class="nav-link">About</a></li>
-        <li><a href="/certifications.html" class="nav-link">Certifications</a></li>
-        <li><a href="/blogs/index.html" class="nav-link">Blog</a></li>
-        <li><a href="/contact.html" class="nav-link">Contact</a></li>
-        <li><a href="#quote" class="nav-cta">Get Quote</a></li>
-      </ul>
-
-      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- CERT MARQUEE STRIP
-       Two identical badge sets for seamless -50% translateX loop.
-       To add a cert: copy one .cs-badge block into BOTH sets.
-       Phase 1 (2026-09-04): cert strip shows FSSAI, APEDA (all 3 core products), GST, IEC only.
-         Spice Board and IOPEPC chips removed — no longer relevant to current product focus.
-  -->
-  <div class="cert-strip" aria-label="Certifications and registrations" role="complementary">
-    <div class="cert-track-wrapper">
-      <div class="cert-track" aria-hidden="true">
-
-        <!-- ── Set A ── -->
-        <span class="cs-badge">
-          <span class="cs-icon"><!-- shield: FSSAI --><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-          <span class="cs-text"><span class="cs-name">FSSAI</span><span class="cs-sub">Central License</span></span>
-        </span>
-        <span class="cs-badge">
-          <span class="cs-icon"><!-- leaf: APEDA --><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
-          <span class="cs-text"><span class="cs-name">APEDA</span><span class="cs-sub">All Core Products</span></span>
-        </span>
-        <span class="cs-badge">
-          <span class="cs-icon"><!-- document: GST --><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
-          <span class="cs-text"><span class="cs-name">GST</span><span class="cs-sub">Registered</span></span>
-        </span>
-        <span class="cs-badge">
-          <span class="cs-icon"><!-- globe: IEC --><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
-          <span class="cs-text"><span class="cs-name">IEC</span><span class="cs-sub">Import Export Code</span></span>
-        </span>
-
-        <!-- ── Set B (identical — loop target) ── -->
-        <span class="cs-badge">
-          <span class="cs-icon"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-          <span class="cs-text"><span class="cs-name">FSSAI</span><span class="cs-sub">Central License</span></span>
-        </span>
-        <span class="cs-badge">
-          <span class="cs-icon"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
-          <span class="cs-text"><span class="cs-name">APEDA</span><span class="cs-sub">All Core Products</span></span>
-        </span>
-        <span class="cs-badge">
-          <span class="cs-icon"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
-          <span class="cs-text"><span class="cs-name">GST</span><span class="cs-sub">Registered</span></span>
-        </span>
-        <span class="cs-badge">
-          <span class="cs-icon"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
-          <span class="cs-text"><span class="cs-name">IEC</span><span class="cs-sub">Import Export Code</span></span>
-        </span>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════
-       HERO — green bg, headline left, product photo right
-  ════════════════════════════════════════════ -->
-  <section class="hero" id="hero-section" aria-label="Hero">
-    <!-- Slideshow background layers: JS crossfades between these -->
-    <div class="hero-bg" id="hero-bg-a" aria-hidden="true">
-      <img src="/images/psyllium-hero.webp" alt="" width="1376" height="768"
-           loading="eager" fetchpriority="high" decoding="async" class="hero-bg-img">
-    </div>
-    <!-- Phase 1 repositioning (2026-09-04): hero slideshow reduced to psyllium-only (static).
-         Cumin and sesame hero slides commented out — keeping files for SEO; not surfaced in nav.
-         Restore or replace with ashwagandha/chia imagery once product photography is available.
-    <div class="hero-bg" id="hero-bg-b" aria-hidden="true">
-      <picture>
-        <source media="(max-width: 960px)" srcset="/images/cumin-hero-960.webp" type="image/webp">
-        <img src="/images/cumin-hero.webp" alt="" width="1672" height="941"
-             loading="lazy" decoding="async" class="hero-bg-img">
-      </picture>
-    </div>
-    <div class="hero-bg" id="hero-bg-c" aria-hidden="true">
-      <img src="/images/sesame-hero.webp" alt="" width="1672" height="941"
-           loading="lazy" decoding="async" class="hero-bg-img">
-    </div>
-    -->
-    <!-- Directional scrim: dark-left → transparent-right, always above bg -->
-    <div class="hero-scrim" aria-hidden="true"></div>
-
-    <!-- Left column: headline + subhead + CTAs -->
-    <div class="hero-left">
-      <div>
-        <p class="hero-eyebrow">Sourcing partner for supplement, wellness, and functional food brands.</p>
-        <h1 class="hero-title">The sample you approve is the shipment you receive.</h1>
-        <p class="hero-subtitle">Psyllium husk, ashwagandha, and chia seeds — verified before they ship.</p>
-      </div>
-      <div class="hero-actions">
-        <a href="#quote" class="btn btn-primary">Send Your Requirement</a>
-        <a href="https://wa.me/917265097308?text=Hi%2C+I%27d+like+to+request+a+sample+before+placing+an+order." target="_blank" rel="noopener" class="btn btn-ghost">Request a Sample*</a>
-      </div>
-      <p class="hero-trial-note">500 kg trial orders available for first-time buyers.*</p>
-      <a href="#sourcing" class="hero-source-link">
-        See How We Source
-        <svg class="hero-source-arrow" width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
-          <path d="M5.5 1v9M1.5 6.5l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-    </div>
-
-    <div class="scroll-indicator" aria-hidden="true">
-      <span>Scroll</span>
-      <div class="scroll-chevron"></div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       STATIC TRUST BAR — 4 proof points
-  ════════════════════════════════════════════ -->
-  <div class="static-trust-bar" aria-label="Trust signals">
-    <div class="stb-grid">
-      <div class="stb-item">
-        <svg class="stb-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M9 3v6l-5 10a2 2 0 0 0 1.8 3h12.4a2 2 0 0 0 1.8-3L15 9V3"/><line x1="6" y1="14" x2="18" y2="14"/></svg>
-        <span>NABL-accredited CoA on every lot</span>
-      </div>
-      <div class="stb-item">
-        <svg class="stb-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-        <span>Sample before shipment*</span>
-      </div>
-      <div class="stb-item">
-        <svg class="stb-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <span>APEDA RCMC · FSSAI · IEC registered</span>
-      </div>
-      <div class="stb-item">
-        <svg class="stb-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        <span>Founder replies to every enquiry</span>
-      </div>
-    </div>
-  </div>
-
-  <p class="sample-asterisk-note">*Sample cost is credited toward your order if you place one.</p>
-  <p class="trial-asterisk-note">*500 kg trial orders apply to conventional (non-sterilized) psyllium husk powder or whole husk, and are available for first-time RPM buyers. Steam-sterilized psyllium husk is available at 500 kg trial quantities through qualified processors, at a premium versus standard 2 MT+ processing rates due to industry-wide minimum batch requirements. Contact us for current sterilized-grade trial pricing.</p>
-
-  <!-- ═══════════════════════════════════════════
-       TRUST & TRACK RECORD
-  ════════════════════════════════════════════ -->
-  <section class="trust-section" aria-labelledby="trust-heading">
-    <div class="container">
-      <span class="section-label">Why Buyers Trust Us</span>
-      <h2 class="section-title" id="trust-heading">Built on Transparency, Not Just Paperwork</h2>
-      <p class="section-subtitle">We don't ask you to take our word for anything. Every claim we make comes with documentation a third party can verify.</p>
-
-      <div class="trust-pillars">
-        <div class="trust-pillar">
-          <div class="trust-pillar-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3 class="trust-pillar-title">NABL-Accredited CoA</h3>
-          <p class="trust-pillar-desc">Every shipment is accompanied by a Certificate of Analysis from an independent, NABL-accredited or internationally recognised laboratory — not an in-house test.</p>
-        </div>
-        <div class="trust-pillar">
-          <div class="trust-pillar-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          </div>
-          <h3 class="trust-pillar-title">Lot Photos Before Dispatch</h3>
-          <p class="trust-pillar-desc">You receive photos and video of your specific lot before it leaves our warehouse. No surprises at the destination port.</p>
-        </div>
-        <div class="trust-pillar">
-          <div class="trust-pillar-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          </div>
-          <h3 class="trust-pillar-title">Founder-Direct Communication</h3>
-          <p class="trust-pillar-desc">Enquiries are handled personally by Rudra or Meet Jani — no sales team, no account managers. You speak to the people who can actually make the call.</p>
-        </div>
-        <div class="trust-pillar">
-          <div class="trust-pillar-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 3 9 8 3 8"/><path d="M3 8h18"/><path d="M5 8v12h14V8"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg>
-          </div>
-          <h3 class="trust-pillar-title">Unjha Market Pricing</h3>
-          <p class="trust-pillar-desc">We source directly from Unjha APMC — Asia's largest seed trading market. Our pricing reflects real spot rates, not inflated middleman margins.</p>
-        </div>
-      </div>
-
-      <div class="trust-certifications">
-        <span class="trust-cert-label">Regulatory registrations</span>
-        <div class="trust-cert-chips">
-          <span class="trust-cert-chip">FSSAI Central Licence · 10726997000840</span>
-          <span class="trust-cert-chip">APEDA · Psyllium Husk, Ashwagandha &amp; Chia Seeds</span>
-          <span class="trust-cert-chip">IEC · DFLPJ8868G</span>
-          <span class="trust-cert-chip">GST · 24DFLPJ8868G1ZW</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       PROBLEM STATEMENT
-  ════════════════════════════════════════════ -->
-  <section class="why-rpm-section" aria-labelledby="problem-heading">
-    <div class="container">
-      <div class="section-header centered">
-        <span class="section-label">The Reality of Sourcing From India</span>
-        <h2 class="section-title" id="problem-heading">Most First-Time Importers Get Burned Once Before They Get It Right</h2>
-        <p class="section-subtitle">Ask anyone who's imported from India for the first time, and you'll hear a version of the same story.</p>
-      </div>
-
-      <div class="trust-pillars">
-        <div class="trust-pillar">
-          <div class="trust-pillar-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-          </div>
-          <h3 class="trust-pillar-title">You Order Sight-Unseen</h3>
-          <p class="trust-pillar-desc">Payment goes out before you've seen the actual lot — you're trusting that what ships matches what was promised, with no way to check until it's already on the water.</p>
-        </div>
-        <div class="trust-pillar">
-          <div class="trust-pillar-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="9.01" y2="15"/></svg>
-          </div>
-          <h3 class="trust-pillar-title">Certifications You Can't Verify</h3>
-          <p class="trust-pillar-desc">In-house quality claims with no independent lab behind them leave you no real way to confirm purity, moisture, or microbial standards before you commit.</p>
-        </div>
-        <div class="trust-pillar">
-          <div class="trust-pillar-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          </div>
-          <h3 class="trust-pillar-title">Account Managers, Not Decision-Makers</h3>
-          <p class="trust-pillar-desc">When something goes wrong, you're routed through a sales layer that can't actually fix the problem — or won't own it.</p>
-        </div>
-      </div>
-
-      <p class="why-rpm-readmore">That's the exact gap RPM Global Exports was built to close.</p>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       WHY RPM GLOBAL EXPORTS — compare card + practice points
-  ════════════════════════════════════════════ -->
-  <section class="why-rpm-section" id="why-rpm" aria-labelledby="why-rpm-heading">
-    <div class="container">
-
-      <h2 class="section-title why-rpm-heading-standalone" id="why-rpm-heading">Why RPM Global Exports</h2>
-
-      <div class="why-rpm-compare" aria-label="Manufacturer vs merchant exporter comparison">
-        <div class="why-rpm-compare-card why-rpm-compare-builder">
-          <span class="why-rpm-compare-label">The builder (manufacturer)</span>
-          <h3 class="why-rpm-compare-heading">Makes the product. Moves on to the next site.</h3>
-          <p class="why-rpm-compare-desc">Their full-time job is production — running the mill, managing farmer networks, hitting purity specs. Your export requirements compete for attention with their actual business.</p>
-        </div>
-        <div class="why-rpm-compare-vs" aria-hidden="true">vs</div>
-        <div class="why-rpm-compare-card why-rpm-compare-realtor">
-          <span class="why-rpm-compare-label">The Realtor (RPM Global Exports)</span>
-          <h3 class="why-rpm-compare-heading">Manages your order. That is the entire job.</h3>
-          <p class="why-rpm-compare-desc">Spec matching, documentation, communication across time zones, catching a problem before it ships — that's our full-time work. Your order isn't competing with a factory floor.</p>
-        </div>
-      </div>
-
-      <p class="why-rpm-readmore"><a href="/blogs/psyllium/is-merchant-exporter-still-needed-2026.html" class="why-rpm-link">Is a merchant exporter still needed in 2026? →</a></p>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       POUR REVEAL — green bg, three highlights + bowl
-  ════════════════════════════════════════════ -->
-  <section class="pour-reveal-section" aria-label="Why source with us">
-    <div class="pour-reveal-inner">
-      <div class="pour-reveal-text">
-        <span class="section-label">What We Offer</span>
-        <div class="hero-highlights">
-          <div class="hero-highlight">
-            <span class="hero-hl-label"><a href="#private-label-heading" class="hero-hl-link">Private Labelling</a></span>
-            <span class="hero-hl-desc">Your brand, our sourcing. Custom packaging and labels on your order.</span>
-          </div>
-          <div class="hero-highlight">
-            <span class="hero-hl-label">Unjha Sourcing</span>
-            <span class="hero-hl-desc">Direct from Asia's largest seed market, not layers of traders.</span>
-          </div>
-          <div class="hero-highlight">
-            <span class="hero-hl-label">500 kg Trial*</span>
-            <span class="hero-hl-desc">Prove us on a small order before you scale to full container.</span>
-          </div>
-        </div>
-        <div class="hero-actions">
-          <a href="#quote" class="btn btn-primary">Send Your Requirement</a>
-          <a href="https://wa.me/917265097308?text=Hi%2C+I%27d+like+to+request+a+sample+before+placing+an+order." target="_blank" rel="noopener" class="btn btn-ghost">Request a Sample*</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       SOURCING STORY
-  ════════════════════════════════════════════ -->
-  <section class="sourcing-section" id="sourcing" aria-labelledby="sourcing-heading">
-    <div class="container">
-      <div class="sourcing-grid">
-        <div class="sourcing-text">
-          <span class="section-label">Our Sourcing Model</span>
-          <h2 class="section-title" id="sourcing-heading">We Go to the Source.<br>So You Don't Have To.</h2>
-          <p class="section-subtitle">We control the full chain — direct sourcing from Unjha APMC, processing, packaging, and export to buyers in USA, UAE, Germany, and Canada. Quotations reflect live Unjha market rates, not estimates passed through intermediaries.</p>
-
-          <div class="sourcing-image" style="margin-top: 2rem;">
-            <a href="/see-the-market.html" class="sourcing-play-link" aria-label="See the market — watch our Unjha APMC walkthrough">
-              <!-- Looping teaser: portrait clip cropped to 4:3 landscape container.
-                   Lazy-loaded via IntersectionObserver below. -->
-              <video
-                class="sourcing-teaser-vid"
-                id="sourcing-teaser"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="none"
-                data-src="/videos/piles-whitebags.mp4"
-                aria-hidden="true"
-                tabindex="-1"
-              ></video>
-              <div class="sourcing-play-overlay" aria-hidden="true">
-                <div class="sourcing-play-btn">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                    <polygon points="7,3.5 17,10 7,16.5" fill="currentColor"/>
-                  </svg>
-                </div>
-                <span class="sourcing-play-label">See the Market Through Our Eyes</span>
-              </div>
-            </a>
-          </div>
-          <p class="sourcing-image-caption">Unjha APMC — Asia's largest seed trading market, Gujarat.</p>
-        </div>
-
-        <div class="sourcing-quotes-stack">
-          <div class="sourcing-quote-card">
-            <p class="sourcing-quote-text">"Importers get pricing grounded in reality — not inflated by middlemen. We visit Unjha market so we know what's available, at what quality, and at what price."</p>
-            <div class="sourcing-quote-attribution">
-              <img src="/images/rudra.webp" alt="Rudra Jani, Co-Founder of RPM Global Exports, responsible for sourcing at Unjha APMC" class="sourcing-quote-avatar" loading="lazy">
-              <span class="sourcing-quote-author">— Rudra Jani, Co-Founder · Sourcing</span>
-            </div>
-          </div>
-
-          <div class="sourcing-quote-card">
-            <p class="sourcing-quote-text">"Every enquiry I answer myself. No sales team, no account managers — if you email us, you're talking to someone who can actually make the call."</p>
-            <div class="sourcing-quote-attribution">
-              <img src="/images/meet.webp" alt="Meet Jani, Co-Founder of RPM Global Exports, handling business development and buyer relations" class="sourcing-quote-avatar" loading="lazy">
-              <span class="sourcing-quote-author">— Meet Jani, Co-Founder · Business Development</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       PRIVATE LABEL
-  ════════════════════════════════════════════ -->
-  <section class="private-label-section" aria-labelledby="private-label-heading">
-    <div class="container">
-      <div class="private-label-inner">
-        <span class="section-label">Custom Packaging</span>
-        <h2 class="section-title" id="private-label-heading">Need Your Own Brand on the Bag?</h2>
-        <p>Private label and custom packaging available on request. Tell us your branding, packaging spec, and target market when you enquire — we'll work out what's realistic for your order size and timeline.</p>
-        <a href="https://wa.me/917265097308?text=Hi%2C+I%27d+like+to+enquire+about+private+label+and+custom+packaging." target="_blank" rel="noopener" class="btn btn-dark">Ask About Private Label →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       PRODUCTS SECTION
-  ════════════════════════════════════════════ -->
-  <section class="products-section" id="products">
-    <div class="container">
-      <div class="section-header centered">
-        <span class="section-label">What We Export</span>
-        <h2 class="section-title">Health &amp; Wellness Ingredients</h2>
-        <p class="section-subtitle">Psyllium husk, ashwagandha, and chia seeds — sourced from India, verified before shipment, documented end-to-end.</p>
-      </div>
-
-      <div class="products-grid">
-
-        <!-- Psyllium Husk -->
-        <article class="product-card fade-in-up">
-          <a href="/Products/psyllium-husk.html" class="product-card-main-link" aria-label="Psyllium Husk — view full specifications"></a>
-          <img src="/images/psyllium-husk.webp" alt="Psyllium Husk — food-grade and pharma-grade isabgol from Gujarat" class="product-card-img" loading="lazy">
-          <div class="product-card-body">
-            <h3 class="product-card-title">Psyllium Husk</h3>
-            <p class="product-card-desc">Food-grade and pharma-grade psyllium husk with ≥45 ml/g swelling index, sourced from Gujarat's isabgol belt.</p>
-            <ul class="product-card-specs">
-              <li>Purity: ≥99% | Swelling Index: ≥45 ml/g</li>
-              <li>Grades: Food Grade (95%), Pharma Grade (98–99%)</li>
-              <li>HSN: 12119032 | MOQ: 1 MT</li>
-              <li>NABL-accredited lab report available on request</li>
-            </ul>
-            <div class="product-card-actions">
-              <span class="product-card-link" aria-hidden="true">View Full Specs →</span>
-              <a href="/spec-sheets/PsylliumHuskSpecsheet.pdf" target="_blank" rel="noopener" class="product-card-spec-dl">📄 Download Spec Sheet (PDF)</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Ashwagandha Root Powder -->
-        <!-- PLACEHOLDER CARD: spec values below are indicative; confirm with supplier before updating -->
-        <article class="product-card fade-in-up">
-          <a href="/Products/ashwagandha.html" class="product-card-main-link" aria-label="Ashwagandha Root Powder — view full specifications"></a>
-          <img src="/images/ashwagandha-card.webp" alt="Ashwagandha whole root dried — RPM Global Exports" class="product-card-img" loading="lazy">
-          <div class="product-card-body">
-            <h3 class="product-card-title">Ashwagandha Root</h3>
-            <p class="product-card-desc">Withania somnifera whole root (dried) sourced from Madhya Pradesh and Rajasthan — used in adaptogen, sleep, stress, and sports nutrition formulations. Powder available on request.</p>
-            <ul class="product-card-specs">
-              <li>Form: Whole root (dried) — powder on request</li>
-              <li>CoA from NABL-accredited lab available</li>
-              <!-- PLACEHOLDER: HSN indicative only — confirm with CHA before document use -->
-              <li>HSN: 12119099 (indicative — confirm with CHA)</li>
-              <li>MOQ: Enquire — trial quantities available</li>
-            </ul>
-            <div class="product-card-actions">
-              <span class="product-card-link" aria-hidden="true">View Full Specs →</span>
-              <!-- No spec sheet download — ashwagandha spec sheet not yet available -->
-            </div>
-          </div>
-        </article>
-
-        <!-- Chia Seeds -->
-        <!-- PLACEHOLDER CARD: confirm origin and spec values with supplier before updating -->
-        <article class="product-card fade-in-up">
-          <a href="/Products/chia-seeds.html" class="product-card-main-link" aria-label="Chia Seeds — view full specifications"></a>
-          <!--
-            PLACEHOLDER — Replace this div with a real product image once photography is available.
-            <img src="/images/chia-seeds-card.webp" alt="Chia seeds whole grain" class="product-card-img" loading="lazy">
-          -->
-          <div class="product-card-img-placeholder" aria-hidden="true">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-            <span>Photography coming soon</span>
-          </div>
-          <div class="product-card-body">
-            <h3 class="product-card-title">Chia Seeds</h3>
-            <p class="product-card-desc">Salvia hispanica — whole seeds for functional food, dietary supplements, and consumer packaged goods. High in omega-3 ALA and dietary fibre.</p>
-            <ul class="product-card-specs">
-              <li>Form: Whole seeds (black / white — confirm at enquiry)</li>
-              <li>CoA from NABL-accredited lab available</li>
-              <!-- PLACEHOLDER: HSN indicative only — confirm with CHA before document use -->
-              <li>HSN: 12079990 (indicative — confirm with CHA)</li>
-              <li>MOQ: Enquire — trial quantities available</li>
-            </ul>
-            <div class="product-card-actions">
-              <span class="product-card-link" aria-hidden="true">View Full Specs →</span>
-              <!-- No spec sheet download — chia seeds spec sheet not yet available -->
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       SPEC SHEET LEAD CAPTURE
-  ════════════════════════════════════════════ -->
-  <div class="spec-capture-section" aria-label="Request spec sheets">
-    <div class="spec-capture-inner">
-      <h3>Not ready to send a full requirement?</h3>
-      <p>Enter your email and we'll send the psyllium husk spec sheet within a few hours. Ashwagandha and chia seeds spec sheets available on request — enquire directly.</p>
-      <form class="spec-capture-form" action="https://formspree.io/f/mojzrjbe" method="POST">
-        <input type="hidden" name="_subject" value="Spec Sheet Request">
-        <input type="hidden" name="request_type" value="spec_sheet">
-        <input type="email" name="email" placeholder="your@email.com" required autocomplete="email" aria-label="Your email address">
-        <button type="submit" class="btn-spec-send">Send Me the Spec Sheet →</button>
-      </form>
-      <p class="spec-capture-success" id="spec-capture-success" style="display:none;">Done — we'll send the spec sheets to your email within a few hours.</p>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════
-       SECTION 3 — How It Works (forest green)
-  ════════════════════════════════════════════ -->
-  <section class="how-section" aria-labelledby="how-heading">
-    <div class="container">
-      <div class="fade-section-content">
-        <div class="section-header centered">
-          <span class="section-label">The Process</span>
-          <h2 class="section-title" id="how-heading">How It Works</h2>
-          <p class="section-subtitle">Simple, direct, and built for serious importers. No registration required to enquire.</p>
-        </div>
-        <div class="steps-container">
-          <span class="step-gap step-gap-1" aria-hidden="true"></span>
-          <span class="step-gap step-gap-2" aria-hidden="true"></span>
-          <span class="step-gap step-gap-3" aria-hidden="true"></span>
-          <div class="step-block">
-            <div class="step-number">01</div>
-            <h3 class="step-title">Send Your Requirement</h3>
-            <p class="step-desc">Tell us your product, quantity (trial from 500 kg*), destination port, and grade preference. No registration or commitment required to enquire.</p>
-          </div>
-          <div class="step-block">
-            <div class="step-number">02</div>
-            <h3 class="step-title">Receive Sample + Lab CoA</h3>
-            <p class="step-desc">We dispatch a pre-shipment sample* so you can verify quality with your own team or third-party lab — before any commitment to bulk.</p>
-          </div>
-          <div class="step-block">
-            <div class="step-number">03</div>
-            <h3 class="step-title">Practical Quotation at Live Rates</h3>
-            <p class="step-desc">Once you're satisfied with the sample, we send a firm quotation grounded in current Unjha market rates — not inflated margins passed through intermediaries.</p>
-          </div>
-          <div class="step-block">
-            <div class="step-number">04</div>
-            <h3 class="step-title">We Handle the Rest</h3>
-            <p class="step-desc">From 500 kg* trial to full container: lot photos, documentation, inspection, and shipment updates — all managed founder-direct.</p>
-          </div>
-        </div>
-        <div class="reassurance-tags">
-          <span class="reassurance-tag">
-            <svg class="rtag-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            No commitment to enquire
-          </span>
-          <span class="reassurance-tag">
-            <svg class="rtag-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-            Samples available before bulk
-          </span>
-          <span class="reassurance-tag">
-            <svg class="rtag-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            IEC &amp; compliance docs ready
-          </span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       SAMPLE CTA STRIP
-  ════════════════════════════════════════════ -->
-  <div class="sample-cta-strip">
-    <div class="container sample-cta-inner">
-      <p class="sample-cta-text">Not ready to order bulk yet? Request a pre-shipment sample* before you commit.</p>
-      <a href="https://wa.me/917265097308?text=Hi%2C+I%27d+like+to+request+a+sample+of+%5Bproduct%5D." target="_blank" rel="noopener" class="btn-sample-cta">Request a Sample* on WhatsApp →</a>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════
-       BLOG PREVIEW
-  ════════════════════════════════════════════ -->
-  <section class="blog-preview-section" aria-labelledby="blog-preview-heading">
-    <div class="container">
-      <div class="section-header centered">
-        <span class="section-label">Knowledge Hub</span>
-        <h2 class="section-title" id="blog-preview-heading">Latest from the Blog</h2>
-        <p class="section-subtitle">Guides for buyers sourcing from India — covering quality parameters, trade documentation, and sourcing decisions.</p>
-      </div>
-      <div class="blog-preview-grid" id="blog-preview-grid">
-        <noscript><p style="color:#888;font-size:.9rem;padding:1rem 0;text-align:center">JavaScript is required. <a href="/blogs/index.html">Visit the blog →</a></p></noscript>
-      </div>
-      <div class="blog-preview-cta">
-        <a href="/blogs/index.html" class="btn btn-outline">View All Articles →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       FAQ
-  ════════════════════════════════════════════ -->
-  <section class="faq-section" aria-labelledby="faq-heading">
-    <div class="container">
-      <div class="section-header centered">
-        <span class="section-label">Frequently Asked Questions</span>
-        <h2 class="section-title" id="faq-heading">Common Questions from Importers</h2>
-      </div>
-      <div class="faq-list">
-
-        <details class="faq-item fade-in-up">
-          <summary class="faq-question">What is your minimum order quantity?</summary>
-          <div class="faq-answer">Trial orders from 500 kg*. Standard MOQ after that is 1 MT.</div>
-        </details>
-
-        <details class="faq-item fade-in-up">
-          <summary class="faq-question">Can we request a sample before placing a bulk order?</summary>
-          <div class="faq-answer">Yes. We send a sample before any bulk commitment — the sample cost is charged but credited toward your order if you place one. <a href="https://wa.me/917265097308?text=Hi%2C+I%27d+like+to+request+a+sample." target="_blank" rel="noopener">Request on WhatsApp</a> or email <a href="mailto:meet@rpmglobalexports.com">meet@rpmglobalexports.com</a>. Samples come with a third-party lab CoA so you have independently verified quality data before committing to bulk.</div>
-        </details>
-
-        <details class="faq-item fade-in-up">
-          <summary class="faq-question">We've never worked with an Indian supplier before — how do we reduce risk?</summary>
-          <div class="faq-answer">Sample before shipment* — cost credited toward your order. Third-party NABL lab CoA — not in-house claims. Photos and video of your lot before dispatch. Trial from 500 kg. Third-party inspection welcome. Payment terms discussed case by case. <a href="https://wa.me/917265097308" target="_blank" rel="noopener">The founders reply personally on WhatsApp.</a></div>
-        </details>
-
-        <details class="faq-item fade-in-up">
-          <summary class="faq-question">What certifications does RPM Global Exports hold?</summary>
-          <div class="faq-answer">We hold an active IEC (Import Export Code), APEDA RCMC covering psyllium husk, ashwagandha, and chia seeds (Reg. No. RCMC/APEDA/31367/2026-2027, Herbal &amp; Medicinal Plants panel), FSSAI Central Licence, and GST registration. See our <a href="/certifications.html">Certifications page</a> for full details and registration documents.</div>
-        </details>
-
-        <details class="faq-item fade-in-up">
-          <summary class="faq-question">What are your payment terms?</summary>
-          <div class="faq-answer">We work with T/T (Telegraphic Transfer). Terms are discussed based on order size and buyer profile.</div>
-        </details>
-
-        <details class="faq-item fade-in-up">
-          <summary class="faq-question">How long does shipment take to the USA or Germany?</summary>
-          <div class="faq-answer">Typical transit time is 18–25 days to the USA and 15–20 days to Germany via sea freight.</div>
-        </details>
-
-        <details class="faq-item fade-in-up">
-          <summary class="faq-question">Do you provide a Certificate of Analysis with each shipment?</summary>
-          <div class="faq-answer">Yes, every shipment includes a full COA covering purity, moisture content, and microbial standards.</div>
-        </details>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       DESTINATION MARKETS
-  ════════════════════════════════════════════ -->
-  <section class="trust-section" aria-label="Export destination markets">
-    <div class="container">
-      <span class="section-label">Why Buyers Trust Us</span>
-      <h2 class="section-title" id="trust-heading">Built on Transparency, Not Just Paperwork</h2>
-      <p class="section-subtitle">We don't ask you to take our word for anything. Every claim we make comes with documentation a third party can verify.</p>
-
-      <div class="trust-pillars">
-        <div class="trust-pillar">
-          <div class="trust-pillar-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3 class="trust-pillar-title">NABL-Accredited CoA</h3>
-          <p class="trust-pillar-desc">Every shipment is accompanied by a Certificate of Analysis from an independent, NABL-accredited or internationally recognised laboratory — not an in-house test.</p>
-        </div>
-        <div class="trust-pillar">
-          <div class="trust-pillar-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          </div>
-          <h3 class="trust-pillar-title">Lot Photos Before Dispatch</h3>
-          <p class="trust-pillar-desc">You receive photos and video of your specific lot before it leaves our warehouse. No surprises at the destination port.</p>
-        </div>
-        <div class="trust-pillar">
-          <div class="trust-pillar-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          </div>
-          <h3 class="trust-pillar-title">Founder-Direct Communication</h3>
-          <p class="trust-pillar-desc">Enquiries are handled personally by Rudra or Meet Jani — no sales team, no account managers. You speak to the people who can actually make the call.</p>
-        </div>
-        <div class="trust-pillar">
-          <div class="trust-pillar-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 3 9 8 3 8"/><path d="M3 8h18"/><path d="M5 8v12h14V8"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg>
-          </div>
-          <h3 class="trust-pillar-title">Unjha Market Pricing</h3>
-          <p class="trust-pillar-desc">We source directly from Unjha APMC — Asia's largest seed trading market. Our pricing reflects real spot rates, not inflated middleman margins.</p>
-        </div>
-      </div>
-
-      <!-- RPM VERIFIED LOT — internal process callout.
-           This describes our internal pre-dispatch process; it does NOT imply an
-           external certification body or third-party audit programme. -->
-      <div class="trust-verified-lot" style="margin: 2.5rem 0; padding: 1.5rem 2rem; background: var(--bg-alt); border-left: 3px solid var(--accent); border-radius: 4px;">
-        <p class="trust-cert-label" style="margin-bottom: 1rem;">How every lot is prepared before it ships</p>
-        <ol style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
-          <li><strong>Approved specification confirmed</strong> — buyer-approved grade, mesh or purity, packaging format locked in writing</li>
-          <li><strong>Third-party CoA pulled</strong> — NABL-accredited lab result covering key quality parameters for the actual lot</li>
-          <li><strong>Lot identified and set aside</strong> — physical quantity matched to the specification and segregated before dispatch</li>
-          <li><strong>Photos of your lot shared</strong> — WhatsApp photos and video of packed bags before they leave the warehouse</li>
-          <li><strong>Pre-dispatch quality check</strong> — packing, labelling, and document set reviewed against the buyer's requirement</li>
-          <li><strong>Full shipment document set</strong> — commercial invoice, packing list, B/L, CoA, and any required certificates ready at dispatch</li>
-        </ol>
-      </div>
-
-      <div class="trust-certifications">
-        <span class="trust-cert-label">Regulatory registrations</span>
-        <div class="trust-cert-chips">
-          <span class="trust-cert-chip">FSSAI Central Licence · 10726997000840</span>
-          <span class="trust-cert-chip">APEDA RCMC · Psyllium Husk, Ashwagandha &amp; Chia Seeds</span>
-          <span class="trust-cert-chip">IEC · DFLPJ8868G</span>
-          <span class="trust-cert-chip">GST · 24DFLPJ8868G1ZW</span>
-        </div>
-      </div>
-
-      <!-- COA EMBED — PLACEHOLDER
-           When the real CoA PDF is ready, replace the placeholder div with:
-           <iframe src="/documents/coa-[product-slug].pdf"
-                   class="cert-pdf-embed"
-                   title="Certificate of Analysis — [Product], [Lab], [Date]"
-                   loading="lazy"></iframe>
-           Then update the three meta fields below (product / lab / date).
-           No lot number or batch reference — this is a general trust-signal document. -->
-      <div class="coa-embed-block">
-        <div class="coa-embed-header">
-          <div>
-            <p class="trust-cert-label">Certificate of Analysis</p>
-            <p class="coa-embed-meta">Psyllium Husk Powder (95%) &middot; Lot NNI/26-27/088 &middot; Eureka Analytical Services &middot; 7–11 August 2026</p>
-          </div>
-          <a href="/certifications.html" class="btn-outline-dark coa-dl-btn">View All Certifications</a>
-        </div>
-        <div class="coa-reports-grid">
-          <a href="/documents/coa-lot-NNI-26-27-088-heavy-metals.pdf" class="coa-report-card" target="_blank" rel="noopener" aria-label="Download Heavy Metals CoA — Lot NNI/26-27/088">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            <div class="coa-report-info">
-              <span class="coa-report-name">Heavy Metals</span>
-              <span class="coa-report-detail">Pb, Hg, Cd, As &middot; 7 Aug 2026</span>
-              <span class="coa-report-dl">Download PDF ↓</span>
-            </div>
-          </a>
-          <a href="/documents/coa-lot-NNI-26-27-088-purity-physical.pdf" class="coa-report-card" target="_blank" rel="noopener" aria-label="Download Purity &amp; Physical CoA — Lot NNI/26-27/088">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            <div class="coa-report-info">
-              <span class="coa-report-name">Purity &amp; Physical</span>
-              <span class="coa-report-detail">Swell Volume, Purity, Moisture &middot; 8 Aug 2026</span>
-              <span class="coa-report-dl">Download PDF ↓</span>
-            </div>
-          </a>
-          <a href="/documents/coa-lot-NNI-26-27-088-microbial.pdf" class="coa-report-card" target="_blank" rel="noopener" aria-label="Download Microbial CoA — Lot NNI/26-27/088">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            <div class="coa-report-info">
-              <span class="coa-report-name">Microbial</span>
-              <span class="coa-report-detail">TPC, Yeast &amp; Mold, Salmonella &middot; 11 Aug 2026</span>
-              <span class="coa-report-dl">Download PDF ↓</span>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <!-- Destination markets -->
-      <div class="trust-destinations-area">
-        <div class="trust-destinations-card">
-          <p class="trust-dest-heading">Where RPM exports to</p>
-          <ul class="trust-dest-list" aria-label="Export destination markets">
-            <li class="trust-dest-item"><span class="trust-dest-flag" aria-hidden="true">🇺🇸</span> United States</li>
-            <li class="trust-dest-item"><span class="trust-dest-flag" aria-hidden="true">🇨🇦</span> Canada</li>
-            <li class="trust-dest-item"><span class="trust-dest-flag" aria-hidden="true">🇦🇪</span> UAE</li>
-            <li class="trust-dest-item"><span class="trust-dest-flag" aria-hidden="true">🇩🇪</span> Germany</li>
-          </ul>
-          <p class="trust-dest-note">We're happy to connect serious buyers with a reference importer in their market — <a href="/contact.html">get in touch</a> and we'll make the introduction.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       QUOTE FORM
-  ════════════════════════════════════════════ -->
-  <section class="quote-section" id="quote" aria-labelledby="quote-heading">
-    <div class="container">
-      <div class="quote-grid">
-
-        <div class="quote-info">
-          <span class="section-label">Get in Touch</span>
-          <h2 class="section-title" id="quote-heading">Tell Us What You Need</h2>
-          <p class="section-subtitle">Share your product, quantity, and requirement — we'll respond within 4 business hours with a practical quotation.</p>
-
-          <div class="quote-features">
-            <div class="quote-feature">
-              <div class="quote-feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#B8924A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-              <span>Response within 4 business hours</span>
-            </div>
-            <div class="quote-feature">
-              <div class="quote-feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#B8924A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5" rx="1"/><line x1="10" y1="13" x2="14" y2="13"/></svg></div>
-              <span>500 kg trial orders welcome*</span>
-            </div>
-            <div class="quote-feature">
-              <div class="quote-feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#B8924A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M9 3v6l-5 10a2 2 0 0 0 1.8 3h12.4a2 2 0 0 0 1.8-3L15 9V3"/><line x1="6" y1="14" x2="18" y2="14"/></svg></div>
-              <span>Sample &amp; CoA before you commit</span>
-            </div>
-            <div class="quote-feature">
-              <div class="quote-feature-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#B8924A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
-              <span>Lot photos before dispatch</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="quote-form">
-          <form id="quote-form" action="https://formspree.io/f/mojzrjbe" method="POST">
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="full-name">Full Name <span class="field-required">*</span></label>
-                <input type="text" id="full-name" name="name" placeholder="Your full name" required />
-              </div>
-              <div class="form-group">
-                <label for="email">Email Address <span class="field-required">*</span></label>
-                <input type="email" id="email" name="email" placeholder="you@company.com" required />
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="product">Product <span class="field-required">*</span></label>
-                <select id="product" name="product" required>
-                  <option value="" disabled selected>Select a product</option>
-                  <option value="Psyllium Husk">Psyllium Husk</option>
-                  <option value="Ashwagandha">Ashwagandha</option>
-                  <option value="Chia Seeds">Chia Seeds</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="quantity">Quantity <span class="field-required">*</span></label>
-                <input type="text" id="quantity" name="quantity_mt" placeholder="e.g. 500 kg or 10 MT" required />
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="company">Company Name <span class="field-optional">(optional)</span></label>
-                <input type="text" id="company" name="company" placeholder="Your company" />
-              </div>
-              <div class="form-group">
-                <label for="country">Country <span class="field-optional">(optional)</span></label>
-                <input type="text" id="country" name="country" placeholder="e.g. United States" />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Your Requirement <span class="field-optional">(optional)</span></label>
-              <textarea id="message" name="message" placeholder="Grade preference, destination port, packaging, Incoterms, or any other details..."></textarea>
-            </div>
-
-            <details class="form-optional">
-              <summary class="form-optional-toggle">+ Add more details (WhatsApp, destination port)</summary>
-              <div class="form-optional-fields">
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="whatsapp">WhatsApp Number</label>
-                    <input type="tel" id="whatsapp" name="whatsapp" placeholder="+1 555 000 0000" />
-                  </div>
-                  <div class="form-group">
-                    <label for="port">Destination Port</label>
-                    <input type="text" id="port" name="destination_port" placeholder="e.g. Los Angeles, CA" />
-                  </div>
-                </div>
-              </div>
-            </details>
-
-            <div class="form-submit">
-              <button type="submit" class="btn btn-primary">Send Requirement →</button>
-            </div>
-
-            <p class="whatsapp-note">
-              🧪 Want samples before bulk?
-              <a href="https://wa.me/917265097308" target="_blank" rel="noopener">Request directly on WhatsApp</a>
-            </p>
-          </form>
-          <div id="quote-success" style="display:none; padding: 2rem; text-align: center; color: var(--primary); font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; border: 2px solid var(--accent); border-radius: 12px; margin-top: 1rem;">
-            Thank you for your inquiry. We will respond within 4 business hours.
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       FOOTER
-  ════════════════════════════════════════════ -->
-  <footer class="footer" aria-label="Site footer">
-    <div class="container">
-      <div class="footer-grid">
-
-        <!-- Brand -->
-        <div>
-          <img src="/images/image-1.webp" alt="RPM Global Exports" class="footer-logo-img">
-          <div class="footer-brand-name">RPM Global Exports</div>
-          <!-- PENDING SUPPLIER CONFIRMATION: chia seeds origin ("from India") — sourced via re-export or India-grown not yet confirmed by supplier. Do not use in trade documents until confirmed. -->
-          <div class="footer-tagline">Health &amp; wellness ingredients from India, sourced and verified before they ship.</div>
-          <p class="footer-brand-desc">We source psyllium husk, ashwagandha, and chia seeds from India's agricultural belts — exporting directly to buyers in the USA, Canada, UAE, and Germany. Trial orders from 500 kg*. Enquiries answered within 4 hours by Rudra or Meet.</p>
-          <div class="footer-socials">
-            <a href="https://instagram.com/rpmglobalexports" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
-            <a href="https://linkedin.com/company/rpmglobalexports" target="_blank" rel="noopener" class="footer-social" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
-          </div>
-        </div>
-
-        <!-- Quick Links -->
-        <div>
-          <div class="footer-col-title">Quick Links</div>
-          <ul class="footer-links">
-            <li><a href="/" class="footer-link">Home</a></li>
-            <li><a href="/Our-story.html" class="footer-link">Our Story</a></li>
-            <li><a href="/certifications.html" class="footer-link">Certifications</a></li>
-            <li><a href="/blogs/index.html" class="footer-link">Blog</a></li>
-            <li><a href="#quote" class="footer-link">Get a Quote</a></li>
-            <li><a href="/contact.html" class="footer-link">Contact</a></li>
-            <li><a href="/privacy-policy.html" class="footer-link">Privacy Policy</a></li>
-            <li><a href="/terms.html" class="footer-link">Terms &amp; Conditions</a></li>
-          </ul>
-        </div>
-
-        <!-- Products -->
-        <div>
-          <div class="footer-col-title">Products</div>
-          <ul class="footer-links">
-            <li><a href="/Products/psyllium-husk.html" class="footer-link">Psyllium Husk</a></li>
-            <li><a href="/Products/ashwagandha.html" class="footer-link">Ashwagandha</a></li>
-            <li><a href="/Products/chia-seeds.html" class="footer-link">Chia Seeds</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact -->
-        <div>
-          <div class="footer-col-title">Contact</div>
-          <p class="footer-contact-item">📍 Vadodara, Gujarat, India</p>
-          <p class="footer-contact-item">
-            📧 <a href="mailto:info@rpmglobalexports.com">info@rpmglobalexports.com</a>
-          </p>
-          <p class="footer-contact-item">
-            📧 <a href="mailto:meet@rpmglobalexports.com">meet@rpmglobalexports.com</a>
-          </p>
-          <p class="footer-contact-item">
-            📱 <a href="https://wa.me/917265097308" target="_blank" rel="noopener">+91 72650 97308</a>
-          </p>
-        </div>
-
-      </div>
-
-      <div class="footer-bottom">
-        <span class="footer-copy">© 2026 RPM Global Exports. All rights reserved.</span>
-        <span class="footer-reg">IEC: DFLPJ8868G &nbsp;|&nbsp; GSTIN: 24DFLPJ8868G1ZW &nbsp;|&nbsp; FSSAI: 10726997000840</span>
-        <span class="footer-sample-note">*Sample cost credited toward your order if you place one.</span>
-        <span class="footer-export-note">Exporting to USA, UAE, Germany, and Canada.</span>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-  <script src="/js/blog-posts.js" defer></script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is your minimum order quantity?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Trial orders from 500 kg. Standard MOQ after that is 1 MT." }
-      },
-      {
-        "@type": "Question",
-        "name": "Can we request a sample before placing a bulk order?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. We send a sample before any bulk commitment — the sample cost is charged but credited toward your order if you place one. Request on WhatsApp (+91 72650 97308) or email meet@rpmglobalexports.com. Samples come with a third-party lab CoA so you have independently verified quality data before committing to bulk." }
-      },
-      {
-        "@type": "Question",
-        "name": "We've never worked with an Indian supplier before — how do we reduce risk?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Sample before shipment — cost credited toward your order if you place one. Third-party NABL lab CoA — not in-house claims. Photos and video of your lot before dispatch. Trial from 500 kg. Third-party inspection welcome. Payment terms discussed case by case. The founders reply personally on WhatsApp." }
-      },
-      {
-        "@type": "Question",
-        "name": "What certifications does RPM Global Exports hold?",
-        "acceptedAnswer": { "@type": "Answer", "text": "We hold an active IEC (Import Export Code), APEDA RCMC covering psyllium husk, ashwagandha, and chia seeds (Reg. RCMC/APEDA/31367/2026-2027, Herbal and Medicinal Plants panel), FSSAI Central Licence, and GST registration. See our Certifications page for full details." }
-      },
-      {
-        "@type": "Question",
-        "name": "What are your payment terms?",
-        "acceptedAnswer": { "@type": "Answer", "text": "We work with T/T (Telegraphic Transfer). Terms are discussed based on order size and buyer profile." }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does shipment take to the USA or Germany?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Typical transit time is 18-25 days to the USA and 15-20 days to Germany via sea freight." }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you provide a Certificate of Analysis with each shipment?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes, every shipment includes a full COA covering purity, moisture content, and microbial standards." }
-      }
-    ]
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0E2219;
+      --bg-card: #163728;
+      --fg: #F6EFDD;
+      --fg-muted: #B5C4BC;
+      --accent: #D9B770;
+      --accent-deep: #C6A15B;
+      --divider: rgba(246, 239, 221, 0.18);
+      --shadow: rgba(0, 0, 0, 0.4);
+      color-scheme: dark;
+    }
   }
-  </script>
+  :root[data-theme="dark"] {
+    --bg: #0E2219;
+    --bg-card: #163728;
+    --fg: #F6EFDD;
+    --fg-muted: #B5C4BC;
+    --accent: #D9B770;
+    --accent-deep: #C6A15B;
+    --divider: rgba(246, 239, 221, 0.18);
+    --shadow: rgba(0, 0, 0, 0.4);
+    color-scheme: dark;
+  }
 
-  <!-- Sticky bottom CTA bar (mobile) -->
-  <div class="sticky-cta-bar" id="stickyCta" aria-hidden="true" role="complementary" aria-label="Quick contact">
-    <a href="#quote" class="btn-cta-quote">Get Quote</a>
-    <a href="https://wa.me/917265097308" target="_blank" rel="noopener" class="btn-cta-wa">WhatsApp</a>
-  </div>
+  * { box-sizing: border-box; }
 
-  <a href="https://wa.me/917265097308" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="28" height="28" />
+  html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Top nav: brand left, email pill right */
+  .top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    gap: 1rem;
+  }
+
+  .brand {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--fg);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.1em;
+  }
+  .brand .dot { color: var(--accent); font-size: 1.4em; line-height: 0; }
+
+  .email-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--fg-muted);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid var(--divider);
+    border-radius: 999px;
+    transition: all 0.2s ease;
+    background: var(--bg-card);
+    white-space: nowrap;
+  }
+  .email-pill:hover {
+    color: var(--fg);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+  .email-pill svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 500px) {
+    .email-pill .pill-label { display: none; }
+    .email-pill { padding: 0.5rem; }
+  }
+
+  /* Hero */
+  main.hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding-block: clamp(1.5rem, 5vw, 3rem);
+    min-width: 0;
+  }
+
+  .hero-text {
+    font-family: 'Caveat', cursive;
+    margin: 0;
+    line-height: 0.9;
+    text-wrap: balance;
+  }
+
+  .hero-primary {
+    font-size: clamp(5rem, 16vw, 12rem);
+    font-weight: 700;
+    color: var(--fg);
+    margin-bottom: 0.1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-secondary {
+    font-size: clamp(1.8rem, 5.5vw, 4rem);
+    font-weight: 500;
+    color: var(--accent);
+    margin-top: 0.5rem;
+    letter-spacing: 0.005em;
+    line-height: 1;
+  }
+
+  /* Split CTAs */
+  .split-ctas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: clamp(2rem, 5vw, 3.5rem);
+    width: 100%;
+    max-width: 780px;
+    align-items: start;
+  }
+
+  @media (max-width: 720px) {
+    .split-ctas {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 360px;
+    }
+  }
+
+  .cta-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    min-width: 0;
+  }
+
+  .arrow-svg {
+    width: clamp(70px, 10vw, 110px);
+    height: clamp(55px, 8vw, 85px);
+    overflow: visible;
+    display: block;
+  }
+  .arrow-svg path {
+    stroke: var(--accent);
+    stroke-width: 2.4;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .cta-block.left .arrow-svg {
+    transform: scaleX(-1);
+  }
+
+  .cta-link {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+    text-decoration: none;
+    color: inherit;
+    padding: 1.5rem 1.5rem 1.75rem;
+    border: 1.5px solid var(--divider);
+    border-radius: 28px;
+    background: var(--bg-card);
+    transition: all 0.25s cubic-bezier(.2,.8,.3,1);
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .cta-link:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px var(--shadow);
+  }
+
+  .cta-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .cta-icon.whatsapp {
+    background: var(--whatsapp);
+    color: white;
+  }
+  .cta-icon.whatsapp svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cta-icon.read {
+    background: var(--fg);
+    color: var(--accent);
+  }
+  .cta-icon.read svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .cta-label {
+    font-family: 'Caveat', cursive;
+    font-size: 1.55rem;
+    font-weight: 600;
+    color: var(--fg);
+    line-height: 1.05;
+    text-align: center;
+    letter-spacing: 0.01em;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    color: var(--fg-muted);
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: center;
+  }
+
+  footer .tagline {
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  footer .sub {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+  }
+
+  /* Trust strip — old-school scrolling marquee of compliance signals */
+  .trust-strip {
+    max-width: 1200px;
+    margin: 1rem auto 0;
+    padding: 0.7rem 0;
+    border-top: 1px solid var(--divider);
+    border-bottom: 1px solid var(--divider);
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
+  }
+  .trust-track {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    width: max-content;
+    animation: trust-scroll 48s linear infinite;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--fg-muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding-left: 2.4rem;
+  }
+  .trust-strip:hover .trust-track {
+    animation-play-state: paused;
+  }
+  .ts-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .ts-item .ts-sep {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+  }
+  @keyframes trust-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .trust-track {
+      animation: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      padding-left: 0;
+    }
+  }
+  @media (max-width: 600px) {
+    .trust-track {
+      font-size: 0.62rem;
+      gap: 1.8rem;
+      letter-spacing: 0.14em;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+</style>
+
+<div class="top-nav">
+  <span class="brand">rpm global exports<span class="dot">.</span></span>
+  <a class="email-pill" href="mailto:meet@rpmglobalexports.com">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5" width="18" height="14" rx="2"/>
+      <path d="m3 7 9 6 9-6"/>
+    </svg>
+    <span class="pill-label">meet@rpmglobalexports.com</span>
   </a>
+</div>
 
-  <!-- Lazy-load the homepage sourcing teaser video when it enters the viewport -->
-  <script>
-    (function () {
-      'use strict';
-      var teaser = document.getElementById('sourcing-teaser');
-      if (!teaser) return;
+<div class="trust-strip">
+  <div class="trust-track">
+    <!-- first copy -->
+    <span class="ts-item">fssc 22000</span>
+    <span class="ts-sep"></span>
+    <span class="ts-item">gmp</span>
+    <span class="ts-sep"></span>
+    <span class="ts-item">fssai central</span>
+    <span class="ts-sep"></span>
+    <span class="ts-item">apeda registered</span>
+    <span class="ts-sep"></span>
+    <!-- second copy -->
+    <span class="ts-item">fssc 22000</span>
+    <span class="ts-sep"></span>
+    <span class="ts-item">gmp</span>
+    <span class="ts-sep"></span>
+    <span class="ts-item">fssai central</span>
+    <span class="ts-sep"></span>
+    <span class="ts-item">apeda registered</span>
+    <span class="ts-sep"></span>
+    <!-- third copy -->
+    <span class="ts-item">fssc 22000</span>
+    <span class="ts-sep"></span>
+    <span class="ts-item">gmp</span>
+    <span class="ts-sep"></span>
+    <span class="ts-item">fssai central</span>
+    <span class="ts-sep"></span>
+    <span class="ts-item">apeda registered</span>
+    <span class="ts-sep"></span>
+    <!-- fourth copy (for seamless loop with -50% translate on halfway point) -->
+    <span class="ts-item">fssc 22000</span>
+    <span class="ts-sep"></span>
+    <span class="ts-item">gmp</span>
+    <span class="ts-sep"></span>
+    <span class="ts-item">fssai central</span>
+    <span class="ts-sep"></span>
+    <span class="ts-item">apeda registered</span>
+    <span class="ts-sep"></span>
+  </div>
+</div>
 
-      function loadAndPlay(el) {
-        if (!el.src && el.dataset.src) {
-          el.src = el.dataset.src;
-        }
-        el.play().catch(function () {});
-      }
+<main class="hero">
+  <h1 class="hero-text hero-primary">we source<span style="color: var(--accent);">.</span></h1>
+  <p class="hero-text hero-secondary">psyllium, ashwagandha &amp; chia</p>
 
-      if ('IntersectionObserver' in window) {
-        var obs = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) {
-            if (e.isIntersecting) {
-              loadAndPlay(e.target);
-              obs.unobserve(e.target);
-            }
-          });
-        }, { threshold: 0.25 });
-        obs.observe(teaser);
-      } else {
-        /* Fallback for older browsers: load immediately */
-        loadAndPlay(teaser);
-      }
-    }());
-  </script>
-</body>
-</html>
+  <div class="split-ctas">
+
+    <div class="cta-block left">
+      <svg class="arrow-svg" viewBox="0 0 120 100" aria-hidden="true">
+        <path d="M 15 5 C 40 18, 12 48, 30 68 C 48 86, 75 88, 100 88"/>
+        <path d="M 86 78 L 100 88 L 92 73"/>
+      </svg>
+      <a class="cta-link" href="https://wa.me/917265097308?text=hi%20meet%2C%20i%27d%20like%20to%20talk%20psyllium" target="_blank" rel="noopener">
+        <div class="cta-icon whatsapp" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="currentColor">
+            <path d="M16.004 3C9.374 3 3.999 8.374 3.999 15.004c0 2.37.69 4.654 1.998 6.613L4 29l7.586-1.986a12.01 12.01 0 0 0 4.418.84h.005c6.63 0 12.004-5.374 12.004-12.004C28.013 8.374 22.635 3 16.004 3zm0 21.838h-.003a9.83 9.83 0 0 1-5.016-1.375l-.36-.214-4.5 1.18 1.202-4.388-.235-.37a9.797 9.797 0 0 1-1.503-5.25c.003-5.422 4.413-9.833 9.839-9.833 2.628.001 5.097 1.026 6.95 2.882a9.773 9.773 0 0 1 2.88 6.956c-.002 5.42-4.413 9.831-9.834 9.831zm5.398-7.36c-.295-.147-1.75-.863-2.02-.962-.27-.098-.467-.147-.664.148-.198.295-.763.962-.936 1.16-.173.198-.345.222-.64.074-.295-.147-1.248-.46-2.377-1.467-.879-.783-1.472-1.75-1.645-2.045-.172-.295-.018-.455.13-.603.133-.133.295-.345.443-.517.148-.173.198-.295.296-.493.099-.197.05-.37-.025-.517-.074-.148-.664-1.603-.91-2.195-.24-.577-.483-.498-.664-.507l-.566-.01c-.197 0-.517.074-.787.37-.27.295-1.03 1.007-1.03 2.456 0 1.45 1.055 2.85 1.202 3.047.148.197 2.075 3.167 5.027 4.442.703.303 1.252.484 1.68.62.705.223 1.346.192 1.853.116.565-.084 1.75-.715 1.996-1.406.247-.69.247-1.282.173-1.406-.074-.123-.27-.197-.566-.345z"/>
+          </svg>
+        </div>
+        <div class="cta-label">shoot a message<br>on whatsapp</div>
+      </a>
+    </div>
+
+    <div class="cta-block right">
+      <svg class="arrow-svg" viewBox="0 0 120 100" aria-hidden="true">
+        <path d="M 15 5 C 40 18, 12 48, 30 68 C 48 86, 75 88, 100 88"/>
+        <path d="M 86 78 L 100 88 L 92 73"/>
+      </svg>
+      <a class="cta-link" href="products.html">
+        <div class="cta-icon read" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+        <div class="cta-label">no, i want to read<br>more about you first</div>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="tagline">from unjha, gujarat &mdash; to the world</div>
+  <div class="sub">fssc 22000 &middot; bscic gmp &middot; nabl labs</div>
+</footer>

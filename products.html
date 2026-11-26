@@ -1,12 +1,766 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Products — RPM Global Exports</title>
-  <meta http-equiv="refresh" content="0; url=/">
-  <link rel="canonical" href="https://rpmglobalexports.com/">
-</head>
-<body>
-  <p>Redirecting to <a href="/">RPM Global Exports — Products</a>…</p>
-</body>
-</html>
+<title>RPM Global Exports</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap">
+
+<style>
+  /* Layout: scrolling page. Hero → Products (3 cards) → Certifications (badge grid) → Why us (reasons) → Blogs (links) → Footer. Same brand palette as landing: forest green, brass gold, cream. */
+
+  :root {
+    --bg: #F6EFDD;
+    --bg-card: #FBF7EA;
+    --bg-deep: #EFE6D1;
+    --fg: #16362B;
+    --fg-muted: #4A5E55;
+    --accent: #C6A15B;
+    --accent-deep: #9E7F3E;
+    --whatsapp: #25D366;
+    --divider: rgba(22, 54, 43, 0.14);
+    --shadow: rgba(22, 54, 43, 0.1);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0E2219;
+      --bg-card: #163728;
+      --bg-deep: #0A1A13;
+      --fg: #F6EFDD;
+      --fg-muted: #B5C4BC;
+      --accent: #D9B770;
+      --accent-deep: #C6A15B;
+      --divider: rgba(246, 239, 221, 0.16);
+      --shadow: rgba(0, 0, 0, 0.4);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0E2219;
+    --bg-card: #163728;
+    --bg-deep: #0A1A13;
+    --fg: #F6EFDD;
+    --fg-muted: #B5C4BC;
+    --accent: #D9B770;
+    --accent-deep: #C6A15B;
+    --divider: rgba(246, 239, 221, 0.16);
+    --shadow: rgba(0, 0, 0, 0.4);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 1.5rem 3rem;
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* Top nav same as landing */
+  .top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto 2rem;
+    gap: 1rem;
+  }
+
+  .brand {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--fg);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.1em;
+  }
+  .brand .dot { color: var(--accent); font-size: 1.4em; line-height: 0; }
+
+  .email-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--fg-muted);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid var(--divider);
+    border-radius: 999px;
+    background: var(--bg-card);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .email-pill:hover { color: var(--fg); border-color: var(--accent); }
+  .email-pill svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+  @media (max-width: 500px) {
+    .email-pill .pill-label { display: none; }
+    .email-pill { padding: 0.5rem; }
+  }
+
+  /* Shared wrappers */
+  .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    min-width: 0;
+  }
+
+  .section { padding-block: clamp(3rem, 7vw, 5rem); }
+
+  .eyebrow {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+    margin: 0 0 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(2.5rem, 6.5vw, 4.5rem);
+    font-weight: 700;
+    color: var(--fg);
+    margin: 0 0 0.5rem;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .section-title .accent { color: var(--accent); }
+
+  .section-lead {
+    font-size: clamp(1rem, 1.3vw, 1.1rem);
+    color: var(--fg-muted);
+    max-width: 560px;
+    margin: 0;
+  }
+
+  /* HERO */
+  .hero {
+    text-align: center;
+    padding-block: clamp(2rem, 6vw, 4rem) clamp(2rem, 5vw, 3rem);
+  }
+
+  .hero .section-title {
+    font-size: clamp(4rem, 11vw, 8rem);
+  }
+
+  .hero .section-lead {
+    margin: 0.5rem auto 0;
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    max-width: 640px;
+    text-align: center;
+  }
+
+  /* PRODUCTS */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (max-width: 860px) {
+    .products-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+  }
+
+  .product-card {
+    background: var(--bg-card);
+    border: 1.5px solid var(--divider);
+    border-radius: 20px;
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: all 0.25s ease;
+    min-width: 0;
+  }
+  .product-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px var(--shadow);
+  }
+
+  .product-label {
+    font-family: 'Caveat', cursive;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--fg);
+    line-height: 1;
+    margin: 0;
+  }
+  .product-label .tag {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    background: rgba(198, 161, 91, 0.12);
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+    line-height: 1;
+  }
+
+  .product-grades {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent-deep);
+    letter-spacing: 0.02em;
+  }
+
+  .product-desc {
+    font-size: 0.92rem;
+    color: var(--fg-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .product-specs {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .product-specs li {
+    font-size: 0.82rem;
+    color: var(--fg);
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
+  .product-specs li::before {
+    content: "·";
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.2em;
+    line-height: 1;
+  }
+  .product-specs .k {
+    color: var(--fg-muted);
+    min-width: 76px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+
+  /* CERTIFICATIONS */
+  .cert-band {
+    background: var(--bg-deep);
+    margin-left: calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+    margin-right: calc(-1 * max(16px, env(safe-area-inset-right, 0px)));
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: clamp(3rem, 7vw, 5rem);
+    border-block: 1px solid var(--divider);
+  }
+
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (max-width: 860px) {
+    .cert-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 500px) {
+    .cert-grid { grid-template-columns: 1fr; }
+  }
+
+  .cert-card {
+    background: var(--bg-card);
+    border: 1px solid var(--divider);
+    border-radius: 14px;
+    padding: 1.1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    min-width: 0;
+  }
+
+  .cert-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0;
+  }
+  .cert-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--fg);
+    line-height: 1.3;
+    margin: 0;
+  }
+  .cert-meta {
+    font-size: 0.78rem;
+    color: var(--fg-muted);
+    margin: 0;
+  }
+
+  /* WHY US */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 2rem;
+    margin-top: 2.5rem;
+  }
+  @media (max-width: 720px) {
+    .why-grid { grid-template-columns: 1fr; }
+  }
+
+  .why-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    min-width: 0;
+  }
+
+  .why-num {
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 0.9;
+    min-width: 2ch;
+  }
+
+  .why-body { min-width: 0; }
+
+  .why-body h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--fg);
+    margin: 0 0 0.3rem;
+    line-height: 1.3;
+  }
+  .why-body p {
+    font-size: 0.9rem;
+    color: var(--fg-muted);
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  /* BLOGS */
+  .blog-band {
+    background: var(--bg-deep);
+    margin-left: calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+    margin-right: calc(-1 * max(16px, env(safe-area-inset-right, 0px)));
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: clamp(3rem, 7vw, 5rem);
+    border-block: 1px solid var(--divider);
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  @media (max-width: 860px) {
+    .blog-grid { grid-template-columns: 1fr; max-width: 500px; margin-left: auto; margin-right: auto; }
+  }
+
+  .blog-card {
+    background: var(--bg-card);
+    border: 1.5px solid var(--divider);
+    border-radius: 16px;
+    padding: 1.4rem 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    transition: all 0.25s ease;
+    min-width: 0;
+  }
+  .blog-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px var(--shadow);
+  }
+
+  .blog-cat {
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--accent);
+    margin: 0;
+  }
+  .blog-title {
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--fg);
+    line-height: 1.35;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .blog-snippet {
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+    margin: 0;
+    line-height: 1.55;
+  }
+  .blog-read {
+    font-family: 'Caveat', cursive;
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-top: auto;
+    padding-top: 0.5rem;
+    font-weight: 600;
+  }
+
+  /* Bottom bar */
+  .bottom-cta {
+    text-align: center;
+    padding-block: clamp(3rem, 6vw, 4rem) 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+  }
+
+  .bottom-cta .prompt {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    color: var(--fg);
+    margin: 0;
+    line-height: 1.1;
+    font-weight: 600;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.4rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    border: 1.5px solid transparent;
+  }
+  .btn-primary {
+    background: var(--whatsapp);
+    color: white;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--fg);
+    border-color: var(--divider);
+  }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent-deep); }
+
+  .btn svg { width: 18px; height: 18px; }
+
+  footer {
+    text-align: center;
+    color: var(--fg-muted);
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: center;
+    border-top: 1px solid var(--divider);
+    margin-top: 2rem;
+  }
+
+  footer .tagline {
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  footer .sub {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+</style>
+
+<div class="top-nav wrap">
+  <a class="brand" href="index.html">rpm global exports<span class="dot">.</span></a>
+  <a class="email-pill" href="mailto:meet@rpmglobalexports.com">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5" width="18" height="14" rx="2"/>
+      <path d="m3 7 9 6 9-6"/>
+    </svg>
+    <span class="pill-label">meet@rpmglobalexports.com</span>
+  </a>
+</div>
+
+<!-- HERO -->
+<section class="hero wrap">
+  <p class="eyebrow">why rpm</p>
+  <h1 class="section-title">a middleman worth<br><span class="accent">keeping.</span></h1>
+  <p class="section-lead">we source three indian botanicals from gujarat processors, absorb the working-capital and compliance work on your side, and ship ready for your qa team to open the box.</p>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section wrap">
+  <p class="eyebrow">what we source</p>
+  <h2 class="section-title">three things.<br><span class="accent">done well.</span></h2>
+  <p class="section-lead">narrow catalogue on purpose. no spices you've never heard of, no 20-ingredient sampler. the three plants we know cold.</p>
+
+  <div class="products-grid">
+
+    <article class="product-card">
+      <h3 class="product-label">psyllium<span class="tag">lead</span></h3>
+      <div class="product-grades">99% · 95% · 85% grades</div>
+      <p class="product-desc">whole husk, powder, seed. steam-sterilised on request. the product we move most of, with the deepest processor relationship.</p>
+      <ul class="product-specs">
+        <li><span class="k">mesh</span> 40 / 60 / 80 / 100</li>
+        <li><span class="k">packs</span> 25 kg paper bags, fibc</li>
+        <li><span class="k">moq</span> 500 kg to 20 mt</li>
+        <li><span class="k">lead time</span> 10 – 14 days</li>
+      </ul>
+    </article>
+
+    <article class="product-card">
+      <h3 class="product-label">ashwagandha</h3>
+      <div class="product-grades">roots · powder</div>
+      <p class="product-desc">conventional and premium grades, kgms root available. supplied with full heavy-metal panel and botanical identity testing from nabl labs.</p>
+      <ul class="product-specs">
+        <li><span class="k">form</span> cut, powdered, whole root</li>
+        <li><span class="k">withanolides</span> 1.5% to 5% on request</li>
+        <li><span class="k">packs</span> 25 kg kraft</li>
+        <li><span class="k">moq</span> 500 kg to 10 mt</li>
+      </ul>
+    </article>
+
+    <article class="product-card">
+      <h3 class="product-label">chia seeds</h3>
+      <div class="product-grades">black · white</div>
+      <p class="product-desc">cleaned, sortex-graded, tested for salmonella and heavy metals per lot. ready for bulk ingredient use or private-label packing.</p>
+      <ul class="product-specs">
+        <li><span class="k">purity</span> 99.5% min</li>
+        <li><span class="k">moisture</span> below 8%</li>
+        <li><span class="k">packs</span> 25 kg pp, fibc</li>
+        <li><span class="k">moq</span> 500 kg to 20 mt</li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="cert-band">
+  <div class="wrap">
+    <p class="eyebrow">paperwork, handled</p>
+    <h2 class="section-title">certifications<br><span class="accent">your qa team will accept.</span></h2>
+    <p class="section-lead">our primary processor is bscic-certified, nabcb accredited. full declaration pack ready day one, not when you ask.</p>
+
+    <div class="cert-grid">
+      <div class="cert-card">
+        <p class="cert-name">fssc 22000</p>
+        <p class="cert-title">food safety system certification</p>
+        <p class="cert-meta">issued by bscic · gfsi-benchmarked · certificate first week december 2026</p>
+      </div>
+      <div class="cert-card">
+        <p class="cert-name">bscic gmp</p>
+        <p class="cert-title">good manufacturing practice</p>
+        <p class="cert-meta">cert bu4003/23644 · valid through aug 2029</p>
+      </div>
+      <div class="cert-card">
+        <p class="cert-name">nabl labs</p>
+        <p class="cert-title">third-party lab reports per lot</p>
+        <p class="cert-meta">heavy metals · pesticides · microbio · identity</p>
+      </div>
+      <div class="cert-card">
+        <p class="cert-name">fssai central</p>
+        <p class="cert-title">food authority of india licence</p>
+        <p class="cert-meta">licence 10726994000864 · manufacturer-exporter category</p>
+      </div>
+      <div class="cert-card">
+        <p class="cert-name">apeda rcmc</p>
+        <p class="cert-title">export registration</p>
+        <p class="cert-meta">registered with india's agri export authority</p>
+      </div>
+      <div class="cert-card">
+        <p class="cert-name">declarations</p>
+        <p class="cert-title">signed on letterhead</p>
+        <p class="cert-meta">allergen · non-gmo · vegan · gluten-free · process flow</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section wrap">
+  <p class="eyebrow">why work with us</p>
+  <h2 class="section-title">we're middlemen.<br><span class="accent">but the good kind.</span></h2>
+  <p class="section-lead">most indian psyllium sellers push one processor's output and hope the spec fits. we pick the processor per spec, take the invoice ourselves, and sort out what india is bad at before it reaches you.</p>
+
+  <div class="why-grid">
+    <div class="why-item">
+      <div class="why-num">01</div>
+      <div class="why-body">
+        <h3>we absorb the working-capital</h3>
+        <p>indian processors want 50% advance on large orders. we invoice you as a merchant exporter, so your pos look like any other supplier payment, not a wire-first prepayment to a factory you've never been to.</p>
+      </div>
+    </div>
+
+    <div class="why-item">
+      <div class="why-num">02</div>
+      <div class="why-body">
+        <h3>processor fit per spec</h3>
+        <p>a lead target under 0.08 mg/kg sends you to a different processor than a kosher-certified powder for a premium brand. we pick, you don't have to vet five factories.</p>
+      </div>
+    </div>
+
+    <div class="why-item">
+      <div class="why-num">03</div>
+      <div class="why-body">
+        <h3>500 kg trials are fine</h3>
+        <p>most distributors will quote you a full container at 18 mt minimum. we start at 500 kg so qualification doesn't cost a quarter of inventory. scale when you're ready.</p>
+      </div>
+    </div>
+
+    <div class="why-item">
+      <div class="why-num">04</div>
+      <div class="why-body">
+        <h3>compliance pack ready, not promised</h3>
+        <p>fssc, nabl lot reports, gmp cert, declaration pack, process flow, factory video, 360 tour. sent as one pdf when you ask, not emailed back three weeks later after your qa chases.</p>
+      </div>
+    </div>
+
+    <div class="why-item">
+      <div class="why-num">05</div>
+      <div class="why-body">
+        <h3>24-hour response, from one person</h3>
+        <p>you'll be dealing with meet, co-founder. not a sales channel. not a cc list. your questions get an answer in a day, or an honest note that it'll take longer and why.</p>
+      </div>
+    </div>
+
+    <div class="why-item">
+      <div class="why-num">06</div>
+      <div class="why-body">
+        <h3>10 to 14 day lead time</h3>
+        <p>from order confirmation, from unjha to fob mundra. we hold the processor accountable on dates so you can plan around a real number, not a hopeful one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOGS -->
+<section class="blog-band">
+  <div class="wrap">
+    <p class="eyebrow">reading</p>
+    <h2 class="section-title">things we've<br><span class="accent">written down.</span></h2>
+    <p class="section-lead">notes and guides from six months of running this. what we figured out so you don't have to.</p>
+
+    <div class="blog-grid">
+      <a class="blog-card" href="/blogs/psyllium/psyllium-husk-merchant-exporter-india.html">
+        <p class="blog-cat">merchant exporter</p>
+        <h3 class="blog-title">what a merchant exporter actually is, and why you probably want one</h3>
+        <p class="blog-snippet">the difference between a merchant exporter and a manufacturer, and why buyers in canada and the us often prefer the former.</p>
+        <span class="blog-read">read →</span>
+      </a>
+
+      <a class="blog-card" href="/blogs/psyllium/psyllium-husk-coa-checklist.html">
+        <p class="blog-cat">compliance</p>
+        <h3 class="blog-title">psyllium husk coa: what to actually check before you sign the po</h3>
+        <p class="blog-snippet">lead levels, swell volume, purity, pesticide residue. the five numbers that matter and the three that don't.</p>
+        <span class="blog-read">read →</span>
+      </a>
+
+      <a class="blog-card" href="/blogs/psyllium/psyllium-husk-hs-code-guide.html">
+        <p class="blog-cat">customs</p>
+        <h3 class="blog-title">psyllium husk hs code guide: 12119099 vs 13023900</h3>
+        <p class="blog-snippet">why the same product sometimes clears under one hs code and sometimes another, and what it means for your import paperwork.</p>
+        <span class="blog-read">read →</span>
+      </a>
+
+      <a class="blog-card" href="/blogs/psyllium/private-label-isabgol-contract-manufacturing.html">
+        <p class="blog-cat">private label</p>
+        <h3 class="blog-title">private label psyllium: when it's smart, when it's a trap</h3>
+        <p class="blog-snippet">most private-label pitches die at qualification. here's how to sort the ones worth running from the ones that won't.</p>
+        <span class="blog-read">read →</span>
+      </a>
+
+      <a class="blog-card" href="/blogs/psyllium/psyllium-husk-distributor-guide.html">
+        <p class="blog-cat">buyers guide</p>
+        <h3 class="blog-title">buying psyllium from india: distributor, wholesaler, or direct</h3>
+        <p class="blog-snippet">three ways to source indian psyllium, what each costs, and where the hidden fees sit in each route.</p>
+        <span class="blog-read">read →</span>
+      </a>
+
+      <a class="blog-card" href="/blogs/psyllium/isabgol-manufacturer-exporter-india.html">
+        <p class="blog-cat">sourcing</p>
+        <h3 class="blog-title">isabgol in india: who the real processors are, and how they differ</h3>
+        <p class="blog-snippet">unjha runs 90% of the world's psyllium through one apmc yard. not every processor there is the same. a walkthrough.</p>
+        <span class="blog-read">read →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<div class="bottom-cta wrap">
+  <p class="prompt">seen enough?</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="https://wa.me/917265097308?text=hi%20meet%2C%20i%27d%20like%20to%20talk%20psyllium" target="_blank" rel="noopener">
+      <svg viewBox="0 0 32 32" fill="currentColor">
+        <path d="M16.004 3C9.374 3 3.999 8.374 3.999 15.004c0 2.37.69 4.654 1.998 6.613L4 29l7.586-1.986a12.01 12.01 0 0 0 4.418.84h.005c6.63 0 12.004-5.374 12.004-12.004C28.013 8.374 22.635 3 16.004 3zm5.398 14.478c-.295-.147-1.75-.863-2.02-.962-.27-.098-.467-.147-.664.148-.198.295-.763.962-.936 1.16-.173.198-.345.222-.64.074-.295-.147-1.248-.46-2.377-1.467-.879-.783-1.472-1.75-1.645-2.045-.172-.295-.018-.455.13-.603.133-.133.295-.345.443-.517.148-.173.198-.295.296-.493.099-.197.05-.37-.025-.517-.074-.148-.664-1.603-.91-2.195-.24-.577-.483-.498-.664-.507l-.566-.01c-.197 0-.517.074-.787.37-.27.295-1.03 1.007-1.03 2.456 0 1.45 1.055 2.85 1.202 3.047.148.197 2.075 3.167 5.027 4.442.703.303 1.252.484 1.68.62.705.223 1.346.192 1.853.116.565-.084 1.75-.715 1.996-1.406.247-.69.247-1.282.173-1.406-.074-.123-.27-.197-.566-.345z"/>
+      </svg>
+      whatsapp meet
+    </a>
+    <a class="btn btn-secondary" href="mailto:meet@rpmglobalexports.com">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="5" width="18" height="14" rx="2"/>
+        <path d="m3 7 9 6 9-6"/>
+      </svg>
+      email instead
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="tagline">from unjha, gujarat &mdash; to the world</div>
+  <div class="sub">fssc 22000 &middot; bscic gmp &middot; nabl labs &middot; fssai &middot; apeda</div>
+</footer>
