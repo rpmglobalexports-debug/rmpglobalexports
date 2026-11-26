@@ -1,12 +1,78 @@
-<title>RPM Global Exports</title>
+<title>Psyllium Husk, Ashwagandha &amp; Chia Seeds | RPM Global Exports</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="RPM Global Exports — psyllium husk, ashwagandha, and chia seeds sourced from Gujarat. NABL-accredited CoA with every lot. Trial orders from 500 kg. Founder-direct.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is your minimum order quantity?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trial orders from 500 kg. Standard MOQ after that is 1 MT."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can we request a sample before placing a bulk order?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We send a sample before any bulk commitment — the sample cost is charged but credited toward your order if you place one. Samples come with a third-party lab CoA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "We've never worked with an Indian supplier before — how do we reduce risk?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sample before shipment with cost credited toward your order. Third-party NABL lab CoA, not in-house claims. Photos and video of your lot before dispatch. Trial from 500 kg. Third-party inspection welcome. The founders reply personally on WhatsApp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What certifications does RPM Global Exports hold?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We hold an active IEC, APEDA registration covering psyllium husk, ashwagandha, and chia seeds, an FSSAI Central Licence, and GST registration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are your payment terms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We work with T/T (Telegraphic Transfer). Terms are discussed based on order size and buyer profile."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does shipment take to the USA or Germany?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Typical transit time is 18–25 days to the USA and 15–20 days to Germany via sea freight."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide a Certificate of Analysis with each shipment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, every shipment includes a full CoA covering purity, moisture content, and microbial standards."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
-  /* Layout: scrolling page. Hero → Products (3 cards) → Certifications (badge grid) → Why us (reasons) → Blogs (links) → Footer. Same brand palette as landing: forest green, brass gold, cream. */
+  /* Layout: scrolling page. Hero → Problem Section → Products (3 cards) → Certifications → Why Us (6) → How It Works (4) → Founder Mini → FAQ → Pre-shipment Checklist → Blogs → Footer. Brand palette: forest green, brass gold, cream. */
 
   :root {
     --bg-center: #FBF5E4;
@@ -522,6 +588,158 @@
     color: var(--fg-muted);
   }
 
+  /* PAIN SECTION */
+  .pain-card {
+    background: var(--bg-card);
+    border: 1.5px solid var(--divider);
+    border-radius: 20px;
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    min-width: 0;
+  }
+  .pain-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--fg);
+    margin: 0;
+    line-height: 1.3;
+  }
+  .pain-card p {
+    font-size: 0.9rem;
+    color: var(--fg-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .pain-closing {
+    margin-top: 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--fg);
+    font-style: italic;
+    max-width: 560px;
+  }
+
+  /* CERT NOTE */
+  .cert-note {
+    margin-top: 1.5rem;
+    font-size: 0.88rem;
+    color: var(--fg-muted);
+    font-style: italic;
+  }
+
+  /* FOUNDER BAND */
+  .founder-band {
+    background: var(--bg-deep);
+    margin-left: calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+    margin-right: calc(-1 * max(16px, env(safe-area-inset-right, 0px)));
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: clamp(3rem, 7vw, 5rem);
+    border-block: 1px solid var(--divider);
+  }
+  .founder-bio {
+    max-width: 640px;
+    font-size: 1rem;
+    color: var(--fg-muted);
+    line-height: 1.65;
+    margin: 1.5rem 0 1.25rem;
+  }
+  .founder-link {
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .founder-link:hover { text-decoration: underline; }
+
+  /* FAQ */
+  .faq-list {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--divider);
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+  }
+  .faq-q {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--fg);
+    margin: 0 0 0.5rem;
+    line-height: 1.4;
+  }
+  .faq-a {
+    font-size: 0.9rem;
+    color: var(--fg-muted);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* PRE-SHIPMENT CHECKLIST */
+  .checklist {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    counter-reset: checklist;
+  }
+  .checklist-step {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--divider);
+    min-width: 0;
+  }
+  .checklist-step:last-child { border-bottom: none; }
+  .checklist-num {
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 0.9;
+    min-width: 2ch;
+    flex-shrink: 0;
+  }
+  .checklist-body { min-width: 0; }
+  .checklist-body h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--fg);
+    margin: 0 0 0.3rem;
+    line-height: 1.3;
+  }
+  .checklist-body p {
+    font-size: 0.88rem;
+    color: var(--fg-muted);
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  /* EXPORT MARKETS */
+  .export-markets {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--divider);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--fg-muted);
+    letter-spacing: 0.04em;
+  }
+  .export-markets strong {
+    color: var(--fg);
+    font-weight: 600;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { transition: none !important; animation: none !important; }
   }
@@ -540,52 +758,78 @@
 
 <!-- HERO -->
 <section class="hero wrap">
-  <p class="eyebrow">why rpm</p>
-  <h1 class="section-title">a middleman worth<br><span class="accent">keeping.</span></h1>
-  <p class="section-lead">we source three indian botanicals from gujarat processors, absorb the working-capital and compliance work on your side, and ship ready for your qa team to open the box.</p>
+  <p class="eyebrow">sourcing partner for supplement, wellness &amp; functional food brands</p>
+  <h1 class="section-title">the sample you approve<br>is the shipment you <span class="accent">receive.</span></h1>
+  <p class="section-lead">psyllium husk, ashwagandha and chia seeds — verified before they ship.</p>
+</section>
+
+<!-- PAIN SECTION -->
+<section class="section wrap">
+  <p class="eyebrow">the reality of sourcing from india</p>
+  <h2 class="section-title">most first-time importers get burned once<br><span class="accent">before they get it right.</span></h2>
+  <p class="section-lead">ask anyone who's imported from india for the first time, and you'll hear a version of the same story.</p>
+
+  <div class="products-grid">
+    <div class="pain-card">
+      <h3>you order sight-unseen</h3>
+      <p>payment goes out before you've seen the actual lot. you're trusting what ships matches what was promised, with no way to check until it's already on the water.</p>
+    </div>
+    <div class="pain-card">
+      <h3>certifications you can't verify</h3>
+      <p>in-house quality claims with no independent lab behind them leave you no real way to confirm purity, moisture, or microbial standards before you commit.</p>
+    </div>
+    <div class="pain-card">
+      <h3>account managers, not decision-makers</h3>
+      <p>when something goes wrong, you're routed through a sales layer that can't actually fix the problem or won't own it.</p>
+    </div>
+  </div>
+
+  <p class="pain-closing">that's the exact gap RPM Global Exports was built to close.</p>
 </section>
 
 <!-- PRODUCTS -->
 <section class="section wrap">
-  <p class="eyebrow">what we source</p>
-  <h2 class="section-title">three things.<br><span class="accent">done well.</span></h2>
-  <p class="section-lead">narrow catalogue on purpose. no spices you've never heard of, no 20-ingredient sampler. the three plants we know cold.</p>
+  <p class="eyebrow">what we export</p>
+  <h2 class="section-title">three products.<br><span class="accent">documented end-to-end.</span></h2>
+  <p class="section-lead">psyllium husk, ashwagandha, and chia seeds — verified before they ship.</p>
 
   <div class="products-grid">
 
     <article class="product-card">
-      <h3 class="product-label">psyllium<span class="tag">lead</span></h3>
-      <div class="product-grades">99% · 95% · 85% grades</div>
-      <p class="product-desc">whole husk, powder, seed. steam-sterilised on request. the product we move most of, with the deepest processor relationship.</p>
+      <h3 class="product-label">psyllium husk<span class="tag">lead</span></h3>
+      <div class="product-grades">food grade · pharma grade</div>
+      <p class="product-desc">food-grade and pharma-grade psyllium husk with ≥45 ml/g swelling index, sourced from Gujarat's isabgol belt.</p>
       <ul class="product-specs">
-        <li><span class="k">mesh</span> 40 / 60 / 80 / 100</li>
-        <li><span class="k">packs</span> 25 kg paper bags, fibc</li>
-        <li><span class="k">moq</span> 500 kg to 20 mt</li>
-        <li><span class="k">lead time</span> 10 – 14 days</li>
+        <li><span class="k">purity</span> ≥99%</li>
+        <li><span class="k">swell index</span> ≥45 ml/g</li>
+        <li><span class="k">grades</span> food grade (95%), pharma grade (98–99%)</li>
+        <li><span class="k">hsn</span> 12119032</li>
+        <li><span class="k">moq</span> 500 kg trial · 1 MT standard</li>
+        <li><span class="k">lab report</span> NABL-accredited, on request</li>
       </ul>
     </article>
 
     <article class="product-card">
       <h3 class="product-label">ashwagandha</h3>
-      <div class="product-grades">roots · powder</div>
-      <p class="product-desc">conventional and premium grades, kgms root available. supplied with full heavy-metal panel and botanical identity testing from nabl labs.</p>
+      <div class="product-grades">whole root · powder on request</div>
+      <p class="product-desc">Withania somnifera whole root (dried) used in adaptogen, sleep, stress, and sports nutrition formulations. powder available on request.</p>
       <ul class="product-specs">
-        <li><span class="k">form</span> cut, powdered, whole root</li>
-        <li><span class="k">withanolides</span> 1.5% to 5% on request</li>
-        <li><span class="k">packs</span> 25 kg kraft</li>
-        <li><span class="k">moq</span> 500 kg to 10 mt</li>
+        <li><span class="k">form</span> whole root (dried) — powder on request</li>
+        <li><span class="k">hsn</span> 12119099 (indicative — confirm with CHA)</li>
+        <li><span class="k">lab report</span> CoA from NABL-accredited lab available</li>
+        <li><span class="k">moq</span> enquire — trial quantities available</li>
       </ul>
     </article>
 
     <article class="product-card">
       <h3 class="product-label">chia seeds</h3>
-      <div class="product-grades">black · white</div>
-      <p class="product-desc">cleaned, sortex-graded, tested for salmonella and heavy metals per lot. ready for bulk ingredient use or private-label packing.</p>
+      <div class="product-grades">black · white · confirm at enquiry</div>
+      <p class="product-desc">Salvia hispanica whole seeds for functional food, dietary supplements, and consumer packaged goods.</p>
       <ul class="product-specs">
-        <li><span class="k">purity</span> 99.5% min</li>
-        <li><span class="k">moisture</span> below 8%</li>
-        <li><span class="k">packs</span> 25 kg pp, fibc</li>
-        <li><span class="k">moq</span> 500 kg to 20 mt</li>
+        <li><span class="k">form</span> whole seeds — black / white</li>
+        <li><span class="k">hsn</span> 12079990 (indicative — confirm with CHA)</li>
+        <li><span class="k">lab report</span> CoA from NABL-accredited lab available</li>
+        <li><span class="k">moq</span> enquire — trial quantities available</li>
       </ul>
     </article>
 
@@ -595,100 +839,246 @@
 <!-- CERTIFICATIONS -->
 <section class="cert-band">
   <div class="wrap">
-    <p class="eyebrow">paperwork, handled</p>
-    <h2 class="section-title">certifications<br><span class="accent">your qa team will accept.</span></h2>
-    <p class="section-lead">full declaration pack ready day one, not when you ask. all supporting documents available on request.</p>
+    <p class="eyebrow">active registrations</p>
+    <h2 class="section-title">our registrations.<br><span class="accent">your due diligence, simplified.</span></h2>
+    <p class="section-lead">all active registrations available for verification by buyers on request.</p>
 
     <div class="cert-grid">
       <div class="cert-card">
-        <p class="cert-name">fssc 22000</p>
-        <p class="cert-title">food safety system</p>
-        <p class="cert-meta">gfsi-benchmarked global standard</p>
+        <p class="cert-name">IEC</p>
+        <p class="cert-title">Import Export Code</p>
+        <p class="cert-meta">active · issued by DGFT, Ministry of Commerce</p>
       </div>
       <div class="cert-card">
-        <p class="cert-name">gmp</p>
-        <p class="cert-title">good manufacturing practice</p>
-        <p class="cert-meta">accredited certification body</p>
+        <p class="cert-name">GST</p>
+        <p class="cert-title">GST Registration</p>
+        <p class="cert-meta">active · GST-compliant business entity</p>
       </div>
       <div class="cert-card">
-        <p class="cert-name">nabl labs</p>
-        <p class="cert-title">third-party lab reports per lot</p>
-        <p class="cert-meta">heavy metals · pesticides · microbio · identity</p>
+        <p class="cert-name">MSME</p>
+        <p class="cert-title">MSME / Udyam Registration</p>
+        <p class="cert-meta">active · Ministry of Micro, Small &amp; Medium Enterprises</p>
       </div>
       <div class="cert-card">
-        <p class="cert-name">fssai</p>
-        <p class="cert-title">food authority of india</p>
-        <p class="cert-meta">central licence category</p>
+        <p class="cert-name">FSSAI</p>
+        <p class="cert-title">FSSAI Central Licence</p>
+        <p class="cert-meta">active · food trader / exporter category</p>
       </div>
       <div class="cert-card">
-        <p class="cert-name">apeda</p>
-        <p class="cert-title">export registration</p>
-        <p class="cert-meta">india's agri export authority</p>
+        <p class="cert-name">APEDA</p>
+        <p class="cert-title">APEDA Registration</p>
+        <p class="cert-meta">psyllium husk · ashwagandha · chia seeds · herbal &amp; medicinal plants panel</p>
       </div>
       <div class="cert-card">
-        <p class="cert-name">declarations</p>
-        <p class="cert-title">signed on letterhead</p>
-        <p class="cert-meta">allergen · non-gmo · vegan · gluten-free</p>
+        <p class="cert-name">spec sheets</p>
+        <p class="cert-title">Product Spec Sheets</p>
+        <p class="cert-meta">available for all three products on request</p>
       </div>
     </div>
+
+    <p class="cert-note">need to verify our credentials before placing an enquiry? write to us directly — we'll share everything you need.</p>
   </div>
 </section>
 
 <!-- WHY US -->
 <section class="section wrap">
-  <p class="eyebrow">why work with us</p>
-  <h2 class="section-title">we're middlemen.<br><span class="accent">but the good kind.</span></h2>
-  <p class="section-lead">most indian psyllium sellers push one processor's output and hope the spec fits. we pick the processor per spec, take the invoice ourselves, and sort out what india is bad at before it reaches you.</p>
+  <p class="eyebrow">why buyers trust us</p>
+  <h2 class="section-title">we don't ask you to<br><span class="accent">take our word for anything.</span></h2>
+  <p class="section-lead">every claim we make comes with documentation a third party can verify.</p>
 
   <div class="why-grid">
     <div class="why-item">
       <div class="why-num">01</div>
       <div class="why-body">
-        <h3>we absorb the working-capital</h3>
-        <p>indian processors want 50% advance on large orders. we invoice you as a merchant exporter, so your pos look like any other supplier payment, not a wire-first prepayment to a factory you've never been to.</p>
+        <h3>third-party CoA on every lot</h3>
+        <p>not in-house claims. every shipment comes with a certificate of analysis from an independent, NABL-accredited laboratory — a document your qa team can actually rely on.</p>
       </div>
     </div>
 
     <div class="why-item">
       <div class="why-num">02</div>
       <div class="why-body">
-        <h3>processor fit per spec</h3>
-        <p>different specs want different processors. one for whole husk, another for fine powder, a third for kosher or organic. we pick, you don't have to vet five factories.</p>
+        <h3>lot photos before dispatch</h3>
+        <p>you see your specific lot before it leaves the warehouse. photos and video of packed bags sent to your WhatsApp before dispatch — no surprises at the destination port.</p>
       </div>
     </div>
 
     <div class="why-item">
       <div class="why-num">03</div>
       <div class="why-body">
-        <h3>500 kg trials are fine</h3>
-        <p>most distributors will quote you a full container at 18 mt minimum. we start at 500 kg so qualification doesn't cost a quarter of inventory. scale when you're ready.</p>
+        <h3>founder-direct communication</h3>
+        <p>Rudra or Meet responds personally — no sales layer, no account managers. the person you're talking to can actually make the call.</p>
       </div>
     </div>
 
     <div class="why-item">
       <div class="why-num">04</div>
       <div class="why-body">
-        <h3>compliance pack ready, not promised</h3>
-        <p>fssc, nabl lot reports, gmp cert, declaration pack, process flow. sent as one pdf when you ask, not emailed back three weeks later after your qa chases.</p>
+        <h3>Unjha market pricing</h3>
+        <p>we source directly from Unjha APMC — Asia's largest seed trading market. your quotation reflects live spot rates, not estimates inflated by intermediaries.</p>
       </div>
     </div>
 
     <div class="why-item">
       <div class="why-num">05</div>
       <div class="why-body">
-        <h3>24-hour response, from one person</h3>
-        <p>you'll be dealing with meet, co-founder. not a sales channel. not a cc list. your questions get an answer in a day, or an honest note that it'll take longer and why.</p>
+        <h3>500 kg trial orders</h3>
+        <p>prove us on a small order before you scale to a full container. standard MOQ after that is 1 MT. the trial exists specifically so you don't have to commit to bulk on faith.</p>
       </div>
     </div>
 
     <div class="why-item">
       <div class="why-num">06</div>
       <div class="why-body">
-        <h3>10 to 14 day lead time</h3>
-        <p>from order confirmation, from unjha to fob mundra. we hold the processor accountable on dates so you can plan around a real number, not a hopeful one.</p>
+        <h3>response within 4 business hours</h3>
+        <p>every enquiry, no exceptions. India Standard Time, Monday to Saturday.</p>
       </div>
     </div>
   </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="cert-band">
+  <div class="wrap">
+    <p class="eyebrow">the process</p>
+    <h2 class="section-title">simple, direct, and<br><span class="accent">built for serious importers.</span></h2>
+    <p class="section-lead">no registration required to enquire.</p>
+
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <div class="why-body">
+          <h3>send your requirement</h3>
+          <p>tell us your product, quantity (trial from 500 kg), destination port, and grade preference. no registration or commitment required to enquire.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <div class="why-body">
+          <h3>receive sample + lab CoA</h3>
+          <p>we dispatch a pre-shipment sample so you can verify quality with your own team or third-party lab — before any commitment to bulk.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <div class="why-body">
+          <h3>practical quotation at live rates</h3>
+          <p>once you're satisfied with the sample, we send a firm quotation grounded in current Unjha market rates — not inflated margins passed through intermediaries.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-num">04</div>
+        <div class="why-body">
+          <h3>we handle the rest</h3>
+          <p>from 500 kg trial to full container: lot photos, documentation, inspection, and shipment updates — all managed founder-direct.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER MINI -->
+<section class="section wrap">
+  <p class="eyebrow">who you're dealing with</p>
+  <h2 class="section-title">two founders.<br><span class="accent">one sourcing hub.</span></h2>
+  <p class="founder-bio">two founders from Vadodara, Gujarat. Rudra manages sourcing out of Unjha APMC — Asia's largest seed trading market. Meet handles every buyer enquiry personally, informed by his time in Canada understanding what Western importers actually need. no sales team, no account managers — if you email us, you're talking to someone who can make the call.</p>
+  <a class="founder-link" href="Our-story.html">read our full story →</a>
+</section>
+
+<!-- FAQ -->
+<section class="cert-band">
+  <div class="wrap">
+    <p class="eyebrow">frequently asked</p>
+    <h2 class="section-title">common questions<br><span class="accent">from importers.</span></h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <p class="faq-q">what is your minimum order quantity?</p>
+        <p class="faq-a">trial orders from 500 kg. standard MOQ after that is 1 MT.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">can we request a sample before placing a bulk order?</p>
+        <p class="faq-a">yes. we send a sample before any bulk commitment — the sample cost is charged but credited toward your order if you place one. samples come with a third-party lab CoA so you have independently verified quality data before committing to bulk.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">we've never worked with an Indian supplier before — how do we reduce risk?</p>
+        <p class="faq-a">sample before shipment with cost credited toward your order. third-party NABL lab CoA, not in-house claims. photos and video of your lot before dispatch. trial from 500 kg. third-party inspection welcome. the founders reply personally on WhatsApp.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">what certifications does RPM Global Exports hold?</p>
+        <p class="faq-a">we hold an active IEC, APEDA registration covering psyllium husk, ashwagandha, and chia seeds, an FSSAI Central Licence, and GST registration.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">what are your payment terms?</p>
+        <p class="faq-a">we work with T/T (Telegraphic Transfer). terms are discussed based on order size and buyer profile.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">how long does shipment take to the USA or Germany?</p>
+        <p class="faq-a">typical transit time is 18–25 days to the USA and 15–20 days to Germany via sea freight.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">do you provide a Certificate of Analysis with each shipment?</p>
+        <p class="faq-a">yes, every shipment includes a full CoA covering purity, moisture content, and microbial standards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRE-SHIPMENT CHECKLIST -->
+<section class="section wrap">
+  <p class="eyebrow">before every shipment</p>
+  <h2 class="section-title">how every lot is prepared<br><span class="accent">before it ships.</span></h2>
+  <p class="section-lead">six steps, every time, without exception.</p>
+
+  <div class="checklist">
+    <div class="checklist-step">
+      <div class="checklist-num">1</div>
+      <div class="checklist-body">
+        <h3>approved specification confirmed</h3>
+        <p>buyer-approved grade, mesh or purity, packaging format locked in writing.</p>
+      </div>
+    </div>
+    <div class="checklist-step">
+      <div class="checklist-num">2</div>
+      <div class="checklist-body">
+        <h3>third-party CoA pulled</h3>
+        <p>NABL-accredited lab result covering key quality parameters for the actual lot.</p>
+      </div>
+    </div>
+    <div class="checklist-step">
+      <div class="checklist-num">3</div>
+      <div class="checklist-body">
+        <h3>lot identified and set aside</h3>
+        <p>physical quantity matched to specification and segregated before dispatch.</p>
+      </div>
+    </div>
+    <div class="checklist-step">
+      <div class="checklist-num">4</div>
+      <div class="checklist-body">
+        <h3>photos of your lot shared</h3>
+        <p>WhatsApp photos and video of packed bags before they leave the warehouse.</p>
+      </div>
+    </div>
+    <div class="checklist-step">
+      <div class="checklist-num">5</div>
+      <div class="checklist-body">
+        <h3>pre-dispatch quality check</h3>
+        <p>packing, labelling, and document set reviewed against the buyer's requirement.</p>
+      </div>
+    </div>
+    <div class="checklist-step">
+      <div class="checklist-num">6</div>
+      <div class="checklist-body">
+        <h3>full shipment document set</h3>
+        <p>commercial invoice, packing list, B/L, CoA, and any required certificates ready at dispatch.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="export-markets"><strong>where we export to:</strong> USA &nbsp;·&nbsp; Canada &nbsp;·&nbsp; UAE &nbsp;·&nbsp; Germany</p>
 </section>
 
 <!-- BLOGS -->
@@ -766,5 +1156,5 @@
 
 <footer>
   <div class="tagline">from unjha, gujarat &mdash; to the world</div>
-  <div class="sub">fssc 22000 &middot; bscic gmp &middot; nabl labs &middot; fssai &middot; apeda</div>
+  <div class="sub">nabl labs &middot; fssai central licence &middot; apeda &middot; iec registered</div>
 </footer>
