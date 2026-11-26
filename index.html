@@ -312,7 +312,7 @@
     align-items: center;
     gap: 2rem;
     width: max-content;
-    animation: trust-scroll 32s linear infinite;
+    animation: trust-scroll 22s linear infinite;
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--fg-muted);
@@ -337,8 +337,8 @@
   }
   /* left-to-right scroll: track starts shifted left, slides to 0 */
   @keyframes trust-scroll {
-    from { transform: translateX(-50%); }
-    to { transform: translateX(0); }
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-50%, 0, 0); }
   }
   @media (max-width: 600px) {
     .trust-track {
