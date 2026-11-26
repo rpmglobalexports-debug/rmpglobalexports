@@ -119,6 +119,8 @@
 
   * { box-sizing: border-box; }
 
+  html { scroll-behavior: smooth; }
+
   html, body {
     margin: 0;
     font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -740,6 +742,73 @@
     font-weight: 600;
   }
 
+  /* JUMP STACK */
+  .jump-stack {
+    position: fixed;
+    bottom: max(20px, env(safe-area-inset-bottom, 0px));
+    right: max(20px, env(safe-area-inset-right, 0px));
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-end;
+  }
+  .jump-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    background: var(--bg-card);
+    border: 1.5px solid var(--divider);
+    color: var(--fg);
+    text-decoration: none;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    box-shadow: 0 4px 14px var(--shadow);
+    transition: all 0.2s ease;
+    max-width: 220px;
+  }
+  .jump-btn:hover { border-color: var(--accent); color: var(--accent-deep); transform: translateY(-2px); }
+  .jump-btn svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--accent); }
+  @media (max-width: 500px) {
+    .jump-btn .jb-label { display: none; }
+  }
+
+  /* STAT GRID */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 2rem 0 2.5rem;
+  }
+  @media (max-width: 860px) {
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--divider);
+    border-radius: 16px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    min-width: 0;
+  }
+  .stat-icon { width: 26px; height: 26px; color: var(--accent); margin: 0 auto 0.6rem; display: block; }
+  .stat-number {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--fg);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--fg-muted);
+    margin-top: 0.5rem;
+    line-height: 1.4;
+  }
+
   /* BRAND BUILDER SECTION */
   .brand-paras {
     display: flex;
@@ -787,6 +856,17 @@
     *, *::before, *::after { transition: none !important; animation: none !important; }
   }
 </style>
+
+<div class="jump-stack">
+  <a href="#brand-builders" class="jump-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+    <span class="jb-label">Building a brand?</span>
+  </a>
+  <a href="#how-it-ships" class="jump-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v4H3zM3 10h18M3 17h12"/></svg>
+    <span class="jb-label">How we ship</span>
+  </a>
+</div>
 
 <div class="top-nav wrap">
   <a class="brand" href="index.html">RPM Global Exports<span class="dot">.</span></a>
@@ -1071,7 +1151,7 @@
 </section>
 
 <!-- PRE-SHIPMENT CHECKLIST -->
-<section class="section wrap">
+<section id="how-it-ships" class="section wrap">
   <p class="eyebrow">Before Every Shipment</p>
   <h2 class="section-title">How every lot is prepared<br><span class="accent">before it ships.</span></h2>
   <p class="section-lead">Six steps, every time, without exception.</p>
@@ -1125,12 +1205,36 @@
 </section>
 
 <!-- BRAND BUILDERS -->
-<section class="section wrap">
+<section id="brand-builders" class="section wrap">
   <p class="eyebrow">For Brand Builders</p>
   <h2 class="section-title">If You're Building a Brand,<br><span class="accent">Not Just Buying an Ingredient</span></h2>
 
+  <p class="section-lead" style="margin-top:2rem">The numbers on fibre aren't a pitch — they're published research, and they say the timing argument for this category is real.</p>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 9 9h-9z" fill="currentColor" stroke="none"/></svg>
+      <div class="stat-number">93%</div>
+      <div class="stat-label">of US adults fall short of recommended fibre intake</div>
+    </div>
+    <div class="stat-card">
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div class="stat-number">45M</div>
+      <div class="stat-label">Americans on GLP-1 drugs whose treatment guidance recommends fibre</div>
+    </div>
+    <div class="stat-card">
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/><path d="M8.5 13.5 6 22l6-3 6 3-2.5-8.5"/></svg>
+      <div class="stat-number">1 of 12</div>
+      <div class="stat-label">FDA health claims ever granted to a single fibre ingredient — psyllium is one</div>
+    </div>
+    <div class="stat-card">
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m23 6-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg>
+      <div class="stat-number">9.7%</div>
+      <div class="stat-label">projected CAGR for the global psyllium market through 2030</div>
+    </div>
+  </div>
+
   <div class="brand-paras">
-    <p>The numbers on fibre aren't a pitch — they're published research, and they say the timing argument for this category is real.</p>
     <p>About 93% of US adults fall short of recommended fibre intake (NHANES 2013–2018, Texas Woman's University). That's not a wellness niche — it's nearly the entire population of the largest consumer market in the world, and the Dietary Guidelines Advisory Committee has flagged it as a public health concern since 2015.</p>
     <p>Layered on top: 12.4% of US adults now use a GLP-1 drug like Ozempic or Wegovy — up from 5.8% in early 2024. Clinical guidance for managing the GI side effects of these drugs explicitly recommends fibre intake. That's roughly 45 million people whose own treatment plan now includes the thing you'd be selling them.</p>
     <p>Psyllium specifically carries an FDA-authorized heart-health claim — one of only about a dozen ingredients the FDA has ever granted one to. Most fibre marketing runs on soft claims like 'supports digestion.' Yours doesn't have to.</p>
